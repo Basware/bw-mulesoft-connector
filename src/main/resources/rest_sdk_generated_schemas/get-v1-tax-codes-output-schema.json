@@ -1,0 +1,215 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/TaxCodeResponse",
+  "definitions": {
+    "TaxCodeCompanyEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "companyCode",
+        "inherit",
+        "active"
+      ],
+      "properties": {
+        "companyCode": {
+          "minLength": 2,
+          "description": "Defines a company code that the tax code is mapped to",
+          "type": "string",
+          "maxLength": 32,
+          "example": "BW01"
+        },
+        "inherit": {
+          "description": "The value specifies whether the property is inherited to lower organizations.",
+          "type": "boolean",
+          "example": false
+        },
+        "active": {
+          "description": "This flag will enable the data to be visible on UI, provided if the value is true, not visible in case of value is false. It will be also used for soft delete.",
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "TaxCodeResponse": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {"taxCodes": {"anyOf": [
+        {
+          "type": "array",
+          "items": {"$ref": "#/definitions/TaxCodeEntity"}
+        },
+        {"type": "null"}
+      ]}}
+    },
+    "LanguageTranslationEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "translation",
+        "language"
+      ],
+      "properties": {
+        "translation": {
+          "minLength": 2,
+          "description": "Translated text",
+          "type": "string",
+          "maxLength": 2000,
+          "example": "Office supplies"
+        },
+        "language": {
+          "minLength": 2,
+          "description": "Language code",
+          "type": "string",
+          "maxLength": 10,
+          "example": "en-US"
+        }
+      }
+    },
+    "TaxCodeAdditionalData": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "transactionType": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "SAP tax transaction type. Example values: MWST, VST.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "MWST"
+          },
+          {"type": "null"}
+        ]},
+        "country": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Country code. Example values: DE, EN.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "EN"
+          },
+          {"type": "null"}
+        ]},
+        "statistical": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Statistical indicator. Used in SAP business logic for balance calculations. values: 'X' or null. When X, SAP skips balance check.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "X"
+          },
+          {"type": "null"}
+        ]},
+        "condition": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Condition type. Technical field required back by SAP when posting invoices. Example values: MWVS, MWAS.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "MWVS"
+          },
+          {"type": "null"}
+        ]},
+        "externalCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Exernal code for tax calculation rule.",
+            "type": "string",
+            "maxLength": 32,
+            "example": "c9921a52-6d8b-1017-cb8c-923d"
+          },
+          {"type": "null"}
+        ]},
+        "taxPercent": {"anyOf": [
+          {
+            "description": "Tax percentage used for this tax calculation rule.",
+            "type": "number",
+            "example": 25
+          },
+          {"type": "null"}
+        ]},
+        "active": {"anyOf": [
+          {
+            "description": "Is calculation rule active (true / false).",
+            "type": "boolean"
+          },
+          {"type": "null"}
+        ]},
+        "account": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Tax account. Used in creating tax account posting for SAP.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "46860"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "TaxCodeEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "taxCode",
+        "taxCodeNames",
+        "taxPercentage",
+        "companies",
+        "externalCode"
+      ],
+      "properties": {
+        "taxCodeNames": {
+          "description": "Defines name(s) for the tax code. Please always include 'en-US' language tag for Basware global support, as well as any local-language tag being used. If both translations are not available, please use the same string with both language tags.",
+          "type": "array",
+          "items": {"$ref": "#/definitions/LanguageTranslationEntity"}
+        },
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last sent to API. Set automatically.",
+          "type": "string"
+        },
+        "companies": {
+          "description": "List of company units to associate taxcodes to P2P organization hierarchy",
+          "type": "array",
+          "items": {"$ref": "#/definitions/TaxCodeCompanyEntity"}
+        },
+        "externalCode": {
+          "minLength": 1,
+          "description": "External identifier that is used as a key in API.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "4847-31231212-212121-1212"
+        },
+        "taxPercentage": {
+          "maximum": 100,
+          "description": "Specifies the tax percentage. The value must be 0-100.",
+          "type": "number",
+          "minimum": 0,
+          "example": 10
+        },
+        "taxPercentage2": {"anyOf": [
+          {
+            "description": "Tax percentage 2 (may be used for example for partially deductible VAT)",
+            "type": "number",
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "additionalData": {"anyOf": [
+          {
+            "description": "SAP tax calculation rules. Used with SAP interfaces.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/TaxCodeAdditionalData"}
+          },
+          {"type": "null"}
+        ]},
+        "taxCode": {
+          "minLength": 1,
+          "description": "Tax code.",
+          "type": "string",
+          "maxLength": 25,
+          "example": "B9"
+        }
+      }
+    }
+  }
+}

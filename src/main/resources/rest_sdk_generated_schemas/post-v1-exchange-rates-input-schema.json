@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/schema",
+  "definitions": {
+    "schema": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/ExchangeRateEntity"}
+    },
+    "ExchangeRateCompanyEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "companyCode",
+        "active"
+      ],
+      "properties": {
+        "companyCode": {
+          "minLength": 2,
+          "description": "Defines the organization that the exchange rate is mapped to",
+          "type": "string",
+          "maxLength": 32,
+          "example": "BW00"
+        },
+        "active": {
+          "description": "This flag will enable the data to be visible on UI, provided if the value is true, not visible in case of value is false. It will be also used for soft delete.",
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "ExchangeRateEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "rate",
+        "currencyCodeTo",
+        "currencyCodeFrom",
+        "validFrom",
+        "companies",
+        "externalCode"
+      ],
+      "properties": {
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last sent to API. Set automatically.",
+          "type": "string"
+        },
+        "companies": {
+          "description": "List of company units to associate exchangerate to P2P organization hierarchy",
+          "type": "array",
+          "items": {"$ref": "#/definitions/ExchangeRateCompanyEntity"}
+        },
+        "externalCode": {
+          "minLength": 1,
+          "description": "External identifier that is used as a key in API.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "4847-31231212-212121-1212"
+        },
+        "rate": {
+          "maximum": 1000000000,
+          "description": "Defines the selected currency's exchange rate. Multiplying amount in 'from' -currency by rate provides the amount in 'to' -currency.",
+          "type": "number",
+          "minimum": 0,
+          "example": 0.564858
+        },
+        "currencyCodeFrom": {
+          "minLength": 2,
+          "description": "The currency code defines the quote currency.",
+          "type": "string",
+          "maxLength": 3,
+          "example": "AUD"
+        },
+        "currencyCodeTo": {
+          "minLength": 2,
+          "description": "The currency code defines the base currency.",
+          "type": "string",
+          "maxLength": 3,
+          "example": "EUR"
+        },
+        "validFrom": {
+          "format": "date-time",
+          "description": "Defines the date when the exchange rate becomes valid",
+          "type": "string",
+          "example": "2020-04-08"
+        }
+      }
+    }
+  }
+}

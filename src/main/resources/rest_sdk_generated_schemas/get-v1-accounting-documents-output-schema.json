@@ -1,0 +1,2856 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/AccountingDocumentResponse",
+  "definitions": {
+    "AccountingDocumentEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "invoiceId",
+        "processingStatus",
+        "companyCode",
+        "supplierCode",
+        "currencyCode",
+        "paymentBlock"
+      ],
+      "properties": {
+        "companyName": {"anyOf": [
+          {
+            "minLength": 2,
+            "description": "Company name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Basware Helsinki"
+          },
+          {"type": "null"}
+        ]},
+        "taxSum2": {"anyOf": [
+          {
+            "description": "Invoice tax sum that is excluded from the tax sum to be paid, in invoice currency.",
+            "type": "number",
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "prebookResponses": {"anyOf": [
+          {
+            "description": "Lists prebook responses posted to Basware API for the invoice.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/PrebookResponseEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "taxSum1": {"anyOf": [
+          {
+            "description": "Invoice tax sum to be paid, in invoice currency.",
+            "type": "number",
+            "example": 160
+          },
+          {"type": "null"}
+        ]},
+        "cashSum": {"anyOf": [
+          {
+            "description": "Cash discount amount in invoice currency.",
+            "type": "number",
+            "example": 23.2
+          },
+          {"type": "null"}
+        ]},
+        "transferParameters": {"anyOf": [
+          {
+            "description": "Contains transfer parameters entered by user to pop-up window uring transfer, such as voucher date for a batch of invoices. \r\nThese can be specified in IA_TRANSFER_PARAMETER -table in P2P. Also contains InvoiceBatchId (transfer batch id).",
+            "type": "array",
+            "items": {"$ref": "#/definitions/TransferParameterEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the invoice record was last updated (from Basware P2P or from customer end).",
+          "type": "string"
+        },
+        "netSum": {"anyOf": [
+          {
+            "description": "Invoice net sum (invoice total without tax), in invoice currecy.",
+            "type": "number",
+            "example": 1000
+          },
+          {"type": "null"}
+        ]},
+        "referenceNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Payment reference number.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "16422-3210654-1872000-1110"
+          },
+          {"type": "null"}
+        ]},
+        "numeric20": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "taxSum1Organization": {"anyOf": [
+          {
+            "description": "Invoice tax sum 1, in organization home currency.",
+            "type": "number",
+            "example": 160
+          },
+          {"type": "null"}
+        ]},
+        "taxSum2Organization": {"anyOf": [
+          {
+            "description": "Invoice tax sum 2, in organization home currency.",
+            "type": "number",
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "removeResponses": {"anyOf": [
+          {
+            "description": "Not in use. Reserved for listing remove responses to prebooked invoices.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/RemoveResponseEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "transferResponses": {"anyOf": [
+          {
+            "description": "Lists tranfer responses posted to Basware API for the invoice.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/TransferResponseEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "grossSumCompany": {"anyOf": [
+          {
+            "description": "Invoice gross sum (invoice total with tax), in company home currency.",
+            "type": "number",
+            "example": 1160
+          },
+          {"type": "null"}
+        ]},
+        "processingStatus": {
+          "description": "Processing status of the invoice in Basware API.",
+          "type": "string",
+          "enum": [
+            "WaitingForPrebook",
+            "PrebookInProgress",
+            "Prebooked",
+            "PrebookFailed",
+            "WaitingForTransfer",
+            "TransferInProgress",
+            "Transferred",
+            "TransferFailed",
+            "WaitingForPrebookCancelation",
+            "PrebookCancelationInProgress",
+            "PrebookCanceled",
+            "PrebookCancelFailed",
+            "WaitingToBeRemoved",
+            "RemoveInProgress",
+            "Removed",
+            "RemoveFailed",
+            "WaitingToBeReturned",
+            "ReturnInProgress",
+            "Returned",
+            "ReturnFailed",
+            "WaitingToBeCompleted",
+            "CompletionInProgress",
+            "Completed",
+            "CompletionFailed",
+            "Paid",
+            "New",
+            "InternalStatusChange"
+          ]
+        },
+        "accountingGroup": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Name for target accounting period (if specified by Basware P2P).",
+            "type": "string",
+            "maxLength": 50,
+            "example": "January 2021"
+          },
+          {"type": "null"}
+        ]},
+        "currencyCodeCompany": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Currency code of company home currency.",
+            "type": "string",
+            "maxLength": 3,
+            "example": "EUR"
+          },
+          {"type": "null"}
+        ]},
+        "paymentRevelsalDocument": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Payment reversal document.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "245576456"
+          },
+          {"type": "null"}
+        ]},
+        "text3": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "organizationCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Organization element in the higher level of the organization than companyCode. This organization element collects the spend from the lower organization units.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "BWFIN"
+          },
+          {"type": "null"}
+        ]},
+        "text4": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "text1-30 can be used for additional, customer-specific, invoice header text fields.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text2": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text7": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text8": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text5": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "originService": {
+          "description": "Describes how the invoice got created (as e-invoice, scanned from paper, extracted from pdf, etc)",
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "text6": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "prebooked": {"anyOf": [
+          {
+            "description": "Identifies if the cost is already prebooked in ERP system. Some systems require prebooking the cost before invoice can be sent for payment.",
+            "type": "boolean",
+            "example": false
+          },
+          {"type": "null"}
+        ]},
+        "text9": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "paymentResponses": {"anyOf": [
+          {
+            "description": "Lists payment responses posted to Basware API for the invoice.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/PaymentResponseEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "organizationElementName": {"anyOf": [
+          {
+            "minLength": 1,
+            "description": "Organization element name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Basware Helsinki"
+          },
+          {"type": "null"}
+        ]},
+        "invoiceTypeName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Invoice type name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Purchase order based invoice"
+          },
+          {"type": "null"}
+        ]},
+        "supplierSourceSystemId": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "It is used to identify the source ERP in cases where supplier data is imported from multiple data sources. In these cases, you can identify a supplier using the SupplierSourceSystemId and the supplierCode.",
+            "type": "string",
+            "maxLength": 36,
+            "example": "ERP1"
+          },
+          {"type": "null"}
+        ]},
+        "exchangeRateBaseDate": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "Exchange rate(s) valid on this date are used on the invoice.",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "supplierCode": {
+          "minLength": 0,
+          "description": "A party that supplied goods or services referred in the invoice.",
+          "type": "string",
+          "maxLength": 25,
+          "example": "430022"
+        },
+        "supplierBankIBAN": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Supplier bank account (IBAN).",
+            "type": "string",
+            "maxLength": 50,
+            "example": "IT60X0542811101000000123456"
+          },
+          {"type": "null"}
+        ]},
+        "supplierBankBIC": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Supplier bank SWIFT/BIC code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "CTBAAU2W"
+          },
+          {"type": "null"}
+        ]},
+        "grossSumOrganization": {"anyOf": [
+          {
+            "description": "Invoice gross sum (invoice total with tax), in organization home currency.",
+            "type": "number",
+            "example": 1160
+          },
+          {"type": "null"}
+        ]},
+        "paymentTermCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Payment term code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "7D2-NT30"
+          },
+          {"type": "null"}
+        ]},
+        "exchangeRateOrganization": {"anyOf": [
+          {
+            "description": "Exchange rate between invoice currency and organization home currency",
+            "type": "number",
+            "example": 1
+          },
+          {"type": "null"}
+        ]},
+        "referencePerson": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Person that has been referenced in the invoice.",
+            "type": "string",
+            "maxLength": 255,
+            "example": "Jane Buyer"
+          },
+          {"type": "null"}
+        ]},
+        "numeric9": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "grossSum": {"anyOf": [
+          {
+            "description": "Invoice gross sum (invoice total with tax), in invoice currecy.",
+            "type": "number",
+            "example": 1160
+          },
+          {"type": "null"}
+        ]},
+        "numeric8": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "numeric7": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "numeric6": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "numeric5": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "numeric4": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "numeric3": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "invoiceId": {
+          "minLength": 1,
+          "description": "Unique identifier for an invoice generated by Basware P2P. Must be returned in when sending acknowledgement, transferResponse or paymentResponse to the invoice.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "138e7d94997847aebe7432e521b3dac9"
+        },
+        "numeric2": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "numeric1": {"anyOf": [
+          {
+            "description": "numeric1-20 can be used for additional, customer-specific, invoice header numeric fields.",
+            "type": "number"
+          },
+          {"type": "null"}
+        ]},
+        "date10": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "currencyCode": {
+          "minLength": 2,
+          "description": "Invoice currency.",
+          "type": "string",
+          "maxLength": 3,
+          "example": "EUR"
+        },
+        "cashSumOrganization": {"anyOf": [
+          {
+            "description": "Cash discount amount in organization home currency.",
+            "type": "number",
+            "example": 23.2
+          },
+          {"type": "null"}
+        ]},
+        "dueDate": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "Due date. The last payment date before penalties.",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "text26": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text25": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text28": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text27": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text29": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "bumid": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Unique identifier for a business document generated by BT, used between Basware P2P and other Basware systems.",
+            "type": "string",
+            "maxLength": 36,
+            "example": "c6d7067f-eb67-4289-89ec-819446078a3a"
+          },
+          {"type": "null"}
+        ]},
+        "taxSum1Company": {"anyOf": [
+          {
+            "description": "Invoice tax sum 1, in company home currency.",
+            "type": "number",
+            "example": 160
+          },
+          {"type": "null"}
+        ]},
+        "text20": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "organizationElementCode": {"anyOf": [
+          {
+            "minLength": 1,
+            "description": "Organization element code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "BWOO"
+          },
+          {"type": "null"}
+        ]},
+        "text22": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text21": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "taxSum2Company": {"anyOf": [
+          {
+            "description": "Invoice tax sum 2, in company home currency.",
+            "type": "number",
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "text24": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text23": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "voucherDate": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "Voucher date can be used to determine the target accounting period for invoice in receiving (ERP) system.",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "currencyCodeOrganization": {"anyOf": [
+          {
+            "minLength": 2,
+            "description": "Currency code of organization home currency.",
+            "type": "string",
+            "maxLength": 3,
+            "example": "EUR"
+          },
+          {"type": "null"}
+        ]},
+        "accountingPeriod": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Code for target accounting period (if specified by Basware P2P).",
+            "type": "string",
+            "maxLength": 50,
+            "example": "2021-01"
+          },
+          {"type": "null"}
+        ]},
+        "paymentTermExternalCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Payment term external code.",
+            "type": "string",
+            "maxLength": 100,
+            "example": "7D2-NT30"
+          },
+          {"type": "null"}
+        ]},
+        "codingRows": {"anyOf": [
+          {
+            "description": "Coding rows specify information about posting the invoice to accounting - accounts, cost centers, tax codes, etc. \r\nTypically a small portion of available fields is used within each customer implementation.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/StandardCodingEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "companyCode": {
+          "minLength": 2,
+          "description": "Company code.",
+          "type": "string",
+          "maxLength": 32,
+          "example": "BW00"
+        },
+        "organizationName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Organization element name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Basware Finland"
+          },
+          {"type": "null"}
+        ]},
+        "text15": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "contractNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Contract number.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "AX94055432"
+          },
+          {"type": "null"}
+        ]},
+        "text14": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text17": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text16": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "taxCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Tax code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "T16"
+          },
+          {"type": "null"}
+        ]},
+        "cashPercent": {"anyOf": [
+          {
+            "maximum": 100,
+            "description": "Percentage out of invoice total that can be excluded if the invoice is paid before the cashDate.",
+            "type": "number",
+            "minimum": 0,
+            "example": 2
+          },
+          {"type": "null"}
+        ]},
+        "text19": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text18": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "taxPercent1": {"anyOf": [
+          {
+            "maximum": 100,
+            "description": "Tax percentage.",
+            "type": "number",
+            "minimum": 0,
+            "example": 16
+          },
+          {"type": "null"}
+        ]},
+        "supplierBankName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Supplier bank name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Bankers United"
+          },
+          {"type": "null"}
+        ]},
+        "cashSumCompany": {"anyOf": [
+          {
+            "description": "Cash discount amount in company home currency.",
+            "type": "number",
+            "example": 23.2
+          },
+          {"type": "null"}
+        ]},
+        "text11": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text10": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text13": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text12": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "voucherNumber2": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Voucher Number 2 (for accounting). Voucher numbers can be generated by Basware or returned from customer ERP.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "774785220"
+          },
+          {"type": "null"}
+        ]},
+        "voucherNumber1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Voucher Number 1 (for accounting). Voucher numbers can be generated by Basware or returned from customer ERP.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "114785224"
+          },
+          {"type": "null"}
+        ]},
+        "paymentMethod": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Payment method.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "BankTransfer"
+          },
+          {"type": "null"}
+        ]},
+        "parentInvoiceBumId": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Basware Unique Message Identifier (bumid) for the original invoice to where this document links to. Used in special cases, such as chargeback. Normally field is empty.",
+            "type": "string",
+            "maxLength": 36,
+            "example": "fad3v47f-eb174bsa9-162c-eafg79a6783w"
+          },
+          {"type": "null"}
+        ]},
+        "taxPercent2": {"anyOf": [
+          {
+            "description": "Second tax percentage (for example for partially deductible VAT).",
+            "type": "number",
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "exchangeRateCompany": {"anyOf": [
+          {
+            "description": "Exchange rate between invoice currency and company home currency.",
+            "type": "number",
+            "example": 1
+          },
+          {"type": "null"}
+        ]},
+        "numeric11": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "numeric10": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "numeric13": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "numeric12": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "supplierBankBBAN": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Supplier bank account.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "539007547034"
+          },
+          {"type": "null"}
+        ]},
+        "description": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "A short description of an invoice.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "More information about the invoice."
+          },
+          {"type": "null"}
+        ]},
+        "codingDate": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "Coding date.",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "orderNumbers": {"anyOf": [
+          {
+            "description": "A list of order numbers associated with invoice",
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          {"type": "null"}
+        ]},
+        "invoiceNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Invoice number (from supplier).",
+            "type": "string",
+            "maxLength": 100,
+            "example": "80000330200233"
+          },
+          {"type": "null"}
+        ]},
+        "numeric15": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "numeric14": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "numeric17": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "numeric16": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "numeric19": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "numeric18": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "supplierName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Supplier name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Easy Office Supplies Inc."
+          },
+          {"type": "null"}
+        ]},
+        "baseLineDate": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "paymentBlock": {
+          "description": "Identifies if the payment of this invoice should be denied by the ERP system and additonal steps like approval must take place before the invoice can be paid. Normally this parameter has value False when Basware P2P sends invoice for transfer.",
+          "type": "boolean",
+          "example": false
+        },
+        "paymentPlanReference": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Payment plan reference.",
+            "type": "string",
+            "maxLength": 255,
+            "example": "737-12321"
+          },
+          {"type": "null"}
+        ]},
+        "date9": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "date8": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "date7": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "date6": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "netSumOrganization": {"anyOf": [
+          {
+            "description": "Invoice net sum (invoice total without tax), in organization home currency.",
+            "type": "number",
+            "example": 1000
+          },
+          {"type": "null"}
+        ]},
+        "date5": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "cashDate": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "Cash cate. The last payment date with discount.",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "date4": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "invoiceImageURL": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "URL Link to invoice image.",
+            "type": "string",
+            "maxLength": 250
+          },
+          {"type": "null"}
+        ]},
+        "date3": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "date2": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "invoiceDate": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "Invoice date (from supplier).",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "date1": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "date1-10 can be used for additional, customer-specific, invoice header date fields.",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "invoiceImageToken": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Invoice image token (invoice-specific part of image link).",
+            "type": "string",
+            "maxLength": 250
+          },
+          {"type": "null"}
+        ]},
+        "text30": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "netSumCompany": {"anyOf": [
+          {
+            "description": "Invoice net sum (invoice total without tax), in company home currency.",
+            "type": "number",
+            "example": 1000
+          },
+          {"type": "null"}
+        ]},
+        "paymentTermName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Payment term name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "7 days -2%, 30 days Net"
+          },
+          {"type": "null"}
+        ]},
+        "invoiceTypeCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Invoice type code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "RE"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "PrebookResponseEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "externalCode",
+        "success",
+        "responseMessage",
+        "paymentBlock"
+      ],
+      "properties": {
+        "paymentBlock": {
+          "description": "Available for indicating if invoice has been set to payment blocked -state by the receiving ERP system. Saved onto the invoice in P2P.",
+          "type": "boolean",
+          "example": false
+        },
+        "externalCode": {
+          "minLength": 1,
+          "description": "External identifier",
+          "type": "string",
+          "maxLength": 36,
+          "example": "ff842a95dbb445b8bb3dcb4d53e51f44"
+        },
+        "success": {
+          "description": "Specifies if the invoice was succesfully prebooked to ERP system (true = invoice successfully prebooked, false = prebook failed). Note that if success = false, only the responseMessage and prebook status are saved to the invoice. Other fields, such as the voucher numbers or paymentBlock, are not updated.",
+          "type": "boolean",
+          "example": true
+        },
+        "sourceSystem": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Indicates the system that is returning prebook response.",
+            "type": "string",
+            "maxLength": 32,
+            "example": "ERP1"
+          },
+          {"type": "null"}
+        ]},
+        "voucherNumber2": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Available for returning second voucher number from ERP system. Voucher number 2 is saved onto the invoice in P2P.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "774785220"
+          },
+          {"type": "null"}
+        ]},
+        "voucherNumber1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Available for returning voucher number from ERP system. Voucher number is saved onto the invoice in P2P.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "114785224"
+          },
+          {"type": "null"}
+        ]},
+        "responseMessage": {
+          "minLength": 1,
+          "description": "Informative message for P2P user regarding the prebook. If prebook failed, please indicate reason for failure in this message. This message is shown in invoice action log.",
+          "type": "string",
+          "maxLength": 250,
+          "example": "Prebooked to ERP"
+        },
+        "prebookDate": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "Prebook date. Note: Field is not saved to P2P (P2P saves the moment when prebook response message arrives).",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "PaymentResponseEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "externalCode",
+        "success",
+        "paymentBlock"
+      ],
+      "properties": {
+        "checkNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Unique identifier from the check used in payment transaction.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "123456012"
+          },
+          {"type": "null"}
+        ]},
+        "paymentBlock": {
+          "description": "Payment block.",
+          "type": "boolean",
+          "example": false
+        },
+        "externalCode": {
+          "minLength": 1,
+          "description": "External identifier that is used as a key in API. External code of the paymentResponse needs to be unique within an accountingDocument -record. You should always create a new externalCode when sending response, there is no overwriting/editing of previous response. This will enable the visibility that all responses are tracked in API. ExternalCode in response messages plays no role in P2P (other than it is used in communication between P2P and the API layer).",
+          "type": "string",
+          "maxLength": 36,
+          "example": "f24fff19120445de9c23651434129991"
+        },
+        "paymentReversalDocument": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Payment reversal document can be updated here.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "873326806"
+          },
+          {"type": "null"}
+        ]},
+        "sourceSystem": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Indicates the system that is returning payment response.",
+            "type": "string",
+            "maxLength": 32,
+            "example": "ERP1"
+          },
+          {"type": "null"}
+        ]},
+        "paidTotal": {"anyOf": [
+          {
+            "description": "Total amount paid for the invoice so far. For partial payments, this value will increase each time more of the invoice is paid.",
+            "type": "number",
+            "example": 1136.8
+          },
+          {"type": "null"}
+        ]},
+        "paymentMessage": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Payment message can be updated here.",
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "success": {
+          "description": "Indicates a succesful response from ERP. Needs to be 'true' for P2P to update invoice data field contents.",
+          "type": "boolean",
+          "example": true
+        },
+        "paymentMethod": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Payment method can be updated here.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "BankTransfer"
+          },
+          {"type": "null"}
+        ]},
+        "paymentTermCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Invoice payment term code can be updated here.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "7D2-NT30"
+          },
+          {"type": "null"}
+        ]},
+        "responseMessage": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "This message is stored to P2P invoice action log.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Invoice Paid."
+          },
+          {"type": "null"}
+        ]},
+        "paymentDate": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "Date when the invoice was paid can be updated here.",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "cashDiscount": {"anyOf": [
+          {
+            "description": "discount amount can be updated here.",
+            "type": "number",
+            "example": 23.2
+          },
+          {"type": "null"}
+        ]},
+        "paymentDocument": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Payment document number can be updated here.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "873326806"
+          },
+          {"type": "null"}
+        ]},
+        "paymentNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Payment number can be updated here.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "122447-55257552"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "TransferParameterEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "key",
+        "value"
+      ],
+      "properties": {
+        "value": {
+          "minLength": 1,
+          "type": "string",
+          "maxLength": 250,
+          "example": "ca7f0c603388437ea9584446e26cf01c"
+        },
+        "key": {
+          "minLength": 1,
+          "type": "string",
+          "maxLength": 250,
+          "example": "InvoiceBatchId"
+        }
+      }
+    },
+    "AccountingDocumentResponse": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["accountingDocuments"],
+      "properties": {"accountingDocuments": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/AccountingDocumentEntity"}
+      }}
+    },
+    "TransferResponseEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "externalCode",
+        "success",
+        "responseMessage",
+        "paymentBlock"
+      ],
+      "properties": {
+        "paymentBlock": {
+          "description": "Available for indicating if invoice has been set to payment blocked -state by the receiving ERP system. Saved onto the invoice in P2P.",
+          "type": "boolean",
+          "example": false
+        },
+        "externalCode": {
+          "minLength": 1,
+          "description": "External identifier that is used as a key in API. External code of the transferResponse needs to be unique within an accountingDocument -record. You should always create a new externalCode when sending response, there is no overwriting/editing of previous response. This will enable the visibility that all responses are tracked in API. ExternalCode in response messages plays no role in P2P (other than it is used in communication between P2P and the API layer).",
+          "type": "string",
+          "maxLength": 36,
+          "example": "9c857869cb5c4028ac79b03b57af12795"
+        },
+        "success": {
+          "description": "Specifies if the invoice was succesfully transfered to ERP system (true = invoice successfully transferred, false = transfer failed).",
+          "type": "boolean",
+          "example": true
+        },
+        "sourceSystem": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Indicates the system that is returning transfer response.",
+            "type": "string",
+            "maxLength": 32,
+            "example": "ERP1"
+          },
+          {"type": "null"}
+        ]},
+        "voucherNumber2": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Available for returning second voucher number from ERP system. Voucher number 2 is saved onto the invoice in P2P.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "774785220"
+          },
+          {"type": "null"}
+        ]},
+        "voucherNumber1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Available for returning voucher number from ERP system. Voucher number is saved onto the invoice in P2P.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "114785224"
+          },
+          {"type": "null"}
+        ]},
+        "responseMessage": {
+          "minLength": 1,
+          "description": "Informative message for P2P user regarding the transfer. If transfer failed, please indicate reason for transfer failure in this message. This message is shown in invoice action log.",
+          "type": "string",
+          "maxLength": 250,
+          "example": "Invoice transferred to ERP."
+        },
+        "transferDate": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "Transfer date. Saved onto the invoice in P2P. Note: Field needs to be made visible in P2P UI to see sent value.",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "StandardCodingEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["externalCode"],
+      "properties": {
+        "externalCode": {
+          "minLength": 1,
+          "description": "Coding row external code.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "d5dc444e5c4a4222bc70ee1f8eabcb7d"
+        },
+        "networkActivity": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Network activity.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "budgetCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Budget code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "taxSumCompany": {"anyOf": [
+          {
+            "description": "Coding row tax sum, in company home currency.",
+            "type": "number",
+            "example": 160
+          },
+          {"type": "null"}
+        ]},
+        "dimCode5": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "taxSum2": {"anyOf": [
+          {
+            "description": "Coding row tax sum 2, in invoice currency.",
+            "type": "number",
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "dimCode6": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "closeOrder": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Close order -indicator.",
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimCode7": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimCode8": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimCode9": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "productName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Product name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "taxJurisdictionCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Tax juristiction code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "internalOrderName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Internal order name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "orderLinePriceUnitDescription": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Order line price unit description (from matched order line).",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Box"
+          },
+          {"type": "null"}
+        ]},
+        "vehicleNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Vehicle number.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "lastComment": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Last user comment related to a coding row.",
+            "type": "string",
+            "maxLength": 1000,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "salesOrderSubName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Sales order sub name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "taxSum": {"anyOf": [
+          {
+            "description": "Coding row tax sum, in invoice currency.",
+            "type": "number",
+            "example": 160
+          },
+          {"type": "null"}
+        ]},
+        "matchedNetSum": {"anyOf": [
+          {
+            "description": "Matched net sum.",
+            "type": "number",
+            "example": 1000
+          },
+          {"type": "null"}
+        ]},
+        "businessUnitName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Business unit name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "accountCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Account code.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "18620"
+          },
+          {"type": "null"}
+        ]},
+        "orderLineDescription": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Order line description (from matched order line).",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Box of ball-point pencils"
+          },
+          {"type": "null"}
+        ]},
+        "taxSum2Organization": {"anyOf": [
+          {
+            "description": "Coding row tax sum 2, in organization currency.",
+            "type": "number",
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "profitCenterCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Profit center code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "salesOrderCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Sales order code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "customerName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Customer name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text3": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text4": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Text1-5 can be used for additional, customer-specific, text coding fields.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "plant": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Plant.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text2": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "costCenterName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Cose center name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Helsinki Office"
+          },
+          {"type": "null"}
+        ]},
+        "workOrderSubCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Work order sub code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "conditionType": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Condition type.",
+            "type": "string",
+            "maxLength": 50,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text5": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "fiscalYear": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Fiscal Year.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "2021"
+          },
+          {"type": "null"}
+        ]},
+        "organizationElementName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Organization element name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Basware Helsinki"
+          },
+          {"type": "null"}
+        ]},
+        "grossTotalOrganization": {"anyOf": [
+          {
+            "description": "Coding row gross sum, in organization currency.",
+            "type": "number",
+            "example": 1160
+          },
+          {"type": "null"}
+        ]},
+        "vehicleName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Vehicle name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "serviceCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Service code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "grossTotal": {"anyOf": [
+          {
+            "description": "Coding row gross sum, in invoice currency.",
+            "type": "number",
+            "example": 1160
+          },
+          {"type": "null"}
+        ]},
+        "allocatedQuantity": {"anyOf": [
+          {
+            "description": "Allocated quantity.",
+            "type": "number",
+            "example": 10
+          },
+          {"type": "null"}
+        ]},
+        "customerCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Customer code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "controllingArea": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Controlling area.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "partnerProfitCenter": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Partner profit center.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "employeeCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Employee code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "orderLineNetTotal": {"anyOf": [
+          {
+            "description": "Net total on (matched) order line.",
+            "type": "number",
+            "example": 1000
+          },
+          {"type": "null"}
+        ]},
+        "dimName10": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "receivedNetPrice": {"anyOf": [
+          {
+            "description": "Received net unit price on (matched) goods receipt.",
+            "type": "number",
+            "example": 10
+          },
+          {"type": "null"}
+        ]},
+        "projectCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Project code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "receivedGrossPrice": {"anyOf": [
+          {
+            "description": "Received gross unit price on (matched) goods receipt.",
+            "type": "number",
+            "example": 11.6
+          },
+          {"type": "null"}
+        ]},
+        "businessUnitCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Business unit code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "num1": {"anyOf": [
+          {
+            "description": "Num1-5 can be used for additional, customer-specific, numeric coding fields.",
+            "type": "number"
+          },
+          {"type": "null"}
+        ]},
+        "num5": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "num4": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "num3": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "num2": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "commitmentItem": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Commitment item.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "fixedAssetSubCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Fixed asset sub code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "subUOM": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Order line sub unit of measure (from matched order line).",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "buyerName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Buyer name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "productCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Product code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimCode1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "dimCode1-10 are often used for additional, customer-specific, coding dimensions. Specifies the dimension code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimCode2": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimCode3": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimCode4": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "netTotalCompany": {"anyOf": [
+          {
+            "description": "Coding row net sum, in company home currency.",
+            "type": "number",
+            "example": 1000
+          },
+          {"type": "null"}
+        ]},
+        "workOrderName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Work order name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "rowIndex": {"anyOf": [
+          {
+            "maximum": 100000,
+            "description": "Unique number assigned to a row at the time of it's creation. \r\nNote: Does not necessarily contain sequential numbers. May contain gaps (as in 1,2,5,6) in cases where coding lines are deleted.",
+            "type": "integer",
+            "minimum": 0,
+            "example": 1
+          },
+          {"type": "null"}
+        ]},
+        "accAssignmentCategoryName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Account assignment category name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "orderLineNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Order line number (from matched order line).",
+            "type": "string",
+            "maxLength": 2000,
+            "example": "1"
+          },
+          {"type": "null"}
+        ]},
+        "costCenterCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Cost center code.",
+            "type": "string",
+            "maxLength": 200,
+            "example": "61300"
+          },
+          {"type": "null"}
+        ]},
+        "workOrderSubName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Work order sub name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "orderedNetPrice": {"anyOf": [
+          {
+            "description": "Ordered net unit price (matched) order line.",
+            "type": "number",
+            "example": 10
+          },
+          {"type": "null"}
+        ]},
+        "plannedAdditionalCostType": {
+          "description": "Planned additional cost type.",
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648,
+          "example": 0
+        },
+        "dimName1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "dimName1-10 are often used for additional, customer-specific, coding dimensions. Specifies the dimension name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "orderNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Order number (from matched order).",
+            "type": "string",
+            "maxLength": 1000,
+            "example": "PO612298"
+          },
+          {"type": "null"}
+        ]},
+        "dimName2": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "receivedNetTotal": {"anyOf": [
+          {
+            "description": "Received net total on (matched) goods receipt.",
+            "type": "number",
+            "example": 1000
+          },
+          {"type": "null"}
+        ]},
+        "goodsReceiptItemNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Goods receipt item number (from matched goods receipt).",
+            "type": "string",
+            "maxLength": 250,
+            "example": "1"
+          },
+          {"type": "null"}
+        ]},
+        "grossTotalCompany": {"anyOf": [
+          {
+            "description": "Coding row gross sum, in company home currency.",
+            "type": "number",
+            "example": 1160
+          },
+          {"type": "null"}
+        ]},
+        "orderCodingRowNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Order coding row number - from coding row(s) of matched order line.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "1"
+          },
+          {"type": "null"}
+        ]},
+        "profitCenterName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Profit center name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "projectSubCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Project sub code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "organizationElementCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Organization element code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "BW00"
+          },
+          {"type": "null"}
+        ]},
+        "receivedGrossTotal": {"anyOf": [
+          {
+            "description": "Received gross total on (matched) goods receipt.",
+            "type": "number",
+            "example": 1160
+          },
+          {"type": "null"}
+        ]},
+        "taxSum2Company": {"anyOf": [
+          {
+            "description": "Coding row tax sum 2, in company home currency.",
+            "type": "number",
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "taxPercent": {"anyOf": [
+          {
+            "maximum": 100,
+            "description": "Tax percent.",
+            "type": "number",
+            "minimum": 0,
+            "example": 16
+          },
+          {"type": "null"}
+        ]},
+        "employeeName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Employee name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "fixedAssetName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Fixed asset name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "matchedQuantity": {"anyOf": [
+          {
+            "description": "Matched quantity.",
+            "type": "number",
+            "example": 10
+          },
+          {"type": "null"}
+        ]},
+        "contractNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Contract number.",
+            "type": "string",
+            "maxLength": 255,
+            "example": "123456"
+          },
+          {"type": "null"}
+        ]},
+        "budgetName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Budget name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "taxCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Tax code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "T16"
+          },
+          {"type": "null"}
+        ]},
+        "matchingType": {"anyOf": [
+          {
+            "description": "Order matching type(framework, return, service, standard)",
+            "maximum": 2147483647,
+            "type": "integer",
+            "minimum": -2147483648,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "conversionDeNumerator": {"anyOf": [
+          {
+            "description": "Deprecated field - not in use.",
+            "type": "number",
+            "example": 1
+          },
+          {"type": "null"}
+        ]},
+        "conversionNumerator": {"anyOf": [
+          {
+            "description": "Conversion numerator. Used in giving fractional unit amounts. Used with SAP.",
+            "type": "number",
+            "example": 1
+          },
+          {"type": "null"}
+        ]},
+        "internalOrderCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Internal order code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "orderGrossTotal": {"anyOf": [
+          {
+            "description": "Ordered gross total on (matched) order line.",
+            "type": "number",
+            "example": 1160
+          },
+          {"type": "null"}
+        ]},
+        "businessAreaCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Business area code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "materialGroup": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Material group.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "functionalArea": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Functional area.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "receivedQuantity": {"anyOf": [
+          {
+            "description": "Received quantity on (matched) goods receipt.",
+            "type": "number",
+            "example": 100
+          },
+          {"type": "null"}
+        ]},
+        "orderItemNumber": {"anyOf": [
+          {
+            "description": "Order item number (from matched order line).",
+            "type": "string",
+            "example": "1"
+          },
+          {"type": "null"}
+        ]},
+        "matchedGrossSum": {"anyOf": [
+          {
+            "description": "Matched gross sum.",
+            "type": "number",
+            "example": 1160
+          },
+          {"type": "null"}
+        ]},
+        "dimName7": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "salesOrderSubCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Sales order sub code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimName8": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimName9": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "projectName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Project name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimName3": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimName4": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "deliveryNoteNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Delivery note number.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimName5": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "taxPercent2": {"anyOf": [
+          {
+            "description": "Tax percent 2. Can be used for example for handling reverse charges on EU VAT.",
+            "type": "number",
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "dimName6": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "taxSumOrganization": {"anyOf": [
+          {
+            "description": "Coding row tax sum, in organization currency.",
+            "type": "number",
+            "example": 160
+          },
+          {"type": "null"}
+        ]},
+        "salesOrderName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Sales order name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "accountName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Account name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Office expenses"
+          },
+          {"type": "null"}
+        ]},
+        "workOrderCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Work order code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "rowOrigin": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Not in use. Reserved for indicating how coding row was created.",
+            "type": "string",
+            "maxLength": 50,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "businessAreaName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Business area name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "orderLineUOM": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Order line unit of measure (from matched order line).",
+            "type": "string",
+            "maxLength": 250,
+            "example": "BOX"
+          },
+          {"type": "null"}
+        ]},
+        "dimCode10": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "network": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Network.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "conversionDenominator": {"anyOf": [
+          {
+            "description": "Conversion denominator. Used in giving fractional unit amounts. Used with SAP.",
+            "type": "number",
+            "example": 1
+          },
+          {"type": "null"}
+        ]},
+        "accAssignmentCategoryCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Account assignment cotegory code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "fixedAssetSubName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Fixed asset sub name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "ownerName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Owner name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "netTotalOrganization": {"anyOf": [
+          {
+            "description": "Coding row net sum, in organization currency.",
+            "type": "number",
+            "example": 1000
+          },
+          {"type": "null"}
+        ]},
+        "orderLinePriceUnit": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Order line price unit (from matched order line).",
+            "type": "string",
+            "maxLength": 250,
+            "example": "BOX"
+          },
+          {"type": "null"}
+        ]},
+        "orderedQuantity": {"anyOf": [
+          {
+            "description": "Ordered quantity on (matched) order line.",
+            "type": "number",
+            "example": 10
+          },
+          {"type": "null"}
+        ]},
+        "goodsReceiptNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Goods receipt number (from matched goods receipt).",
+            "type": "string",
+            "maxLength": 250,
+            "example": "215871624"
+          },
+          {"type": "null"}
+        ]},
+        "date5": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "date4": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "orderedGrossPrice": {"anyOf": [
+          {
+            "description": "Ordered gross unit price on (matched) order line.",
+            "type": "number",
+            "example": 11.6
+          },
+          {"type": "null"}
+        ]},
+        "date3": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "date2": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "serviceName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Service name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "date1": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "Date1-5 can be used for additional, customer-specific, date coding fields.",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "freightSlip": {"anyOf": [
+          {
+            "description": "Freight slip.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "orderLineGrossTotal": {"anyOf": [
+          {
+            "description": "Gross total on (matched) order line.",
+            "type": "number",
+            "example": 1160
+          },
+          {"type": "null"}
+        ]},
+        "fixedAssetCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Fixed asset code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "projectSubName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Project sub name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "netTotal": {"anyOf": [
+          {
+            "description": "Coding row net sum, in invoice currency.",
+            "type": "number",
+            "example": 1000
+          },
+          {"type": "null"}
+        ]},
+        "orderNetTotal": {"anyOf": [
+          {
+            "description": "Ordered net total on (matched) order line.",
+            "type": "number",
+            "example": 1000
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "RemoveResponseEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "externalCode",
+        "responseMessage"
+      ],
+      "properties": {
+        "externalCode": {
+          "minLength": 2,
+          "description": "External identifier",
+          "type": "string",
+          "maxLength": 36,
+          "example": "dd79ba5612a744bf9a92333fe14a6aef"
+        },
+        "success": {"anyOf": [
+          {
+            "description": "Identifies if the invoice was succesfully removed",
+            "type": "boolean",
+            "example": false
+          },
+          {"type": "null"}
+        ]},
+        "sourceSystem": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Indicates the system that is returning transfer response.",
+            "type": "string",
+            "maxLength": 32,
+            "example": "ERP1"
+          },
+          {"type": "null"}
+        ]},
+        "responseMessage": {
+          "minLength": 0,
+          "description": "Message that gives more details of the deviance that was identified in the invoice details. The message is stored to a comment field in the invoice action log item that is created based on the result.",
+          "type": "string",
+          "maxLength": 250,
+          "example": ""
+        }
+      }
+    }
+  }
+}

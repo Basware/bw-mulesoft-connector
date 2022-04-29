@@ -1,0 +1,46 @@
+= Basware API Connector 1.0 
+
+Support Category: https://www.mulesoft.com/legal/versioning-back-support-policy#anypoint-connectors[Select]
+
+== Prerequisites
+
+To use this connector, you must be familiar with:
+
+* Basware APIs
+* Anypoint Connectors
+* Mule runtime engine (Mule)
+* Elements and global elements in a Mule flow
+* Creating a Mule app using Anypoint Studio (Studio)
+
+Before creating an app, you must have:
+
+* Credentials to access the target Basware API resource
+* Anypoint Studio version 7.3.5 or later
+
+== Common Use Cases for the Connector
+
+The Basware Connector provides the connectivity to the Basware Rest API. This connector functions within Mule 4 application which you can access the P2P apis
+
+Possible use cases include:
+
+* Integrate to multiple Basware solutions through a single point of integration. The data is distributed automatically to supported Basware solutions.
+* After receiving an invoice through Basware Network you have the option to verify and process it in your Basware P2P solution. Verified invoices can be transferred through an API to your ERP/accounting system(s), along with full accounting details.
+* Import external order data using APIs to match invoice data to orders created outside of Basware solutions. Automatically approve invoices with reference to order(s). Whether you're sending orders electronically to suppliers or processing purchase requisitions, you can integrate the Basware Purchasing module with your applications.
+
+
+== Authentication Types
+
+Jira Connector connections use the following authentication methods:
+
+* Basic authentication +
+Uses a username and password for authentication
+* OAuth2 +
+Delegates user authentication to the service hosting the user account
+
+
+== See Also
+
+* xref:connectors::introduction/introduction-to-anypoint-connectors.adoc[Introduction to Anypoint Connectors]
+* xref:connectors::introduction/intro-use-exchange.adoc[Use Exchange to Discover Connectors, Templates, and Examples]
+* https://developer.basware.com/api/p2p[Basware API developer site]
+* https://developer.basware.com/api/p2p/api_reference[Basware API reference]

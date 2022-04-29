@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/DeleteRequest",
+  "definitions": {"DeleteRequest": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "lastUpdated": {"anyOf": [
+        {
+          "format": "date-time",
+          "description": "To delete records updated after specific time, use lastUpdated -field. This will delete all items that have been updated after the specified date. In response, user will get the taskStatus api link where the task status can be checked. Note: '0001-01-01' can be used to delete all records.",
+          "type": "string"
+        },
+        {"type": "null"}
+      ]},
+      "externalCode": {"anyOf": [
+        {
+          "minLength": 0,
+          "description": "Single item can be deleted using externalCode and final status is returned immediately.",
+          "type": "string",
+          "maxLength": 36
+        },
+        {"type": "null"}
+      ]}
+    }
+  }}
+}

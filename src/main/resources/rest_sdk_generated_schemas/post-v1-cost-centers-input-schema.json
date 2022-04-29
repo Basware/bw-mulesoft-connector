@@ -1,0 +1,264 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/schema",
+  "definitions": {
+    "schema": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/CostCenterEntity"}
+    },
+    "CostCenterCompanyEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "companyCode",
+        "active"
+      ],
+      "properties": {
+        "companyCode": {
+          "minLength": 2,
+          "description": "Defines a company code that the cost center is mapped to",
+          "type": "string",
+          "maxLength": 32,
+          "example": "BW00"
+        },
+        "active": {
+          "description": "This flag will enable the data to be visible on UI, provided if the value is true, not visible in case of value is false. It will be also used for soft delete.",
+          "type": "boolean"
+        }
+      }
+    },
+    "LanguageTranslationEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "translation",
+        "language"
+      ],
+      "properties": {
+        "translation": {
+          "minLength": 2,
+          "description": "Translated text",
+          "type": "string",
+          "maxLength": 2000,
+          "example": "Office supplies"
+        },
+        "language": {
+          "minLength": 2,
+          "description": "Language code",
+          "type": "string",
+          "maxLength": 10,
+          "example": "en-US"
+        }
+      }
+    },
+    "CostCenterEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "costCenterCode",
+        "costCenterNames",
+        "companies",
+        "externalCode"
+      ],
+      "properties": {
+        "costCenterCode": {
+          "minLength": 1,
+          "description": "Cost center code (used for invoice coding).",
+          "type": "string",
+          "maxLength": 25,
+          "example": "35680"
+        },
+        "externalCode": {
+          "minLength": 1,
+          "description": "External identifier that is used as a key in API.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "4847-31231212-212121-1212"
+        },
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last sent to API. Set automatically.",
+          "type": "string"
+        },
+        "int2": {"anyOf": [
+          {
+            "maximum": 2147483647,
+            "type": "integer",
+            "minimum": -2147483648
+          },
+          {"type": "null"}
+        ]},
+        "companies": {
+          "description": "List of company units to associate costcenter to P2P organization hierarchy",
+          "type": "array",
+          "items": {"$ref": "#/definitions/CostCenterCompanyEntity"}
+        },
+        "int1": {"anyOf": [
+          {
+            "description": "Int 1-5 can be used for customer-specific numeric fields.",
+            "maximum": 2147483647,
+            "type": "integer",
+            "minimum": -2147483648
+          },
+          {"type": "null"}
+        ]},
+        "int4": {"anyOf": [
+          {
+            "maximum": 2147483647,
+            "type": "integer",
+            "minimum": -2147483648
+          },
+          {"type": "null"}
+        ]},
+        "int3": {"anyOf": [
+          {
+            "maximum": 2147483647,
+            "type": "integer",
+            "minimum": -2147483648
+          },
+          {"type": "null"}
+        ]},
+        "int5": {"anyOf": [
+          {
+            "maximum": 2147483647,
+            "type": "integer",
+            "minimum": -2147483648
+          },
+          {"type": "null"}
+        ]},
+        "costCenterNames": {
+          "description": "Cost center name(s) (used for invoice coding). Please always include 'en-US' language tag for Basware global support, as well as any local-language tag being used. If both translations are not available, please use the same string with both language tags.",
+          "type": "array",
+          "items": {"$ref": "#/definitions/LanguageTranslationEntity"}
+        },
+        "date5": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "date4": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "date3": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "date2": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "date1": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "Date1-5 can be used for customer-specific date fields.",
+            "type": "string"
+          },
+          {"type": "null"}
+        ]},
+        "text3": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text4": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text10": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "text1-10 can be used for customer-specific text fields.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text2": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text7": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text8": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text5": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text6": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text9": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]}
+      }
+    }
+  }
+}

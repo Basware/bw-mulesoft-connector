@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/AcknowledgeRequest",
+  "definitions": {"AcknowledgeRequest": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "lastUpdated": {"anyOf": [
+        {
+          "format": "date-time",
+          "description": "Records with lastUpdated -timestamp after the specified value are acknowledged. '0001-01-01' can be used as input value to acknowledge all records.",
+          "type": "string",
+          "example": "2022-01-01"
+        },
+        {"type": "null"}
+      ]},
+      "externalCodes": {"anyOf": [
+        {
+          "description": "List of requestIds to acknowledge. Several requests can be acknowledged in one operation.",
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        {"type": "null"}
+      ]}
+    }
+  }}
+}

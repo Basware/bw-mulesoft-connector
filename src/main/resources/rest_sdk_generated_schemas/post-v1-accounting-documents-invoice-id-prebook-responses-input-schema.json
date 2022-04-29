@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/PrebookResponseEntity",
+  "definitions": {"PrebookResponseEntity": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+      "externalCode",
+      "success",
+      "responseMessage",
+      "paymentBlock"
+    ],
+    "properties": {
+      "paymentBlock": {
+        "description": "Available for indicating if invoice has been set to payment blocked -state by the receiving ERP system. Saved onto the invoice in P2P.",
+        "type": "boolean",
+        "example": false
+      },
+      "externalCode": {
+        "minLength": 1,
+        "description": "External identifier",
+        "type": "string",
+        "maxLength": 36,
+        "example": "ff842a95dbb445b8bb3dcb4d53e51f44"
+      },
+      "success": {
+        "description": "Specifies if the invoice was succesfully prebooked to ERP system (true = invoice successfully prebooked, false = prebook failed). Note that if success = false, only the responseMessage and prebook status are saved to the invoice. Other fields, such as the voucher numbers or paymentBlock, are not updated.",
+        "type": "boolean",
+        "example": true
+      },
+      "sourceSystem": {"anyOf": [
+        {
+          "minLength": 0,
+          "description": "Indicates the system that is returning prebook response.",
+          "type": "string",
+          "maxLength": 32,
+          "example": "ERP1"
+        },
+        {"type": "null"}
+      ]},
+      "voucherNumber2": {"anyOf": [
+        {
+          "minLength": 0,
+          "description": "Available for returning second voucher number from ERP system. Voucher number 2 is saved onto the invoice in P2P.",
+          "type": "string",
+          "maxLength": 25,
+          "example": "774785220"
+        },
+        {"type": "null"}
+      ]},
+      "voucherNumber1": {"anyOf": [
+        {
+          "minLength": 0,
+          "description": "Available for returning voucher number from ERP system. Voucher number is saved onto the invoice in P2P.",
+          "type": "string",
+          "maxLength": 25,
+          "example": "114785224"
+        },
+        {"type": "null"}
+      ]},
+      "responseMessage": {
+        "minLength": 1,
+        "description": "Informative message for P2P user regarding the prebook. If prebook failed, please indicate reason for failure in this message. This message is shown in invoice action log.",
+        "type": "string",
+        "maxLength": 250,
+        "example": "Prebooked to ERP"
+      },
+      "prebookDate": {"anyOf": [
+        {
+          "format": "date-time",
+          "description": "Prebook date. Note: Field is not saved to P2P (P2P saves the moment when prebook response message arrives).",
+          "type": "string"
+        },
+        {"type": "null"}
+      ]}
+    }
+  }}
+}

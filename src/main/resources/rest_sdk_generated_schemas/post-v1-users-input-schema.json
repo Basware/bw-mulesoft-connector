@@ -1,0 +1,353 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/schema",
+  "definitions": {
+    "schema": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/UserEntity"}
+    },
+    "UserRecipientIdentifiers": {
+      "description": "Recipient identifier data in P2P. Can be used for specifying invoice recipient groups. Note: User recipient identifiers in P2P are overridden with values received through API. When no values are specified in API, the fields are emptied in P2P.",
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "identifier5": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "identifier1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Identifier1-5: Specifies invoice recipient group(s), to which the user belongs.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Europe"
+          },
+          {"type": "null"}
+        ]},
+        "identifier2": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "identifier3": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "identifier4": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "UserEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "firstName",
+        "surName",
+        "loginAccount",
+        "email",
+        "groups",
+        "companyCode",
+        "externalCode"
+      ],
+      "properties": {
+        "costCenterCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "User's default cost center code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "1000"
+          },
+          {"type": "null"}
+        ]},
+        "loginAccount": {
+          "minLength": 1,
+          "description": "User identifier for authentication. With SSO loginAccount needs to match to the data that identity provider sends to Basware and with P2P basic authentication the loginAccount needs to match to what user keys in during authentication. For example BASWARE\\john.smith or john.smith@basware.com. Basware Access basic authentication uses email instead of loginAccount. P2P and Access allow changes to loginAccount without creating a new user, but in Network Portal loginAccount is unique identifier i.e. changed loginAccount means new user into Network Portal.",
+          "type": "string",
+          "maxLength": 100,
+          "example": "BASWARE\\JOHNSMITH"
+        },
+        "uiLanguage": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Language code. Specifies the language in which the user uses the system. The languages, for example English or Finnish, are available in the language picker.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "en-US"
+          },
+          {"type": "null"}
+        ]},
+        "surName": {
+          "minLength": 1,
+          "description": "Specifies the user's last name.",
+          "type": "string",
+          "maxLength": 100,
+          "example": "Smith"
+        },
+        "externalCode": {
+          "minLength": 1,
+          "description": "Unique identifier in P2P and in Basware Access. Change to external code means a new user. The externalCode is ignored by Network Portal, which uses loginAccount as unique identifier.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "BASWARE\\JOHNSMITH"
+        },
+        "loginType": {"anyOf": [
+          {
+            "pattern": "0|2|4|99|",
+            "description": "User 'loginType' needs to be 4 (user authentication through Basware Access) when the user is imported to any system besides (or in addition to) P2P. Following types of login are available.\r\nSingle service username and password login (0): Entry level option for cases when only one Basware service is in use. User is created to the Basware service user repository and authentication is with username and password. If more than one Basware service is in use this may cause situation where same user has different passwords for different Basware services and needs to authenticate separately to each service. Passwords are delivered via separate emails.\r\nSingle service SSO login (2): Single Sign On integrated solution for cases when only one Basware service is in use. Also used for Purchase Manager and Invoice Automation point to point authentication integration if other Basware services are not in use. Not applicable with some Basware Services (username and separate password is used in those services instead).\r\nBasware Access login (4): Authentication through Basware Access. Authentication for cases when all Basware services are in use or when Single Sign On integration is required and not otherwise supported. Supports both username and password authentication and SSO integrations. Requires provisioning Basware Access service into use. 'Password' -field above needs to be null when using Basware Access login type.\r\nDefined in P2P (99): Allows login type to be changed to one of the above in P2P Administration's user management module. Defaults to 'Default login type' set for the user's home organization in P2P.",
+            "type": "string",
+            "example": "2"
+          },
+          {"type": "null"}
+        ]},
+        "collaborationSendType": {"anyOf": [
+          {
+            "pattern": "0|1|2|",
+            "description": "Defines how notifications are sent for discussions and announcements. The options are: 0 = No notifications, 1 = For each new message, 2 = Daily summary.",
+            "type": "string",
+            "example": "1"
+          },
+          {"type": "null"}
+        ]},
+        "validFrom": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "The user is active and can use the system starting from this date.",
+            "type": "string",
+            "example": "2017-01-01"
+          },
+          {"type": "null"}
+        ]},
+        "title": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Specifies the user's title.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Solid line manager"
+          },
+          {"type": "null"}
+        ]},
+        "approvalPasswordUseAllowed": {"anyOf": [
+          {
+            "description": "This value defines whether the system generates an approval password for the user to be used when approving purchase requisitions, purchase orders, and invoices.",
+            "type": "string",
+            "example": "0"
+          },
+          {"type": "null"}
+        ]},
+        "accessTimeout": {"anyOf": [
+          {
+            "maximum": 28800,
+            "description": "User specific session idle timeout in seconds to use instead of the login method default. Determines how long user can stay logged in without using the system. Used only when loginType = 4 (=Basware Access).",
+            "type": "integer",
+            "minimum": 900,
+            "example": 1800
+          },
+          {"type": "null"}
+        ]},
+        "personCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Defines the userâ\u20ac™s person code that is mapped with the userâ\u20ac™s employee ID.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "1002"
+          },
+          {"type": "null"}
+        ]},
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last sent to API. Set automatically.",
+          "type": "string"
+        },
+        "middleInitial": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Specifies the user's middle name's initial letter.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "S"
+          },
+          {"type": "null"}
+        ]},
+        "countryCode": {"anyOf": [
+          {
+            "minLength": 2,
+            "description": "Specifies user's country code. Not used in P2P Alusta.",
+            "type": "string",
+            "maxLength": 3,
+            "example": "FIN"
+          },
+          {"type": "null"}
+        ]},
+        "email": {
+          "minLength": 3,
+          "pattern": "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$",
+          "description": "Specifies the userâ\u20ac™s email address. User needs access to the email account in order to set password. Note: When loginType = 4 (Basware Access), the email is used as userâ\u20ac™s login account and must be unique within a tenant. Else only the first user having the same email is accepted, next users are not created.",
+          "type": "string",
+          "maxLength": 320,
+          "example": "john.smith@company.com"
+        },
+        "loginAllowed": {"anyOf": [
+          {
+            "description": "Determines whether the user can access the system after the user details are saved. If field is omitted, it is treated as 'false'.",
+            "type": "boolean",
+            "example": true
+          },
+          {"type": "null"}
+        ]},
+        "companyCode": {
+          "minLength": 2,
+          "description": "The company code specifies the user's home organization element. Note: The company to which a user is imported needs to be set up as an administrative site in P2P.",
+          "type": "string",
+          "maxLength": 32,
+          "example": "BW01"
+        },
+        "accessLoginMethod": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Normally empty. Used when customer uses several login/authentication methods in use with Basware Access. Specifies login/authentication method (such as 'EmailAndPassword', 'SSO1'), when Basware Access is in use (loginType = 4). \r\nWhen field needs to be used, applicable login method code(s) are provided by Basware SaaS production -personnel. When field is empty, default value is used internally.",
+            "type": "string",
+            "maxLength": 100,
+            "example": "SSO1"
+          },
+          {"type": "null"}
+        ]},
+        "applicationGroups": {"anyOf": [
+          {
+            "description": "Used for assigning the user to application groups, which give the user login-access to specific applications (P2P, Reporting, Supplier Portal, etc). The applications belonging to each applicationGroup are maintained through applicationGroups API. Value(s) posted need to match to applicationGroupCodes created in applicationGroups API. Application group needs to be created before posting user to API. If no applicationGroups are specified, user will receive those applicationGroups where 'default' = 'true'.",
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          {"type": "null"}
+        ]},
+        "groups": {
+          "description": "User groups in P2P. These determine user rights within P2P application. User groups are created and configured in P2P user group administration UI. When user group creation has been done, the groups can be assigned to users through this section of users API.",
+          "type": "array",
+          "items": {"$ref": "#/definitions/UserGroup"}
+        },
+        "mfa": {"anyOf": [
+          {
+            "pattern": "notAllowed|optional|mandatory",
+            "description": "Used only when loginType = 4 (=Basware Access). Determines Multi Factor Authentication settings (additional authentication using SMS or Google authenticator app for smartphones): required, allowed or disabled.",
+            "type": "string",
+            "example": "optional"
+          },
+          {"type": "null"}
+        ]},
+        "telephone": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Specifies the user's telephone number.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "501234567"
+          },
+          {"type": "null"}
+        ]},
+        "userRecipientIdentifiers": {"$ref": "#/definitions/UserRecipientIdentifiers"},
+        "sendAccountCreationEmail": {"anyOf": [
+          {
+            "pattern": "welcome|resetPwd|notSend",
+            "description": "Used only when loginType = 4 (=Basware Access). Use 'welcome' if Basware Access should send welcome email containing a link for account activation. The password within the welcome email expires within an hour and can be recovered using 'forgot password' -function. Use 'notSend' if customer wants to send welcome email themselves or if welcome email is not required. ResetPwd is reserved for internal API usage.",
+            "type": "string",
+            "example": "notSend"
+          },
+          {"type": "null"}
+        ]},
+        "firstName": {
+          "minLength": 1,
+          "description": "Specifies the user's first name.",
+          "type": "string",
+          "maxLength": 100,
+          "example": "John"
+        },
+        "supervisorLoginAccount": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Unique user id of the userâ\u20ac™s supervisor.",
+            "type": "string",
+            "maxLength": 100,
+            "example": "BASWARE\\JOEGREEN"
+          },
+          {"type": "null"}
+        ]},
+        "messageSendType": {"anyOf": [
+          {
+            "pattern": "0|1|2|",
+            "description": "Defines how notifications are sent for tasks. The options are: 0 = No notifications, 1= For each new task, 2 = Daily summary.",
+            "type": "string",
+            "example": "1"
+          },
+          {"type": "null"}
+        ]},
+        "validUntil": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "On this date, the user is deactivated and can no longer use the system.",
+            "type": "string",
+            "example": "2018-01-02"
+          },
+          {"type": "null"}
+        ]},
+        "accountCreationURI": {"anyOf": [
+          {
+            "description": "Used only when loginType = 4 (=Basware Access). Defines service address for welcome email sent by Basware Access. Put here the login URL of the service where you want the user to land (P2P, network, etc). In P2P case this is the URL that consultant would give for customer when using SSO login.",
+            "type": "string",
+            "example": "https://tenantcode.p2p.basware.com/Portal/WifLogin"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "UserGroup": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["externalGroupCode"],
+      "properties": {
+        "externalGroupCode": {
+          "minLength": 1,
+          "description": "Specifies the user group to which the user gets assigned. Needs to match with 'External code' of User group in P2P user groups administration UI.",
+          "type": "string",
+          "maxLength": 260,
+          "example": "Approvers_200"
+        },
+        "active": {"anyOf": [
+          {
+            "description": "Specifies is the user group active. Note: P2P allows a delete/insert -import of user groups by enabling setting: \"P2P Administration\" -> \"Settings\" -> \"Delete existing user groups when importing users\".",
+            "type": "boolean",
+            "example": true
+          },
+          {"type": "null"}
+        ]}
+      }
+    }
+  }
+}

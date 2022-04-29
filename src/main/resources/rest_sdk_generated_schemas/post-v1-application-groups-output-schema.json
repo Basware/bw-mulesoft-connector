@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ApplicationGroupEntity",
+  "definitions": {
+    "Applications": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["code"],
+      "properties": {"code": {
+        "description": "Specifies code for the application. \r\n1. PurchaseToPay = Basware Purchase-to-Pay (P2P)\r\n2. Reporting = Basware Reporting\r\n3. SupplierPortal = Access to Basware network, user can see only own company's suppliers. \r\n4. SupplierManagement = Access to Basware network, user can see suppliers from any company within tenant. \r\n5. CloudscanWithSelfValidation = CloudScan with Self-Validation\r\n6. CloudscanWithBaswareValidation = CloudScan with Basware Validation\r\n\r\nNote: For accessing 'Reporting', 'SupplierPortal' and 'SupplierManagement' applications, loginType '4' (Basware Access login) is required on the user posted through users API.",
+        "type": "string",
+        "enum": [
+          "PurchaseToPay",
+          "Reporting",
+          "SupplierPortal",
+          "SupplierManagement",
+          "CloudscanWithSelfValidation",
+          "CloudscanWithBaswareValidation",
+          "BaswareAdmin"
+        ],
+        "example": "PurchaseToPay"
+      }}
+    },
+    "ApplicationGroupEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "applicationGroupCode",
+        "description",
+        "applications"
+      ],
+      "properties": {
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last sent to API (set automatically by Basware API).",
+          "type": "string",
+          "example": "2020-10-24T00:00:00"
+        },
+        "default": {
+          "description": "Used for specifying default application gruops. Application groups where default = 'true' will be assigned automatically to all users who have no application group assigned through users API.",
+          "type": "boolean",
+          "example": true
+        },
+        "applicationGroupCode": {
+          "minLength": 1,
+          "description": "Identifier for the application group. Best practice: Use descriptive names, such as 'Auditors', 'Reviewers', etc.",
+          "type": "string",
+          "maxLength": 100,
+          "example": "Reviewers"
+        },
+        "description": {
+          "minLength": 1,
+          "description": "Freetext description for the applicationGroup.",
+          "type": "string",
+          "maxLength": 250,
+          "example": "Basic users - access to P2P."
+        },
+        "active": {
+          "description": "Determines whether the applicationGroup is active or not. Groups where active = 'false' do not give access to any applications.",
+          "type": "boolean",
+          "example": true
+        },
+        "applications": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/Applications"}
+        }
+      }
+    }
+  }
+}

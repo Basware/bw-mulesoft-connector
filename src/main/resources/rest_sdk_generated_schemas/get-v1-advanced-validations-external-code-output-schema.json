@@ -1,0 +1,263 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/AdvancedValidationEntity",
+  "definitions": {
+    "AdvancedValidationCompanyEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "companyCode",
+        "active"
+      ],
+      "properties": {
+        "companyCode": {
+          "minLength": 2,
+          "description": "Company code identifier. Corresponds to company code used in P2P. Used as key in this array.",
+          "type": "string",
+          "maxLength": 32,
+          "example": "BW01"
+        },
+        "active": {
+          "description": "Active / Not active setting",
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "AdvancedValidationEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "interface",
+        "keyValue",
+        "dimension1",
+        "externalCode"
+      ],
+      "properties": {
+        "externalCode": {
+          "minLength": 1,
+          "description": "External identifier that is used as a key in API.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "4847-31231212-212121-1212"
+        },
+        "keyValue": {
+          "minLength": 1,
+          "description": "Specifies key value for validation rule, e.g. value of account code, value of cost center code, etc. When this key value is used on coding row, below validations are applied.",
+          "type": "string",
+          "maxLength": 40,
+          "example": "10012"
+        },
+        "dimension1To": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Dimension1-7To: Specifies ending value for the range.",
+            "type": "string",
+            "maxLength": 40,
+            "example": "20000"
+          },
+          {"type": "null"}
+        ]},
+        "dimension2From": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": "18200"
+          },
+          {"type": "null"}
+        ]},
+        "dimension2To": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": "18300"
+          },
+          {"type": "null"}
+        ]},
+        "dimension3From": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimension3To": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimension4To": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimension5To": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimension6To": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "interface": {
+          "minLength": 1,
+          "description": "Specifies validation rule type to use. Needs to match with validation rule types configured in P2P. Rule type configuration determines: \r\n-Key value type (e.g. account code, cost center code, etc) against which the validations are applied\r\n-What coding row fields are used for dimension1-7.",
+          "type": "string",
+          "maxLength": 40,
+          "example": "AdvancedValidation"
+        },
+        "dimension7From": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimension7To": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last sent to API. Set automatically.",
+          "type": "string"
+        },
+        "companies": {"anyOf": [
+          {
+            "description": "List of company units to associate account to P2P organization hierarchy",
+            "type": "array",
+            "items": {"$ref": "#/definitions/AdvancedValidationCompanyEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "dimension6From": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimension1From": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Dimension1-7From: Specifies starting value for the range.",
+            "type": "string",
+            "maxLength": 40,
+            "example": "10000"
+          },
+          {"type": "null"}
+        ]},
+        "dimension5From": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimension6": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimension7": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimension4From": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimension1": {
+          "minLength": 0,
+          "description": "Dimension1-7: Specifies if coding field value needs to be within range. \r\n1 = Must be within range, field is mandatory (empty coding field not allowed)\r\n2 = Field not allowed (must be empty)\r\n3 = Must be within range, field is optional (empty coding field allowed)\r\nNote: Ranges can be used only if the accounting dimension has a numeric value. If a value is not numeric, a warning is shown. Leading zeros are allowed for numeric values.",
+          "type": "string",
+          "maxLength": 40,
+          "example": "1"
+        },
+        "dimension4": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimension5": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimension2": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": "2"
+          },
+          {"type": "null"}
+        ]},
+        "dimension3": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 40,
+            "example": "3"
+          },
+          {"type": "null"}
+        ]}
+      }
+    }
+  }
+}

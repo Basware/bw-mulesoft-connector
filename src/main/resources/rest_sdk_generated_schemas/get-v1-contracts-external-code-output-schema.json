@@ -1,0 +1,235 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ContractEntity",
+  "definitions": {
+    "ContractSuppliers": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["supplierCode"],
+      "properties": {
+        "supplierName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Name of the supplier on the contract. Informative field, P2P will take supplier name from it's supplier registry.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Acme Motor Leasing inc."
+          },
+          {"type": "null"}
+        ]},
+        "supplierCode": {
+          "minLength": 1,
+          "description": "Code of the supplier on the contract. This supplier needs to exist in P2P and be available on the selected company.",
+          "type": "string",
+          "maxLength": 25,
+          "example": "32789"
+        }
+      }
+    },
+    "ContractExternalLinks": {
+      "description": "Contract external links",
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["externalLinkName"],
+      "properties": {
+        "externalLinkURL": {"anyOf": [
+          {
+            "minLength": 1,
+            "description": "URL used when selecting external link",
+            "type": "string",
+            "maxLength": 2000,
+            "example": "https://www.acmemotorsinc.com"
+          },
+          {"type": "null"}
+        ]},
+        "externalLinkName": {
+          "minLength": 1,
+          "description": "Name shown in UI for external link",
+          "type": "string",
+          "maxLength": 512,
+          "example": "Acme motor leasing"
+        }
+      }
+    },
+    "ContractEntity": {
+      "description": "",
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "referenceCode",
+        "companyCode",
+        "title",
+        "validFrom",
+        "validTo",
+        "total",
+        "currencyCode",
+        "owner",
+        "active",
+        "suppliers",
+        "externalCode"
+      ],
+      "properties": {
+        "companyCode": {
+          "minLength": 2,
+          "description": "Buyer Company Code. This company needs to exist in P2P before importing the contract.",
+          "type": "string",
+          "maxLength": 32,
+          "example": "200"
+        },
+        "amountType": {"anyOf": [
+          {
+            "description": "Net or Gross. Default value: Net.",
+            "type": "string",
+            "enum": [
+              "Net",
+              "Gross"
+            ],
+            "example": "net"
+          },
+          {"type": "null"}
+        ]},
+        "owner": {
+          "minLength": 1,
+          "description": "The person owning the contract.",
+          "type": "string",
+          "maxLength": 100,
+          "example": "Liz Black"
+        },
+        "suppliers": {
+          "description": "Supplier(s) for contract.",
+          "type": "array",
+          "items": {"$ref": "#/definitions/ContractSuppliers"}
+        },
+        "externalCode": {
+          "minLength": 1,
+          "description": "External identifier that is used as a key in API.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "4847-31231212-212121-1212"
+        },
+        "description": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "General information on contract.",
+            "type": "string",
+            "maxLength": 2000,
+            "example": "This contract is for car leasing for Acme Motor leasing inc."
+          },
+          {"type": "null"}
+        ]},
+        "contactPerson": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "The person to contact on contract matters.",
+            "type": "string",
+            "maxLength": 100,
+            "example": "Liz Black"
+          },
+          {"type": "null"}
+        ]},
+        "active": {
+          "description": "States if the contract can be used or not.",
+          "type": "boolean",
+          "example": true
+        },
+        "validFrom": {
+          "format": "date-time",
+          "description": "The date on which the contract legally came in to force.",
+          "type": "string",
+          "example": "2021-01-01"
+        },
+        "title": {
+          "minLength": 1,
+          "description": "A short name generally used to identify the contract in reporting.",
+          "type": "string",
+          "maxLength": 250,
+          "example": "Car leasing"
+        },
+        "type": {"anyOf": [
+          {
+            "minLength": 1,
+            "description": "Determined by the contract management system. Types are displayed only for informational purposes.",
+            "type": "string",
+            "maxLength": 100,
+            "example": "Leasing"
+          },
+          {"type": "null"}
+        ]},
+        "spendPlanSpend": {"anyOf": [
+          {
+            "description": "Field reserved for future use (to state if spend of spend plans using this contract is collected for spend reporting).",
+            "type": "boolean",
+            "example": false
+          },
+          {"type": "null"}
+        ]},
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last sent to API. Set automatically.",
+          "type": "string"
+        },
+        "total": {
+          "maximum": 100000000,
+          "description": "Total expected expenditure under this contract between the Start and End Dates specified above.",
+          "type": "number",
+          "minimum": 0,
+          "example": 10000
+        },
+        "paymentTermCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Payment term for this contract.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "NET30"
+          },
+          {"type": "null"}
+        ]},
+        "externalLinks": {"anyOf": [
+          {
+            "description": "ExternalLinks for contract.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/ContractExternalLinks"}
+          },
+          {"type": "null"}
+        ]},
+        "orderSpend": {"anyOf": [
+          {
+            "description": "States if spend of orders using this contract is collected for spend reporting. Requires P2P 22.2 or later.",
+            "type": "boolean",
+            "example": true
+          },
+          {"type": "null"}
+        ]},
+        "invoiceSpend": {"anyOf": [
+          {
+            "description": "Field reserved for future use (to state if spend of invoices linked to this contract is collected for spend reporting).",
+            "type": "boolean",
+            "example": false
+          },
+          {"type": "null"}
+        ]},
+        "referenceCode": {
+          "minLength": 1,
+          "description": "FreeText reference shown in contracts view (Contract Number). Same company and vendor -combination(s) must not use same reference code (contract number) multiple times.",
+          "type": "string",
+          "maxLength": 255,
+          "example": "12197627"
+        },
+        "currencyCode": {
+          "minLength": 2,
+          "description": "Currency used in the contract. Note: 1) P2P needs to have an exhange rate configured from contract curency currency of the company used on contract (if they are different). 2) Contract currency cannot be changed if spend has been collected for the contract.",
+          "type": "string",
+          "maxLength": 3,
+          "example": "EUR"
+        },
+        "validTo": {
+          "format": "date-time",
+          "description": "The date on which the contract will naturally end if not active decisions are made to extend or terminate early.",
+          "type": "string",
+          "example": "2025-01-01"
+        }
+      }
+    }
+  }
+}

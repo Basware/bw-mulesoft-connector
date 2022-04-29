@@ -1,0 +1,214 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/RequestStatusResponse",
+  "definitions": {
+    "BaswareSystem": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "lastUpdated": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "system": {"anyOf": [
+          {
+            "description": "Target system from which the response originates (P2P, network, etc).",
+            "type": "string",
+            "example": "P2P"
+          },
+          {"type": "null"}
+        ]},
+        "module": {"anyOf": [
+          {
+            "type": "string",
+            "example": "IA"
+          },
+          {"type": "null"}
+        ]},
+        "systemStatus": {
+          "description": "Status of processing the request in the target system (aggregated from statuses of individual records).",
+          "type": "string",
+          "enum": [
+            "InProgress",
+            "Success",
+            "Error",
+            "AcknowledgedSuccess",
+            "AcknowledgedError"
+          ],
+          "example": "Error"
+        },
+        "items": {"anyOf": [
+          {
+            "description": "Contains status for each invividual record posted in the original request.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/ProcessedItem"}
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "ProcessedItemErrorDetail": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "Mesage type (error / warning).",
+          "type": "string",
+          "enum": [
+            "Error",
+            "Warning"
+          ],
+          "example": "Error"
+        },
+        "message": {"anyOf": [
+          {
+            "description": "Error message.",
+            "type": "string",
+            "example": "Record skipped due to wrong or missing CompanyCode"
+          },
+          {"type": "null"}
+        ]},
+        "category": {
+          "description": "Categorization. Customer should be able to act on 'DataValidation' errors.",
+          "type": "string",
+          "enum": [
+            "Unknown",
+            "Technical",
+            "DataValidation"
+          ],
+          "example": "Data validation"
+        }
+      }
+    },
+    "RequestStatusResponse": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["requestStatus"],
+      "properties": {"requestStatus": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/ConsumerLogEventUserView"}
+      }}
+    },
+    "ConsumerLogEventUserView": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "entityVersion": {"anyOf": [
+          {
+            "description": "Version of entity type (API interface).",
+            "type": "string",
+            "example": "AccountV1"
+          },
+          {"type": "null"}
+        ]},
+        "lastUpdated": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "systems": {"anyOf": [
+          {
+            "description": "Target system from which the response originates (P2P, network, etc).",
+            "type": "array",
+            "items": {"$ref": "#/definitions/BaswareSystem"}
+          },
+          {"type": "null"}
+        ]},
+        "requestId": {"anyOf": [
+          {
+            "description": "The request id used to post in the data. This is returned in request header parameter 'x-amzn-RequestId', in response of the original request.",
+            "type": "string",
+            "example": "06ca6901-f728-489b-a827-704f5048858c"
+          },
+          {"type": "null"}
+        ]},
+        "entityType": {
+          "description": "Entity type (API interface) of processed data.",
+          "type": "string",
+          "enum": [
+            "Account",
+            "Contract",
+            "CostCenter",
+            "TaxCode",
+            "ExchangeRate",
+            "PaymentTerm",
+            "Budget",
+            "User",
+            "Project",
+            "MatchingOrder",
+            "MatchingOrderLine",
+            "AccountingDocument",
+            "GenericList",
+            "MatchingGoodsReceipt",
+            "AdvancedPermission",
+            "TransferResponse",
+            "PaymentResponse",
+            "PrebookResponse",
+            "Vendor",
+            "AdvancedValidation",
+            "PurchaseRequisition",
+            "ErrorFeedback",
+            "RedistributeData",
+            "TaskStatus",
+            "Company",
+            "CompanyGroup",
+            "CompanyView",
+            "ExportedPurchaseOrder",
+            "PurchaseOrder",
+            "PurchaseGoodsReceipt",
+            "ApplicationGroup",
+            "ExportedPurchaseRequisition",
+            "OperatorUser",
+            "ExportedContract",
+            "ExportedContractSpend"
+          ],
+          "example": "Account"
+        },
+        "requestStatus": {
+          "description": "Status of processing the request (aggregated from statuses of each target system).",
+          "type": "string",
+          "enum": [
+            "InProgress",
+            "Success",
+            "Error",
+            "AcknowledgedSuccess",
+            "AcknowledgedError"
+          ],
+          "example": "Error"
+        }
+      }
+    },
+    "ProcessedItem": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "externalCode": {"anyOf": [
+          {
+            "description": "ExternalCode of the processed record.",
+            "type": "string",
+            "example": "aedf21df912ebc89123687cgh181ea4"
+          },
+          {"type": "null"}
+        ]},
+        "errors": {"anyOf": [
+          {
+            "type": "array",
+            "items": {"$ref": "#/definitions/ProcessedItemErrorDetail"}
+          },
+          {"type": "null"}
+        ]},
+        "status": {
+          "description": "Status of the processed record.",
+          "type": "string",
+          "enum": [
+            "InProgress",
+            "NotProcessed",
+            "Warning",
+            "Success",
+            "Error"
+          ],
+          "example": "Error"
+        }
+      }
+    }
+  }
+}

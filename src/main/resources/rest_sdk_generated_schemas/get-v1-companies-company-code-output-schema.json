@@ -1,0 +1,385 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/CompanyEntity",
+  "definitions": {
+    "CompanyIdentifierEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "id",
+        "schemeId"
+      ],
+      "properties": {
+        "schemeId": {
+          "minLength": 1,
+          "description": "Company identifier type. Defines type of â\u20ac˜Idâ\u20ac™ -field. Available values:\r\nDUNS, EMAIL-RFC2822, GLN, IBAN, ISO6523-ACTORID-UPIS, UNKNOWN, EU:VAT, AT:ORGNR, AU:ABN, AU:ACN, AU:TFN, BE:KBO, CA:BN, CA:GST, CA:VAT, CH:ORGNR, CH:VAT, CN:BRN, CZ:ORGNR, DE:ORGNR, DK:CVR, EE:ORGNR, ES:CIF, ES:NIF, FI:Y-TUNNUS, FR:SIRENE, FR:SIRET, GB:UTR, IE:ORGNR, IN:GSTIN, IT:FISCALE, IT:IPA, LI:VAT, MX:VAT, MY:GST, NL:KVK, NO:ORGNR, NO:VAT, PL:KRS, PL:REGON, PT:NIF, SE:ORGNR, SK:ORGNR, GB:ORGNR, UstidNr, US:TIN",
+          "type": "string",
+          "maxLength": 36,
+          "example": "EU:VAT"
+        },
+        "id": {
+          "minLength": 1,
+          "description": "Company identifier value.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "GB190101452"
+        }
+      }
+    },
+    "CompanyContactEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "name",
+        "role"
+      ],
+      "properties": {
+        "website": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Specifies the contact's web site address.",
+            "type": "string",
+            "maxLength": 200,
+            "example": "www.mrSmith.com"
+          },
+          {"type": "null"}
+        ]},
+        "role": {
+          "description": "Role of contact.",
+          "type": "string",
+          "enum": [
+            "AdditionalContact",
+            "PrimaryContact",
+            "SecondaryContact"
+          ]
+        },
+        "name": {
+          "minLength": 1,
+          "description": "Name of the contact. Used as a key in list of contacts.",
+          "type": "string",
+          "maxLength": 200,
+          "example": "DeliveryContact1"
+        },
+        "description": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 200,
+            "example": "Use this as a primary contact"
+          },
+          {"type": "null"}
+        ]},
+        "telephone": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Specifies the contact's telephone number.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "555-3342-454"
+          },
+          {"type": "null"}
+        ]},
+        "telefax": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Specifies the contact's fax number.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "555-3342-45412"
+          },
+          {"type": "null"}
+        ]},
+        "email": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Specifies the contact's email address.",
+            "type": "string",
+            "maxLength": 200,
+            "example": "mrsmith@business.org"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "CompanyEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "companyCode",
+        "name",
+        "active"
+      ],
+      "properties": {
+        "companyCode": {
+          "minLength": 1,
+          "description": "Unique code to identify the company. Also used as an 'externalCode' for the company.",
+          "type": "string",
+          "maxLength": 32,
+          "example": "200"
+        },
+        "addresses": {"anyOf": [
+          {
+            "description": "Company addresses.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/CompanyAddressEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "sourceSystem": {"anyOf": [
+          {
+            "minLength": 1,
+            "description": "Informative name of the source system, e.g. ERP instance.",
+            "type": "string",
+            "maxLength": 32,
+            "example": "SAP_1"
+          },
+          {"type": "null"}
+        ]},
+        "identifiers": {"anyOf": [
+          {
+            "description": "Company identifiers. See \"[Usage scenario 6: Import companies](https://developer.basware.com/api/p2p/manual#usage6) on Basware API developer site for explanation of available values.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/CompanyIdentifierEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "description": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Company description.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "active": {
+          "description": "Determines is company active or inactive. It is also used for soft delete.",
+          "type": "boolean",
+          "example": true
+        },
+        "homeCurrency": {"anyOf": [
+          {
+            "minLength": 3,
+            "description": "Company home currency.",
+            "type": "string",
+            "maxLength": 3,
+            "example": "EUR"
+          },
+          {"type": "null"}
+        ]},
+        "userDefaultLanguage": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "The default language code for users for this company. \r\nUse following format: [language 2-chars in UPPERCASE]-[country 2-chars in lowercase].",
+            "type": "string",
+            "maxLength": 25,
+            "example": "en-US"
+          },
+          {"type": "null"}
+        ]},
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last sent to API. Set automatically.",
+          "type": "string"
+        },
+        "publishToBusinessDirectory": {"anyOf": [
+          {
+            "description": "When 'true, the company data entity will be published to Business Directory in Basware Portal.",
+            "type": "boolean",
+            "example": true
+          },
+          {"type": "null"}
+        ]},
+        "bucompid": {"anyOf": [
+          {
+            "minLength": 1,
+            "description": "Basware internal ID for the company. Generated by Basware API.",
+            "type": "string",
+            "maxLength": 36,
+            "example": "c61f8a6f-140f-423b-b9fd-3ae32345febb"
+          },
+          {"type": "null"}
+        ]},
+        "name": {
+          "minLength": 1,
+          "description": "Company name.",
+          "type": "string",
+          "maxLength": 100,
+          "example": "Acme corporation"
+        },
+        "contacts": {"anyOf": [
+          {
+            "description": "Company contacts.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/CompanyContactEntity"}
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "CompanyAddressEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "externalCode",
+        "name",
+        "addressType"
+      ],
+      "properties": {
+        "externalCode": {
+          "minLength": 1,
+          "description": "External code for company address.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "d6437eef-0d71-4cb0-8a6e-7f114831479d"
+        },
+        "addressType": {
+          "description": "Specifies type of the address. Types supported by P2P: DeliveryAddress, InvoicingAddress, PostalAddress.",
+          "type": "string",
+          "enum": [
+            "AdditionalAddress",
+            "VisitingAddress",
+            "RemittanceAddress",
+            "DeliveryAddress",
+            "PostalAddress",
+            "RegistrationAddress",
+            "InvoicingAddress"
+          ],
+          "example": "DeliveryAddress"
+        },
+        "locality": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Attribute to postalAddress. This field is required in UK if a similar road name exists within a post town area.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "Burlington"
+          },
+          {"type": "null"}
+        ]},
+        "description": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 200,
+            "example": "This is used as Remit To address"
+          },
+          {"type": "null"}
+        ]},
+        "countrySubEntityDescription": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Country sub entity description.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "Texas"
+          },
+          {"type": "null"}
+        ]},
+        "countrySubEntity": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Country sub entity.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "TX"
+          },
+          {"type": "null"}
+        ]},
+        "countryId": {"anyOf": [
+          {
+            "minLength": 2,
+            "description": "Defines the country ID for the company.",
+            "type": "string",
+            "maxLength": 2,
+            "example": "US"
+          },
+          {"type": "null"}
+        ]},
+        "poBox": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "PO box.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "724"
+          },
+          {"type": "null"}
+        ]},
+        "streetName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Street name.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "Burlington Avenue"
+          },
+          {"type": "null"}
+        ]},
+        "default": {"anyOf": [
+          {
+            "description": "Is this the default address (true / false).",
+            "type": "boolean"
+          },
+          {"type": "null"}
+        ]},
+        "cityName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "City name.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "Dallas"
+          },
+          {"type": "null"}
+        ]},
+        "name": {
+          "minLength": 1,
+          "description": "Specifies the address' name for the company.",
+          "type": "string",
+          "maxLength": 200,
+          "example": "Remittance address"
+        },
+        "addressLine1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Company address as free text, line 1.",
+            "type": "string",
+            "maxLength": 200,
+            "example": "1800 Main Street"
+          },
+          {"type": "null"}
+        ]},
+        "addressLine2": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Company address as free text, line 2.",
+            "type": "string",
+            "maxLength": 200
+          },
+          {"type": "null"}
+        ]},
+        "addressLine3": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Company address as free text, line 3.",
+            "type": "string",
+            "maxLength": 200
+          },
+          {"type": "null"}
+        ]},
+        "postalZone": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Postal zone.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "75201"
+          },
+          {"type": "null"}
+        ]}
+      }
+    }
+  }
+}

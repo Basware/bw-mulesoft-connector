@@ -1,0 +1,189 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/AdvancedPermissionResponse",
+  "definitions": {
+    "AdvancedPermissionEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "loginAccount",
+        "limit",
+        "priorityIndex",
+        "companies",
+        "externalCode"
+      ],
+      "properties": {
+        "priorityIndex": {
+          "maximum": 2147483647,
+          "description": "If there is more than one approver in the user picker, the priority index defines the order of the approvers in the picker.",
+          "type": "integer",
+          "minimum": 0,
+          "example": 0
+        },
+        "loginAccount": {
+          "minLength": 1,
+          "description": "Specifies the user's login name",
+          "type": "string",
+          "maxLength": 100,
+          "example": "jyrki@basware.com"
+        },
+        "excludedValue": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "This column is used to exclude a user from a process for coding rows requiring approval. When a user is excluded, the user will not receive an invoice for approval. The value can be anything, for example numeric (123, 23,45 - comma separated values), alphanumeric, special characters except single quote ('). The field can also be left empty. This field is based on tenant settings.",
+            "type": "string",
+            "maxLength": 1000,
+            "example": "ExcludedValue1"
+          },
+          {"type": "null"}
+        ]},
+        "externalCode": {
+          "minLength": 1,
+          "description": "External identifier that is used as a key in API.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "4847-31231212-212121-1212"
+        },
+        "rowApproveIterationCount": {"anyOf": [
+          {
+            "maximum": 2147483647,
+            "description": "This field is used to define if the user is shown in a picker in row approval.",
+            "type": "integer",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "module": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "This field defines the P2P module. Available values: \"IA\" (Invoice Automation), \"Purchase\" (P2P Purchase), \"Both\" (both Invoice Administration and Purchase).",
+            "type": "string",
+            "maxLength": 28,
+            "example": "Purchase"
+          },
+          {"type": "null"}
+        ]},
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last sent to API. Set automatically.",
+          "type": "string"
+        },
+        "companies": {
+          "description": "List of company units to associate advanced permission to P2P organization hierarchy.",
+          "type": "array",
+          "items": {"$ref": "#/definitions/AdvancedPermissionCompanyEntity"}
+        },
+        "permissionCode4": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Allows user to approve coding lines based on dimension values (cost center, account, etc) when row approval and advanced permissions are in use. Dimensions are mapped to permission codes in P2P. The value of each individual field can be one of the following: 1) \"*\" (asterisk, meaning \"all\"), 2) list of comma separated values such as: \"123, 23, 45, A18\", 3) single range of values such as: \"10-100\". If a combination of these is required, multiple records can be posted for the same user. The field can also be left empty.",
+            "type": "string",
+            "maxLength": 1000,
+            "example": "*"
+          },
+          {"type": "null"}
+        ]},
+        "permissionCode5": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Allows user to approve coding lines based on dimension values (cost center, account, etc) when row approval and advanced permissions are in use. Dimensions are mapped to permission codes in P2P. The value of each individual field can be one of the following: 1) \"*\" (asterisk, meaning \"all\"), 2) list of comma separated values such as: \"123, 23, 45, A18\", 3) single range of values such as: \"10-100\". If a combination of these is required, multiple records can be posted for the same user. The field can also be left empty.",
+            "type": "string",
+            "maxLength": 1000,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "permissionCode6": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Allows user to approve coding lines based on dimension values (cost center, account, etc) when row approval and advanced permissions are in use. Dimensions are mapped to permission codes in P2P. The value of each individual field can be one of the following: 1) \"*\" (asterisk, meaning \"all\"), 2) list of comma separated values such as: \"123, 23, 45, A18\", 3) single range of values such as: \"10-100\". If a combination of these is required, multiple records can be posted for the same user. The field can also be left empty.",
+            "type": "string",
+            "maxLength": 1000,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "permissionCode7": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Allows user to approve coding lines based on dimension values (cost center, account, etc) when row approval and advanced permissions are in use. Dimensions are mapped to permission codes in P2P. The value of each individual field can be one of the following: 1) \"*\" (asterisk, meaning \"all\"), 2) list of comma separated values such as: \"123, 23, 45, A18\", 3) single range of values such as: \"10-100\". If a combination of these is required, multiple records can be posted for the same user. The field can also be left empty.",
+            "type": "string",
+            "maxLength": 1000,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "limit": {
+          "maximum": 1000000000,
+          "description": "Defines the user's coding line approval limit.",
+          "type": "number",
+          "minimum": 0,
+          "example": 0
+        },
+        "permissionCode1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Allows user to approve coding lines based on dimension values (cost center, account, etc) when row approval and advanced permissions are in use. Dimensions are mapped to permission codes in P2P. The value of each individual field can be one of the following: 1) \"*\" (asterisk, meaning \"all\"), 2) list of comma separated values such as: \"123, 23, 45, A18\", 3) single range of values such as: \"10-100\". If a combination of these is required, multiple records can be posted for the same user. The field can also be left empty.",
+            "type": "string",
+            "maxLength": 1000,
+            "example": "6210"
+          },
+          {"type": "null"}
+        ]},
+        "permissionCode2": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Allows user to approve coding lines based on dimension values (cost center, account, etc) when row approval and advanced permissions are in use. Dimensions are mapped to permission codes in P2P. The value of each individual field can be one of the following: 1) \"*\" (asterisk, meaning \"all\"), 2) list of comma separated values such as: \"123, 23, 45, A18\", 3) single range of values such as: \"10-100\". If a combination of these is required, multiple records can be posted for the same user. The field can also be left empty.",
+            "type": "string",
+            "maxLength": 1000,
+            "example": "6210,6211"
+          },
+          {"type": "null"}
+        ]},
+        "permissionCode3": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Allows user to approve coding lines based on dimension values (cost center, account, etc) when row approval and advanced permissions are in use. Dimensions are mapped to permission codes in P2P. The value of each individual field can be one of the following: 1) \"*\" (asterisk, meaning \"all\"), 2) list of comma separated values such as: \"123, 23, 45, A18\", 3) single range of values such as: \"10-100\". If a combination of these is required, multiple records can be posted for the same user. The field can also be left empty.",
+            "type": "string",
+            "maxLength": 1000,
+            "example": "6209-6230"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "AdvancedPermissionCompanyEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "companyCode",
+        "active"
+      ],
+      "properties": {
+        "companyCode": {
+          "minLength": 2,
+          "description": "Defines a company code that is attached to the advanced user right.",
+          "type": "string",
+          "maxLength": 32,
+          "example": "BW01"
+        },
+        "active": {
+          "description": "This flag will enable the data to be visible on UI, provided if the value is true, not visible in case of value is false. It will be also used for soft delete.",
+          "type": "boolean"
+        }
+      }
+    },
+    "AdvancedPermissionResponse": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {"advancedPermissions": {"anyOf": [
+        {
+          "type": "array",
+          "items": {"$ref": "#/definitions/AdvancedPermissionEntity"}
+        },
+        {"type": "null"}
+      ]}}
+    }
+  }
+}

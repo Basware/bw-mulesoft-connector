@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/DeleteResponse",
+  "definitions": {"DeleteResponse": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "statusApiLink": {"anyOf": [
+        {"type": "string"},
+        {"type": "null"}
+      ]},
+      "taskName": {"anyOf": [
+        {"type": "string"},
+        {"type": "null"}
+      ]},
+      "taskStatus": {"anyOf": [
+        {"type": "string"},
+        {"type": "null"}
+      ]}
+    }
+  }}
+}

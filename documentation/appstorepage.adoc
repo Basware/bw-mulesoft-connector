@@ -1,0 +1,24 @@
+== About Basware 
+Basware is ... 
+
+== Basware connector - Mule 4
+Use Basware Purchase-to-Pay APIs to power your purchasing and accounts payable processes. 
+
+=== Associated Use Cases
+
+The Basware Connector provides the connectivity to the Basware Rest API.
+
+* Process your invoices in Basware P2P, transfer them to your accounting system using an API. 
+* Import master data through a single point-of-entry into Basware systems. 
+* Combine your purchasing and accounts payable processes to automatically validate invoices, whether the purchasing is done in Basware P2P Purchase or in your existing purchasing system.
+
+=== Additional References
+* Connector Release Notes
+* Connector User Guide
+* All anypoint connectors support policy https://www.mulesoft.com/legal/versioning-back-support-policy#anypoint-connectors
+* Connector Help https://help.mulesoft.com/s/topic/0TO2T0000009a3bWAA/connectors
+* https://developer.basware.com/api/p2p[Basware API developer site]
+* https://developer.basware.com/api/p2p/api_reference[Basware API reference]
+
+== TODO
+COnsider adding sections similiar to here https://www.mulesoft.com/exchange/com.mulesoft.connectors/mule4-magento-connector/

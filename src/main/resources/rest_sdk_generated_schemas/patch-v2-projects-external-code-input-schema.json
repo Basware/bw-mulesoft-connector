@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ProjectEntityV2",
+  "definitions": {
+    "ProjectCompanyEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "companyCode",
+        "active"
+      ],
+      "properties": {
+        "companyCode": {
+          "minLength": 2,
+          "description": "Defines the company code that the project is mapped to. You can map many projects to one company.",
+          "type": "string",
+          "maxLength": 32,
+          "example": "BW01"
+        },
+        "active": {
+          "description": "This flag will enable the data to be visible on UI, provided if the value is true, not visible in case of value is false. It will be also used for soft delete.",
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "ProjectEntityV2": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "projectCode",
+        "projectName",
+        "validFrom",
+        "validUntil",
+        "companies",
+        "externalCode"
+      ],
+      "properties": {
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last sent to API. Set automatically.",
+          "type": "string"
+        },
+        "companies": {
+          "description": "List of company units to associate project to P2P organization hierarchy",
+          "type": "array",
+          "items": {"$ref": "#/definitions/ProjectCompanyEntity"}
+        },
+        "externalCode": {
+          "minLength": 1,
+          "description": "External identifier that is used as a key in API.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "4847-31231212-212121-1212"
+        },
+        "projectCode": {
+          "minLength": 1,
+          "description": "Defines a code for the project that is mapped with the organization. The code is used when creating purchase requisitions, purchase orders, and invoice coding.",
+          "type": "string",
+          "maxLength": 25,
+          "example": "677020A"
+        },
+        "description": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Defines a project description that is shown when a user selects the project",
+            "type": "string",
+            "maxLength": 500,
+            "example": "Upgrade to support robot logistics"
+          },
+          {"type": "null"}
+        ]},
+        "validUntil": {
+          "format": "date-time",
+          "description": "Specifies the date when the project validity ends",
+          "type": "string",
+          "example": "2018-01-01"
+        },
+        "validFrom": {
+          "format": "date-time",
+          "description": "Specifies the date when the project validity starts",
+          "type": "string",
+          "example": "2017-01-01"
+        },
+        "projectName": {
+          "minLength": 1,
+          "description": "Defines name for the project.",
+          "type": "string",
+          "maxLength": 100,
+          "example": "Chicago warehouse renewal"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,972 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/schema",
+  "definitions": {
+    "schema": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/VendorEntity"}
+    },
+    "VendorAddressPartEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "value": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 200
+          },
+          {"type": "null"}
+        ]},
+        "key": {
+          "type": "string",
+          "enum": [
+            "AdditionalField1",
+            "AdditionalField2",
+            "AdditionalStreetName",
+            "BlockName",
+            "BuildingName",
+            "BuildingNumber",
+            "CitySubDivisionName",
+            "Country",
+            "Department",
+            "District",
+            "Email",
+            "Floor",
+            "GlobalLocationNumber",
+            "InhouseEmail",
+            "MarkAttention",
+            "MarkCare",
+            "Region",
+            "Room",
+            "CoordinateSystemCode",
+            "PlotIdentification",
+            "LatitudeDegreesMeasure",
+            "LatitudeDirectionCode",
+            "LatitudeMinutesMeasure",
+            "LongitudeDegreesMeasure",
+            "LongitudeDirectionCode",
+            "LongitudeMinutesMeasure"
+          ]
+        }
+      }
+    },
+    "VendorDeliveryTermEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["deliveryTermCode"],
+      "properties": {
+        "deliveryLocation": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Specifies delivery location to be used with delivery term selected on order sent to vendor from P2P Purchase.",
+            "type": "string",
+            "maxLength": 100,
+            "example": "Office"
+          },
+          {"type": "null"}
+        ]},
+        "deliveryTermCode": {
+          "minLength": 1,
+          "description": "Specifies the vendor's delivery term code.",
+          "type": "string",
+          "maxLength": 25,
+          "example": "D02"
+        },
+        "description": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Default delivery term description.",
+            "type": "string",
+            "maxLength": 200
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "VendorContactEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "website": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Specifies the vendor's web site address.",
+            "type": "string",
+            "maxLength": 200,
+            "example": "www.mrSmith.com"
+          },
+          {"type": "null"}
+        ]},
+        "role": {
+          "type": "string",
+          "enum": [
+            "AdditionalContact",
+            "PrimaryContact",
+            "SecondaryContact"
+          ]
+        },
+        "name": {
+          "minLength": 1,
+          "description": "Name of the contact. Used as a key in list of contacts. Note: Max length 50 chars if vendors are imported to ScanMarket.",
+          "type": "string",
+          "maxLength": 200,
+          "example": "DeliveryContact1"
+        },
+        "description": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 200,
+            "example": "Use this as a primary contact"
+          },
+          {"type": "null"}
+        ]},
+        "telephone": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Specifies the vendor's telephone number.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "555-3342-454"
+          },
+          {"type": "null"}
+        ]},
+        "telefax": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Specifies the vendor's fax number.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "555-3342-45412"
+          },
+          {"type": "null"}
+        ]},
+        "email": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Specifies the vendor's email address. Field is imported to P2P.",
+            "type": "string",
+            "maxLength": 200,
+            "example": "contact@vendor.com"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "VendorTagEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "name",
+        "value"
+      ],
+      "properties": {
+        "tagGroup": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 50
+          },
+          {"type": "null"}
+        ]},
+        "name": {
+          "minLength": 1,
+          "description": "Name of the tag. Used as key in this array.",
+          "type": "string",
+          "maxLength": 50
+        },
+        "value": {
+          "minLength": 1,
+          "type": "string",
+          "maxLength": 250
+        }
+      }
+    },
+    "VendorIdentifierEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "id",
+        "schemeId"
+      ],
+      "properties": {
+        "defaultPartyId": {"anyOf": [
+          {
+            "description": "Is this the default identifier: true / false.",
+            "type": "boolean"
+          },
+          {"type": "null"}
+        ]},
+        "schemeId": {
+          "minLength": 1,
+          "description": "Specifies identifier type. Typically used for eInvoicing address, VAT ID, local registry id, DUNS, GLN, etc. Configure available values in P2P. Available values are the supplier identifier keys configured in P2P \"identifier configuration\". For example 'PartyId' is commonly used for supplier's eInvoicing address.",
+          "type": "string",
+          "maxLength": 32,
+          "example": "PartyId"
+        },
+        "id": {
+          "minLength": 1,
+          "description": "Value of the identifier type specified by 'schemeId'.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "0592542-4"
+        }
+      }
+    },
+    "VendorProcessingStatusEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "paymentDenied": {"anyOf": [
+          {
+            "description": "Is payment block is enabled for the vendor: true / false.",
+            "type": "boolean",
+            "example": false
+          },
+          {"type": "null"}
+        ]},
+        "active": {"anyOf": [
+          {
+            "description": "Is the vendor active : true / false.",
+            "type": "boolean"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "VendorAdditionalFieldEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "name",
+        "value"
+      ],
+      "properties": {
+        "groupName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Group name. Not used in P2P.",
+            "type": "string",
+            "maxLength": 500
+          },
+          {"type": "null"}
+        ]},
+        "name": {
+          "minLength": 1,
+          "description": "Name of Supplier additional data key field.",
+          "type": "string",
+          "maxLength": 25,
+          "example": "TaxRegistrationValidUntil"
+        },
+        "value": {
+          "minLength": 1,
+          "description": "Value for key field specified above.",
+          "type": "string",
+          "maxLength": 250
+        }
+      }
+    },
+    "VendorPaymentTermEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["paymentTermCode"],
+      "properties": {
+        "description": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 200,
+            "example": "Payment 90 days after invoice date"
+          },
+          {"type": "null"}
+        ]},
+        "paymentTermCode": {
+          "minLength": 1,
+          "description": "Specifies the vendor's payment term code",
+          "type": "string",
+          "maxLength": 25,
+          "example": "Net90"
+        }
+      }
+    },
+    "VendorOrderingDetailsEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "hasActiveCatalog": {"anyOf": [
+          {
+            "description": "Not used in P2P Alusta.",
+            "type": "boolean"
+          },
+          {"type": "null"}
+        ]},
+        "deliverOrderAutomatically": {"anyOf": [
+          {
+            "description": "Not used in P2P Alusta.",
+            "type": "boolean"
+          },
+          {"type": "null"}
+        ]},
+        "createOrderAutomatically": {"anyOf": [
+          {
+            "description": "Not used in P2P Alusta.",
+            "type": "boolean"
+          },
+          {"type": "null"}
+        ]},
+        "minimumOrderAllowed": {"anyOf": [
+          {
+            "description": "Value of the minimum order allowed. Not used in P2P Alusta.",
+            "type": "number"
+          },
+          {"type": "null"}
+        ]},
+        "isTaxable": {"anyOf": [
+          {
+            "description": "Are purchases from this vendor taxable. Not used in P2P Alusta.",
+            "type": "boolean"
+          },
+          {"type": "null"}
+        ]},
+        "orderEmail": {"anyOf": [
+          {
+            "minLength": 3,
+            "pattern": "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$",
+            "description": "Specifies the supplier's email address where the purchase order is sent to. Note: Since all ERP systems do not have a field for this information, P2P can be configured so that this field is maintained in P2P instead of being imported through API.",
+            "type": "string",
+            "maxLength": 320,
+            "example": "orders@vendor.com"
+          },
+          {"type": "null"}
+        ]},
+        "automaticallyReceiveOnOrder": {"anyOf": [
+          {
+            "description": "Not used in P2P Alusta.",
+            "type": "boolean"
+          },
+          {"type": "null"}
+        ]},
+        "automaticallyReceiveOnInvoice": {"anyOf": [
+          {
+            "description": "Not used in P2P Alusta.",
+            "type": "boolean"
+          },
+          {"type": "null"}
+        ]},
+        "noFreeformItems": {"anyOf": [
+          {
+            "description": "Not used in P2P Alusta.",
+            "type": "boolean"
+          },
+          {"type": "null"}
+        ]},
+        "orderingLanguage": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Specifies region-specific texts, including number- and date formats used in the order -message sent to supplier from P2P Purchase.",
+            "type": "string",
+            "maxLength": 8,
+            "example": "en-US"
+          },
+          {"type": "null"}
+        ]},
+        "orderingFormat": {"anyOf": [
+          {
+            "description": "Specifies format in which orders are sent to vendor (from P2P Purchase).\r\n'UBL' = Deprecated value, will be converted toÂ 'BaswareNetwork'.\r\n'EHFXML21' = Deprecated value, will be converted to 'BaswareNetwork'.\r\n'email' = Deliver purchase orders by email as PDF attachments or SmartOrders.\r\n'other' = Deprecated value, will be converted to 'none'.\r\n'none' = Vendor not available for purchasing process.\r\n'BaswareNetwork' = Deliver purchase orders in XML UBL2.0 format to Basware Network. \r\n\r\nNote: Since all ERP systems do not have a field for this information, P2P can be configured so that this field is maintained in P2P instead of being imported through API.",
+            "type": "string",
+            "enum": [
+              "UBL",
+              "EHFXML21",
+              "email",
+              "other",
+              "none",
+              "BaswareNetwork"
+            ],
+            "example": "none"
+          },
+          {"type": "null"}
+        ]},
+        "orderProcessType": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Name of order process. Not used in P2P Alusta.",
+            "type": "string",
+            "maxLength": 50
+          },
+          {"type": "null"}
+        ]},
+        "sendToNetwork": {"anyOf": [
+          {
+            "description": "Not used in P2P Alusta.",
+            "type": "boolean"
+          },
+          {"type": "null"}
+        ]},
+        "orderingMessageLanguage": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Specifies language of order -message sent to vendor from P2P Purchase.",
+            "type": "string",
+            "maxLength": 8,
+            "example": "en-US"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "VendorfinancialAccountsEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "financialAccountIdentifiers": {"anyOf": [
+          {
+            "type": "array",
+            "items": {"$ref": "#/definitions/FinancialAccountIdentifierEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "financialInstitution": {"$ref": "#/definitions/FinancialInstitutionEntity"}
+      }
+    },
+    "FinancialInstitutionEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "name",
+        "id",
+        "schemeId"
+      ],
+      "properties": {
+        "branchId": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "BranchId. Note: Field is not used in P2P.",
+            "type": "string",
+            "maxLength": 50
+          },
+          {"type": "null"}
+        ]},
+        "branchIdSchemeId": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "BranchIdSchemeId. Note: Field is not used in P2P.",
+            "type": "string",
+            "maxLength": 36
+          },
+          {"type": "null"}
+        ]},
+        "name": {
+          "minLength": 0,
+          "description": "Specifies the vendor's bank name.",
+          "type": "string",
+          "maxLength": 250,
+          "example": "Nordea UK"
+        },
+        "schemeId": {
+          "minLength": 1,
+          "description": "Specifies the identifier type for field 'id'. Use 'BIC' for importing bank account BIC/SWIFT number in field 'id'.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "BIC"
+        },
+        "id": {
+          "minLength": 1,
+          "description": "Specifies the value for idenfitier type specified in 'schemeId'. Typically used for importing bank account BIC/SWIFT number.",
+          "type": "string",
+          "maxLength": 20,
+          "example": "NDEAGB2L"
+        },
+        "countryId": {"anyOf": [
+          {
+            "minLength": 2,
+            "description": "Defines the country ID for the vendor. Please use 2-char ISO country codes (according to ISO-3166-1 -standard). Note: Field is not used in P2P.",
+            "type": "string",
+            "maxLength": 2,
+            "example": "US"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "VendorPaymentMeanEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["paymentMeansCode"],
+      "properties": {
+        "paymentMeansCode": {
+          "minLength": 1,
+          "description": "Specifies the payment means code.",
+          "type": "string",
+          "maxLength": 25,
+          "example": "A001"
+        },
+        "default": {"anyOf": [
+          {
+            "description": "Is this the default payment means (true / false).",
+            "type": "boolean"
+          },
+          {"type": "null"}
+        ]},
+        "financialAccounts": {"anyOf": [
+          {
+            "type": "array",
+            "items": {"$ref": "#/definitions/VendorfinancialAccountsEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "description": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Specifies payment means description.",
+            "type": "string",
+            "maxLength": 200,
+            "example": "Payment by a pre-printed form (check)."
+          },
+          {"type": "null"}
+        ]},
+        "currencyCode": {"anyOf": [
+          {
+            "minLength": 3,
+            "description": "Specifies vendor default currency. This is used as vendor's default currency in P2P. Notes: 1) currencyCode of the payment means -block where default = 'true' is selected as the vendor's default currency in P2P. 2) This currency needs to be marked as 'active' in P2P.",
+            "type": "string",
+            "maxLength": 3,
+            "example": "USD"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "VendorEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "externalCode",
+        "vendorCode",
+        "name",
+        "companies"
+      ],
+      "properties": {
+        "addresses": {"anyOf": [
+          {
+            "description": "Vendor addresses",
+            "type": "array",
+            "items": {"$ref": "#/definitions/VendorAddressEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "externalCode": {
+          "minLength": 1,
+          "description": "Specifies a unique code to identify vendor for updates through Basware API.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "c6437eef-0d71-4cb0-8a6e-7f114831478d"
+        },
+        "eligibleForSourcing": {"anyOf": [
+          {
+            "description": "Specifies whether the vendor is eligible for sourcing activities. This flag can be used to mark vendors that need to be copied to an external sourcing system. Note: If your sourcing system does not support a multiple company -structure, please make sure only one company-specific instance of the each vendor has eligibleForSourcing = 'true'.",
+            "type": "boolean",
+            "example": false
+          },
+          {"type": "null"}
+        ]},
+        "buvid": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Vendor identifier generated by Basware. Not to be included when posting data.",
+            "type": "string",
+            "maxLength": 36,
+            "example": "f0b29a62-a5e0-4285-8ceb-11a92eccf212"
+          },
+          {"type": "null"}
+        ]},
+        "deliveryTerm": {"$ref": "#/definitions/VendorDeliveryTermEntity"},
+        "sourceSystem": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Name of the source system, e.g. ERP instance",
+            "type": "string",
+            "maxLength": 36,
+            "example": "SAPEUR1"
+          },
+          {"type": "null"}
+        ]},
+        "identifiers": {"anyOf": [
+          {
+            "description": "Vendor identifiers",
+            "type": "array",
+            "items": {"$ref": "#/definitions/VendorIdentifierEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "customFields": {"anyOf": [
+          {
+            "description": "Custom fields are used to provide additional data. Posted as â\u20ac˜Supplier additional dataâ\u20ac™ -fields to P2P.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/VendorAdditionalFieldEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "supplierAssignedAccountId": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Customer ID in vendor's system.",
+            "type": "string",
+            "maxLength": 128,
+            "example": "12890"
+          },
+          {"type": "null"}
+        ]},
+        "description": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Freetext description of vendor",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "vendorParent": {"anyOf": [
+          {
+            "description": "VendorCode of parent. Not used in P2P Alusta.",
+            "type": "string",
+            "example": "AS12154"
+          },
+          {"type": "null"}
+        ]},
+        "vendorCode": {
+          "minLength": 1,
+          "description": "Vendor code. Normally the vendor code used by Customer ERP system.",
+          "type": "string",
+          "maxLength": 25,
+          "example": "81264"
+        },
+        "tags": {"anyOf": [
+          {
+            "description": "Tags are used to group the vendors. Not used in P2P.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/VendorTagEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "vendorClass": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Specifies vendor class. Can be used to determine preferred vendors in P2P Purchase. Values are determined by customer. Typical example values: A, B, C, Preferred. Note: Allowed values for vendor class need to be configured in P2P before posting data.",
+            "type": "string",
+            "maxLength": 100,
+            "example": "Preferred"
+          },
+          {"type": "null"}
+        ]},
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last sent to API. Set automatically.",
+          "type": "string"
+        },
+        "processingStatus": {"$ref": "#/definitions/VendorProcessingStatusEntity"},
+        "companies": {
+          "description": "List of company units to associate vendor to P2P organization hierarchy",
+          "type": "array",
+          "items": {"$ref": "#/definitions/VendorCompanyEntity"}
+        },
+        "paymentMeans": {"anyOf": [
+          {
+            "description": "Vendor payment means",
+            "type": "array",
+            "items": {"$ref": "#/definitions/VendorPaymentMeanEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "name": {
+          "minLength": 1,
+          "description": "Vendor name.",
+          "type": "string",
+          "maxLength": 250,
+          "example": "Things and Gadgets Inc."
+        },
+        "orderingDetails": {"$ref": "#/definitions/VendorOrderingDetailsEntity"},
+        "contacts": {"anyOf": [
+          {
+            "description": "Vendor contacts. Used in Vendor Manager. Not used in P2P Alusta, except for email address -field.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/VendorContactEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "paymentTerms": {"$ref": "#/definitions/VendorPaymentTermEntity"}
+      }
+    },
+    "VendorCompanyEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["companyCode"],
+      "properties": {
+        "companyCode": {
+          "minLength": 2,
+          "description": "Specifies the organization that the vendor is mapped to.",
+          "type": "string",
+          "maxLength": 32,
+          "example": "BW00"
+        },
+        "inheritToChildUnits": {"anyOf": [
+          {
+            "description": "Specifies whether the vendor is inherited to lower organizations.",
+            "type": "boolean"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "FinancialAccountIdentifierEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["schemeId"],
+      "properties": {
+        "accountAdditionalData1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Account additional data field 1.",
+            "type": "string",
+            "maxLength": 200,
+            "example": "FRS123"
+          },
+          {"type": "null"}
+        ]},
+        "default": {"anyOf": [
+          {
+            "description": "Is this the default account (true / false).",
+            "type": "boolean"
+          },
+          {"type": "null"}
+        ]},
+        "accountAdditionalData2": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Account additional data field 2.",
+            "type": "string",
+            "maxLength": 200,
+            "example": "971298-1212"
+          },
+          {"type": "null"}
+        ]},
+        "description": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Description. Note: Field is not used in P2P.",
+            "type": "string",
+            "maxLength": 200,
+            "example": "UK only"
+          },
+          {"type": "null"}
+        ]},
+        "schemeId": {
+          "minLength": 1,
+          "description": "Account type: BBAN / IBAN.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "IBAN"
+        },
+        "id": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "The account number.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "GB29 NWBK 6016 1331 9268 19"
+          },
+          {"type": "null"}
+        ]},
+        "accountHolderName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Account holder name. Note: Field is not used in P2P.",
+            "type": "string",
+            "maxLength": 200,
+            "example": "United Parcels UK"
+          },
+          {"type": "null"}
+        ]},
+        "currencyCode": {"anyOf": [
+          {
+            "minLength": 3,
+            "description": "Currency code of the account. Note: Field is not used in P2P. To import the supplier specific currency code to P2P, use the 'currencyCode' field in 'paymentMeans' -block.",
+            "type": "string",
+            "maxLength": 3,
+            "example": "GBP"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "VendorAddressEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "externalCode",
+        "name"
+      ],
+      "properties": {
+        "externalCode": {
+          "minLength": 1,
+          "description": "External code for vendor address.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "d6437eef-0d71-4cb0-8a6e-7f114831479d"
+        },
+        "addressType": {"anyOf": [
+          {
+            "description": "Specifies type of the address. Typically PostalAddress and DeliveryAddress are used with P2P. Types supported by P2P: PostalAddress, DeliveryAddress, AdditionalAddress, RemittanceAddress.",
+            "type": "string",
+            "enum": [
+              "AdditionalAddress",
+              "VisitingAddress",
+              "RemittanceAddress",
+              "DeliveryAddress",
+              "PostalAddress",
+              "RegistrationAddress"
+            ],
+            "example": "DeliveryAddress"
+          },
+          {"type": "null"}
+        ]},
+        "locality": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Attribute to postalAddress. This field is required in UK if a similar road name exists within a post town area.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "Burlington"
+          },
+          {"type": "null"}
+        ]},
+        "description": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Freetext description of the address.",
+            "type": "string",
+            "maxLength": 200,
+            "example": "Default delivery addrss"
+          },
+          {"type": "null"}
+        ]},
+        "countrySubEntityDescription": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 50,
+            "example": "Texas"
+          },
+          {"type": "null"}
+        ]},
+        "additionalAddressFields": {"anyOf": [
+          {
+            "description": "Additional address fields. Use by target systems - P2P: yes, Vendor manager: no.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/VendorAddressPartEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "countrySubEntity": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 50,
+            "example": "TX"
+          },
+          {"type": "null"}
+        ]},
+        "countryId": {"anyOf": [
+          {
+            "minLength": 2,
+            "description": "Defines the country ID for the account. Please use 2-char ISO country codes (according to ISO-3166-1 -standard). Note: This field is not used in P2P.",
+            "type": "string",
+            "maxLength": 2,
+            "example": "US"
+          },
+          {"type": "null"}
+        ]},
+        "poBox": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 50,
+            "example": "724"
+          },
+          {"type": "null"}
+        ]},
+        "streetName": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 50,
+            "example": "Burlington Avenue"
+          },
+          {"type": "null"}
+        ]},
+        "default": {"anyOf": [
+          {
+            "description": "Is this the default address (true / false).",
+            "type": "boolean"
+          },
+          {"type": "null"}
+        ]},
+        "cityName": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 50,
+            "example": "Dallas"
+          },
+          {"type": "null"}
+        ]},
+        "name": {
+          "minLength": 1,
+          "description": "Specifies the address' name for the vendor.",
+          "type": "string",
+          "maxLength": 200,
+          "example": "Delivery address"
+        },
+        "addressLine1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Vendor address as free text, line 1. Use by target systems - P2P: no, Vendor manager: yes.",
+            "type": "string",
+            "maxLength": 200,
+            "example": "1800 Main Street"
+          },
+          {"type": "null"}
+        ]},
+        "addressLine2": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Vendor address as free text, line 2. Use by target systems - P2P: no, Vendor manager: yes.",
+            "type": "string",
+            "maxLength": 200
+          },
+          {"type": "null"}
+        ]},
+        "addressLine3": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Vendor address as free text, line 3. Use by target systems - P2P: no, Vendor manager: yes.",
+            "type": "string",
+            "maxLength": 200
+          },
+          {"type": "null"}
+        ]},
+        "postalZone": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 50,
+            "example": "75201"
+          },
+          {"type": "null"}
+        ]}
+      }
+    }
+  }
+}

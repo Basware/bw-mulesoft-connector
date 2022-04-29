@@ -1,0 +1,191 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/PurchaseGoodsReceiptEntity",
+  "definitions": {
+    "GoodsReceiptLine": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "externalCode",
+        "orderLineExternalCode",
+        "receivedQuantity"
+      ],
+      "properties": {
+        "notifyFault": {
+          "description": "Used to notify supplier of damaged goods. True if goods are faulty while receiving.",
+          "type": "boolean",
+          "example": false
+        },
+        "externalCode": {
+          "minLength": 1,
+          "description": "Unique identifier of the goods receipt line.",
+          "type": "string",
+          "maxLength": 100,
+          "example": "06dagdea-5123-71ea-a38b-2e128ce88122"
+        },
+        "productSerialNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Product serial number. Generally used with goods receipt cancellations.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "receivedQuantity": {
+          "description": "Quantity received. Negative in case of reversed GR lines.",
+          "type": "number",
+          "example": 1
+        },
+        "referenceGRLineExternalCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Used when this receipt item is a negative return/cancellation item for an earlier receipt. Needs to match with xternalCode of the original goods receipt line.",
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "comment": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Available for additional information regarding the GR line, such as reason for cancellation in case of reversing the GR.",
+            "type": "string",
+            "maxLength": 255,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "orderLineExternalCode": {
+          "minLength": 1,
+          "description": "External code of the order line for which goods/services are being received.",
+          "type": "string",
+          "maxLength": 100,
+          "example": "060cb8ea - 5464 - 11ea - a38b - 2e728ce88123"
+        },
+        "deliveryNoteNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Reference to the delivery note this delivery relates to.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "D128735871"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "PurchaseGoodsReceiptEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "externalCode",
+        "externalGRNumber",
+        "orderExternalCode",
+        "receiveDate",
+        "receiver",
+        "lineReceivings"
+      ],
+      "properties": {
+        "referenceGRDocumentExternalCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Indicates a return/cancellation for an earlier receipt. In such case, 1) this field needs to contain value of 'externalCode' field of the original goods receipt document and 2) lineReceivings need to contain referenceGRLineExternalCodes, 3) receivedQuantity is expected to be negative.",
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "processingStatus": {
+          "description": "Processing status of the goods receipt (set automatically by Basware API).",
+          "type": "string",
+          "enum": [
+            "ImportInProgress",
+            "Imported",
+            "ImportFailed"
+          ],
+          "example": "ImportInProgress"
+        },
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last updated in API. Set automatically.",
+          "type": "string"
+        },
+        "externalCode": {
+          "minLength": 1,
+          "description": "GR document external code. External identifier that is used as a key in API. Identifies goods receipt for updates through API.",
+          "type": "string",
+          "maxLength": 100,
+          "example": "4847-31231212-212121-1212"
+        },
+        "orderExternalCode": {
+          "minLength": 1,
+          "description": "External code of the order for which goods/services are being received. Needs to match with 'externalCode' in exportedPurchaseOrders API.",
+          "type": "string",
+          "maxLength": 100,
+          "example": "ERP1_PO1234233267"
+        },
+        "receiver": {"$ref": "#/definitions/GoodsReceiver"},
+        "externalGRNumber": {
+          "minLength": 1,
+          "description": "Goods receipt document number in the system from which it is being imported.",
+          "type": "string",
+          "maxLength": 100,
+          "example": "GR123652138"
+        },
+        "receiveDate": {
+          "format": "date-time",
+          "description": "Date on which goods have been received.",
+          "type": "string",
+          "example": "2020-10-24T00:00:00"
+        },
+        "lineReceivings": {
+          "description": "List of individual goods receipt lines.",
+          "type": "array",
+          "items": {"$ref": "#/definitions/GoodsReceiptLine"}
+        }
+      }
+    },
+    "GoodsReceiver": {
+      "description": "Specifies who has received the goods. At least one of the values needs to be provided.",
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "loginAccount": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Login account.",
+            "type": "string",
+            "maxLength": 100,
+            "example": "company\\jyrik"
+          },
+          {"type": "null"}
+        ]},
+        "emailAddress": {"anyOf": [
+          {
+            "minLength": 0,
+            "pattern": "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$",
+            "description": "Email address.",
+            "type": "string",
+            "maxLength": 320,
+            "example": "emailaddress@company.com"
+          },
+          {"type": "null"}
+        ]},
+        "externalCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "External code.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "sadkj2983g87i12diuodsahyukjd"
+          },
+          {"type": "null"}
+        ]}
+      }
+    }
+  }
+}

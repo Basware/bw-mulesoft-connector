@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/TransferResponseEntity",
+  "definitions": {"TransferResponseEntity": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+      "externalCode",
+      "success",
+      "responseMessage",
+      "paymentBlock"
+    ],
+    "properties": {
+      "paymentBlock": {
+        "description": "Available for indicating if invoice has been set to payment blocked -state by the receiving ERP system. Saved onto the invoice in P2P.",
+        "type": "boolean",
+        "example": false
+      },
+      "externalCode": {
+        "minLength": 1,
+        "description": "External identifier that is used as a key in API. External code of the transferResponse needs to be unique within an accountingDocument -record. You should always create a new externalCode when sending response, there is no overwriting/editing of previous response. This will enable the visibility that all responses are tracked in API. ExternalCode in response messages plays no role in P2P (other than it is used in communication between P2P and the API layer).",
+        "type": "string",
+        "maxLength": 36,
+        "example": "9c857869cb5c4028ac79b03b57af12795"
+      },
+      "success": {
+        "description": "Specifies if the invoice was succesfully transfered to ERP system (true = invoice successfully transferred, false = transfer failed).",
+        "type": "boolean",
+        "example": true
+      },
+      "sourceSystem": {"anyOf": [
+        {
+          "minLength": 0,
+          "description": "Indicates the system that is returning transfer response.",
+          "type": "string",
+          "maxLength": 32,
+          "example": "ERP1"
+        },
+        {"type": "null"}
+      ]},
+      "voucherNumber2": {"anyOf": [
+        {
+          "minLength": 0,
+          "description": "Available for returning second voucher number from ERP system. Voucher number 2 is saved onto the invoice in P2P.",
+          "type": "string",
+          "maxLength": 25,
+          "example": "774785220"
+        },
+        {"type": "null"}
+      ]},
+      "voucherNumber1": {"anyOf": [
+        {
+          "minLength": 0,
+          "description": "Available for returning voucher number from ERP system. Voucher number is saved onto the invoice in P2P.",
+          "type": "string",
+          "maxLength": 25,
+          "example": "114785224"
+        },
+        {"type": "null"}
+      ]},
+      "responseMessage": {
+        "minLength": 1,
+        "description": "Informative message for P2P user regarding the transfer. If transfer failed, please indicate reason for transfer failure in this message. This message is shown in invoice action log.",
+        "type": "string",
+        "maxLength": 250,
+        "example": "Invoice transferred to ERP."
+      },
+      "transferDate": {"anyOf": [
+        {
+          "format": "date-time",
+          "description": "Transfer date. Saved onto the invoice in P2P. Note: Field needs to be made visible in P2P UI to see sent value.",
+          "type": "string"
+        },
+        {"type": "null"}
+      ]}
+    }
+  }}
+}

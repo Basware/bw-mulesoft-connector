@@ -1,0 +1,51 @@
+== Basware Connector Release Notes
+
+*May 1,2022*
+
+Release Notes for version V1.0.0 of the Mule 4- Basware Connector.
+
+*Version 1.0.0 - Compatibility*
+
+The Basware connector is compatible with:
+
+[cols=",",options="header",]
+|===
+|*Application/Service* | *Version*
+|Mule Runtime | 4.3.X 4.4.X 
+|Basware Rest API | 22.04.27.36
+|===
+
+Basware API is backwards compatible with previous versions.  
+
+*Version 1.0.0 - Features*
+
+Supports the operations available in https://developer.basware.com/api/p2p[Basware P2P APIs]. 
+
+
+*Support Resources*
+
+* {blank}
++
+
+Basware Connector example can be found at this https://github.com/hautari/muledocs/connectorusageexamples.adoc[Basware-Connector-Usage examples]
+
+* {blank}
++
+
+Learn how
+to https://docs.mulesoft.com/mule-runtime/3.9/installing-connectors[Install
+Anypoint Connectors ]using Anypoint Exchange.
+
+* {blank}
++
+
+Access the https://help.mulesoft.com/s/forum[MuleSoft Forum ]to pose
+questions and get help from Mule’s broad community of users.
+
+* {blank}
++
+
+To access MuleSoft’s expert support
+team, https://www.mulesoft.com/platform/soa/mule-esb-open-source-esb[subscribe] and
+log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer
+Portal.]

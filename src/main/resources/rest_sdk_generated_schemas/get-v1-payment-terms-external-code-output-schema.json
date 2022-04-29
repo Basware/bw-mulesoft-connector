@@ -1,0 +1,267 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/PaymentTermEntity",
+  "definitions": {
+    "PaymentTermCompanyEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "companyCode",
+        "inherit",
+        "active"
+      ],
+      "properties": {
+        "companyCode": {
+          "minLength": 2,
+          "description": "The payment term for different suppliers is attached to this company code.",
+          "type": "string",
+          "maxLength": 32,
+          "example": "BW01"
+        },
+        "inherit": {
+          "description": "The value defines whether the payment is inherited to lower organization units in the organization structure.",
+          "type": "boolean"
+        },
+        "active": {
+          "description": "This flag will enable the data to be visible on UI, provided if the value is true, not visible in case of value is false. It will be also used for soft delete.",
+          "type": "boolean"
+        }
+      }
+    },
+    "LanguageTranslationEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "translation",
+        "language"
+      ],
+      "properties": {
+        "translation": {
+          "minLength": 2,
+          "description": "Translated text",
+          "type": "string",
+          "maxLength": 2000,
+          "example": "Office supplies"
+        },
+        "language": {
+          "minLength": 2,
+          "description": "Language code",
+          "type": "string",
+          "maxLength": 10,
+          "example": "en-US"
+        }
+      }
+    },
+    "PaymentTermDiscountRule": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "externalCode",
+        "active"
+      ],
+      "properties": {
+        "discountDays": {"anyOf": [
+          {
+            "maximum": 2147483647,
+            "description": "Defines number of days used in dynamic cash discount. The number of days must be unique for each discount percentage.",
+            "type": "integer",
+            "minimum": 0
+          },
+          {"type": "null"}
+        ]},
+        "discountPercent": {"anyOf": [
+          {
+            "maximum": 100,
+            "description": "Defines the discount percentage that the supplier offers for the buyer for early cash payments",
+            "type": "number",
+            "minimum": 0
+          },
+          {"type": "null"}
+        ]},
+        "externalCode": {
+          "minLength": 1,
+          "description": "External code is a unique code for the payment term's discount rules.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "c9921a52-6d8b-1017-cb8c-923d"
+        },
+        "active": {
+          "description": "This flag will enable the data to be visible on UI, provided if the value is true, not visible in case of value is false. It will be also used for soft delete.",
+          "type": "boolean"
+        }
+      }
+    },
+    "PaymentTermEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "paymentTermCode",
+        "paymentTermNames",
+        "validFrom",
+        "validTo",
+        "companies",
+        "externalCode"
+      ],
+      "properties": {
+        "paymentTermDiscountRules": {"anyOf": [
+          {
+            "description": "PaymentTermDiscountRules can be used to specify multiple cash discount dates. Data is imported to \"Calculate cynamic cash date and cash discount\" -section in P2P. \r\nTo enable cash discount calculation using these rules, 'cashDueDateCalc' must be set to 2. Overrides other cash date calculation -fields when this is in use.\r\nPaymentTermDiscountRules is mandatory only when 'cashDueDateCalc' is set to 2.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/PaymentTermDiscountRule"}
+          },
+          {"type": "null"}
+        ]},
+        "dueDateDays2": {"anyOf": [
+          {
+            "maximum": 2147483647,
+            "description": "Used in due date calculation. Specifies the amount of days to be added after month-end -moves.",
+            "type": "integer",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "dueDateCalc": {"anyOf": [
+          {
+            "description": "Specifies due date calculation method. \r\n1 = Due date is calculated automatically according to rules specified in this payment term. \r\n0 = Due date is entered manually (no automatic calculation).",
+            "maximum": 2147483647,
+            "type": "integer",
+            "minimum": -2147483648,
+            "example": 1
+          },
+          {"type": "null"}
+        ]},
+        "cashDueDateDays2": {"anyOf": [
+          {
+            "maximum": 2147483647,
+            "description": "Used in cash date calculation. Specifies the amount of days to be added after month-end -moves.",
+            "type": "integer",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "externalCode": {
+          "minLength": 1,
+          "description": "External identifier that is used as a key in API.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "4847-31231212-212121-1212"
+        },
+        "moveDueDatesTo": {"anyOf": [
+          {
+            "pattern": "0|1|2",
+            "description": "Specifies whether to move due date and cash date to next/previous working day (in case due date occurs during weekend). \r\n0 = Do not move due date.\r\n1 = Move to next working day.\r\n2 = Move to previous working day.",
+            "type": "string",
+            "example": "0"
+          },
+          {"type": "null"}
+        ]},
+        "paymentTermNames": {
+          "description": "Defines name(s) for the payment term. Please always include 'en-US' language tag for Basware global support, as well as any local-language tag being used. If both translations are not available, please use the same string with both language tags.",
+          "type": "array",
+          "items": {"$ref": "#/definitions/LanguageTranslationEntity"}
+        },
+        "cashDueDateEom": {"anyOf": [
+          {
+            "maximum": 2147483647,
+            "description": "Used in cash date calculation. Specifies number of month-ends to be added to cash date. Month-ends are added after adding dueDateDays to base calculation date.\r\n0 = Date not moved to end of month.\r\n1 = Date is moved to end of month\r\n2 = Date is moved to end of next month \r\n3 = Date is moved in following way: Add 2 full months, then move date to end of resulting month. \r\nn = Date is moved in following way: Add (n-1) full months, then move date to end of resulting month.",
+            "type": "integer",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "validFrom": {
+          "format": "date-time",
+          "description": "Defines the date when the payment term's validity period starts.",
+          "type": "string",
+          "example": "2015-01-01"
+        },
+        "dueDateEom": {"anyOf": [
+          {
+            "maximum": 2147483647,
+            "description": "Used in due date calculation. Specifies number of month-ends to be added to due date. Month-ends are added after adding dueDateDays to base calculation date.\r\n0 = Date not moved to end of month.\r\n1 = Date is moved to end of month\r\n2 = Date is moved to end of next month \r\n3 = Date is moved in following way: Add 2 full months, then move date to end of resulting month. \r\nn = Date is moved in following way: Add (n-1) full months, then move date to end of resulting month.",
+            "type": "integer",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "cashDueDateCalc": {"anyOf": [
+          {
+            "description": "Specifies cash date calculation method.\r\n0 = Cash date is entered manually (no calculation)\r\n1 = Calculate cash date (accorging to rules specified on this payment term)\r\n2 = Calculate dynamic cash date and cash discount (specified in paymentTermDiscountRules -block)",
+            "maximum": 2147483647,
+            "type": "integer",
+            "minimum": -2147483648,
+            "example": 2
+          },
+          {"type": "null"}
+        ]},
+        "dueDateDays": {"anyOf": [
+          {
+            "maximum": 2147483647,
+            "description": "Used in due date calculation. Specifies number of days to be added to the base date.",
+            "type": "integer",
+            "minimum": 0,
+            "example": 60
+          },
+          {"type": "null"}
+        ]},
+        "cashDueDateDays": {"anyOf": [
+          {
+            "maximum": 2147483647,
+            "description": "Used in cash date calculation. Specifies number of days to be added to the base date.",
+            "type": "integer",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last sent to API. Set automatically.",
+          "type": "string"
+        },
+        "companies": {
+          "description": "List of company units to associate paymentterm to P2P organization hierarchy",
+          "type": "array",
+          "items": {"$ref": "#/definitions/PaymentTermCompanyEntity"}
+        },
+        "sortOrder": {"anyOf": [
+          {
+            "maximum": 2147483647,
+            "description": "Specifies position of a payment term in selection list.",
+            "type": "integer",
+            "minimum": 0,
+            "example": 8
+          },
+          {"type": "null"}
+        ]},
+        "paymentTermCode": {
+          "minLength": 1,
+          "description": "Specifies code for the payment term.",
+          "type": "string",
+          "maxLength": 25,
+          "example": "NT60"
+        },
+        "cashDiscount": {"anyOf": [
+          {
+            "maximum": 100,
+            "description": "Defines the discount percentage. This amount of discount is received if invoice is paid by cash date.",
+            "type": "number",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "validTo": {
+          "format": "date-time",
+          "description": "Defines the date when the payment term's validity period ends.",
+          "type": "string",
+          "example": "2016-01-02"
+        }
+      }
+    }
+  }
+}

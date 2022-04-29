@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/AccountEntity",
+  "definitions": {
+    "AccountCompanyEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "companyCode",
+        "inherit",
+        "active"
+      ],
+      "properties": {
+        "companyCode": {
+          "minLength": 2,
+          "description": "Defines a company code that the account is mapped to",
+          "type": "string",
+          "maxLength": 32,
+          "example": "BW01"
+        },
+        "inherit": {
+          "description": "The value specifies whether the property is inherited to lower organizations.",
+          "type": "boolean",
+          "example": false
+        },
+        "active": {
+          "description": "This flag will enable the data to be visible on UI, provided if the value is true, not visible in case of value is false. It will be also used for soft delete.",
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "LanguageTranslationEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "translation",
+        "language"
+      ],
+      "properties": {
+        "translation": {
+          "minLength": 2,
+          "description": "Translated text",
+          "type": "string",
+          "maxLength": 2000,
+          "example": "Office supplies"
+        },
+        "language": {
+          "minLength": 2,
+          "description": "Language code",
+          "type": "string",
+          "maxLength": 10,
+          "example": "en-US"
+        }
+      }
+    },
+    "AccountEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "accountCode",
+        "accountNames",
+        "companies",
+        "externalCode"
+      ],
+      "properties": {
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last sent to API. Set automatically.",
+          "type": "string"
+        },
+        "accountCode": {
+          "minLength": 1,
+          "description": "Defines a code for the account (used for invoice coding).",
+          "type": "string",
+          "maxLength": 25,
+          "example": "10012"
+        },
+        "companies": {
+          "description": "List of company units to associate account to P2P organization hierarchy",
+          "type": "array",
+          "items": {"$ref": "#/definitions/AccountCompanyEntity"}
+        },
+        "externalCode": {
+          "minLength": 1,
+          "description": "External identifier that is used as a key in API.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "4847-31231212-212121-1212"
+        },
+        "accountNames": {
+          "description": "Defines name(s) for the account (used for invoice coding). Please always include 'en-US' language tag for Basware global support, as well as any local-language tag being used. If both translations are not available, please use the same string with both language tags.",
+          "type": "array",
+          "items": {"$ref": "#/definitions/LanguageTranslationEntity"}
+        }
+      }
+    }
+  }
+}

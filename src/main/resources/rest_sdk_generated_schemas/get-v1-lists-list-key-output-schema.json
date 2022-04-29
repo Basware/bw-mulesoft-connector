@@ -1,0 +1,595 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/GenericListResponse",
+  "definitions": {
+    "GenericListResponse": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["listItems"],
+      "properties": {"listItems": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/GenericListEntity"}
+      }}
+    },
+    "GenericListEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["externalCode"],
+      "properties": {
+        "number_12": {"anyOf": [
+          {
+            "maximum": 1000000000,
+            "description": "Numeric column for lists.",
+            "type": "number",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "number_11": {"anyOf": [
+          {
+            "maximum": 1000000000,
+            "description": "Numeric column for lists.",
+            "type": "number",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "number_10": {"anyOf": [
+          {
+            "maximum": 1000000000,
+            "description": "Numeric column for lists.",
+            "type": "number",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "externalCode": {
+          "minLength": 1,
+          "description": "Id of the list entry.",
+          "type": "string",
+          "maxLength": 36,
+          "example": "6532e1d70e194ff8a193e42beab4a0d9"
+        },
+        "text_18": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text_17": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text_19": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text_14": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text_13": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text_16": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text_15": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text_10": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "number_15": {"anyOf": [
+          {
+            "maximum": 1000000000,
+            "description": "Numeric column for lists.",
+            "type": "number",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "text_12": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "number_14": {"anyOf": [
+          {
+            "maximum": 1000000000,
+            "description": "Numeric column for lists.",
+            "type": "number",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "text_11": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "number_13": {"anyOf": [
+          {
+            "maximum": 1000000000,
+            "description": "Numeric column for lists.",
+            "type": "number",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last sent to API. Set automatically.",
+          "type": "string"
+        },
+        "companies": {"anyOf": [
+          {
+            "description": "List of company units to associate genericlist to P2P organization hierarchy",
+            "type": "array",
+            "items": {"$ref": "#/definitions/GenericListCompanyEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "text_3": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": "true"
+          },
+          {"type": "null"}
+        ]},
+        "text_2": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": "John Smith"
+          },
+          {"type": "null"}
+        ]},
+        "text_5": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": "620018A"
+          },
+          {"type": "null"}
+        ]},
+        "text_4": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": "false"
+          },
+          {"type": "null"}
+        ]},
+        "text_7": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text_6": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text_9": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text_8": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dateValue_15": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "DateTime column for lists.",
+            "type": "string",
+            "example": "2019-11-11"
+          },
+          {"type": "null"}
+        ]},
+        "text_1": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": "032141"
+          },
+          {"type": "null"}
+        ]},
+        "listContent": {"anyOf": [
+          {
+            "description": "Purchase manager list identifier. Needed if Purchase Manager is integrated through Basware API. Not used by P2P.",
+            "type": "string",
+            "enum": [
+              "Plant",
+              "ProfitCenter",
+              "BusinessUnit",
+              "Project",
+              "ProjectSub",
+              "Employee",
+              "Vehicle",
+              "Customer",
+              "AccAssignmentCategory",
+              "Budget",
+              "Service",
+              "BusinessArea",
+              "PartnerProfitCenter",
+              "FixedAsset",
+              "FixedAssetSubCode",
+              "WorkOrderCode",
+              "WorkOrderSubCode",
+              "CommitmentItem",
+              "ControllingArea",
+              "FunctionalArea",
+              "Network",
+              "NetworkActivity",
+              "Tax",
+              "TaxJurisdiction",
+              "Dimension1",
+              "Dimension2",
+              "Dimension3",
+              "Dimension4",
+              "Dimension5",
+              "Dimension6",
+              "Dimension7",
+              "Dimension8",
+              "Dimension9",
+              "Dimension10",
+              "InternalOrder",
+              "SalesOrder",
+              "SalesOrderSub"
+            ],
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "number_5": {"anyOf": [
+          {
+            "maximum": 1000000000,
+            "description": "Numeric column for lists.",
+            "type": "number",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "number_4": {"anyOf": [
+          {
+            "maximum": 1000000000,
+            "description": "Numeric column for lists.",
+            "type": "number",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "number_3": {"anyOf": [
+          {
+            "maximum": 1000000000,
+            "description": "Numeric column for lists.",
+            "type": "number",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "number_2": {"anyOf": [
+          {
+            "maximum": 1000000000,
+            "description": "Numeric column for lists.",
+            "type": "number",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "number_1": {"anyOf": [
+          {
+            "maximum": 1000000000,
+            "description": "Numeric column for lists.",
+            "type": "number",
+            "minimum": 0,
+            "example": 10000
+          },
+          {"type": "null"}
+        ]},
+        "number_9": {"anyOf": [
+          {
+            "maximum": 1000000000,
+            "description": "Numeric column for lists.",
+            "type": "number",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "number_8": {"anyOf": [
+          {
+            "maximum": 1000000000,
+            "description": "Numeric column for lists.",
+            "type": "number",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "number_7": {"anyOf": [
+          {
+            "maximum": 1000000000,
+            "description": "Numeric column for lists.",
+            "type": "number",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "number_6": {"anyOf": [
+          {
+            "maximum": 1000000000,
+            "description": "Numeric column for lists.",
+            "type": "number",
+            "minimum": 0,
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "dateValue_5": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "DateTime column for lists.",
+            "type": "string",
+            "example": "2019-11-11"
+          },
+          {"type": "null"}
+        ]},
+        "dateValue_4": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "DateTime column for lists.",
+            "type": "string",
+            "example": "2019-11-11"
+          },
+          {"type": "null"}
+        ]},
+        "dateValue_7": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "DateTime column for lists.",
+            "type": "string",
+            "example": "2019-11-11"
+          },
+          {"type": "null"}
+        ]},
+        "dateValue_6": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "DateTime column for lists.",
+            "type": "string",
+            "example": "2019-11-11"
+          },
+          {"type": "null"}
+        ]},
+        "dateValue_9": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "DateTime column for lists.",
+            "type": "string",
+            "example": "2019-11-11"
+          },
+          {"type": "null"}
+        ]},
+        "dateValue_8": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "DateTime column for lists.",
+            "type": "string",
+            "example": "2019-11-11"
+          },
+          {"type": "null"}
+        ]},
+        "dateValue_10": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "DateTime column for lists.",
+            "type": "string",
+            "example": "2019-11-11"
+          },
+          {"type": "null"}
+        ]},
+        "dateValue_1": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "DateTime column for lists.",
+            "type": "string",
+            "example": "2019-11-11"
+          },
+          {"type": "null"}
+        ]},
+        "dateValue_11": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "DateTime column for lists.",
+            "type": "string",
+            "example": "2019-11-11"
+          },
+          {"type": "null"}
+        ]},
+        "dateValue_12": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "DateTime column for lists.",
+            "type": "string",
+            "example": "2019-11-11"
+          },
+          {"type": "null"}
+        ]},
+        "dateValue_3": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "DateTime column for lists.",
+            "type": "string",
+            "example": "2019-11-11"
+          },
+          {"type": "null"}
+        ]},
+        "dateValue_13": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "DateTime column for lists.",
+            "type": "string",
+            "example": "2019-11-11"
+          },
+          {"type": "null"}
+        ]},
+        "dateValue_2": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "DateTime column for lists.",
+            "type": "string",
+            "example": "2019-11-11"
+          },
+          {"type": "null"}
+        ]},
+        "dateValue_14": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "DateTime column for lists.",
+            "type": "string",
+            "example": "2019-11-11"
+          },
+          {"type": "null"}
+        ]},
+        "text_25": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text_24": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text_21": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text_20": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text_23": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text_22": {"anyOf": [
+          {
+            "description": "Text column for lists.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "GenericListCompanyEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "companyCode",
+        "active"
+      ],
+      "properties": {
+        "companyCode": {
+          "minLength": 2,
+          "description": "Company code identifier. Corresponds to company code used in P2P. Used as key in this array.",
+          "type": "string",
+          "maxLength": 32,
+          "example": "BW01"
+        },
+        "active": {
+          "description": "Gets or Sets Active",
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1936 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/schema",
+  "definitions": {
+    "schema": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/PurchaseOrderEntity"}
+    },
+    "ImportedPurchaseOrderLineCodingRowEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["externalCode"],
+      "properties": {
+        "costCenterCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Cost center code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "71830"
+          },
+          {"type": "null"}
+        ]},
+        "workOrderSubName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Work order sub name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimName1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Distribution mode.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimName2": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "externalCode": {
+          "minLength": 1,
+          "description": "Unique external identifier that is used as a key in API.",
+          "type": "string",
+          "maxLength": 100,
+          "example": "060cb8ea-5464-11ea-a38b-2e728ce88122"
+        },
+        "budgetCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Budget code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimCode5": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimCode6": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimCode7": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimCode8": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimCode9": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "profitCenterName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Profit center name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "projectSubCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Project sub code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "internalOrderName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Internal order name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "vehicleNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Vehicle number.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "distributionMode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Distribution mode.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "salesOrderSubName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Sales order sub name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "businessUnitName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Business unit name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "employeeName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Employee name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "accountCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Account  code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "18200"
+          },
+          {"type": "null"}
+        ]},
+        "fixedAssetName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Fixed asset name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "profitCenterCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Profit center code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "salesOrderCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Sales order code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "budgetName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Budget name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "customerName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Customer name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "internalOrderCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Internal order code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text3": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text4": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "businessAreaCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Business area code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "LineInvoicingText1-5: Can be used for for customer-specific date fields.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text2": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimName7": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "costCenterName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Cost center name.",
+            "type": "string",
+            "maxLength": 2000,
+            "example": "Tokyo"
+          },
+          {"type": "null"}
+        ]},
+        "salesOrderSubCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Sales order sub code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "workOrderSubCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Work order sub code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimName8": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimName9": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "text5": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "projectName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Project name.",
+            "type": "string",
+            "maxLength": 255,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimName3": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimName4": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimName5": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimName6": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "vehicleName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Vehicle name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "salesOrderName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Sales order name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "distributionCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Distribution code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "accountName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Account name.",
+            "type": "string",
+            "maxLength": 2000,
+            "example": "Equipment purchases"
+          },
+          {"type": "null"}
+        ]},
+        "serviceCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Service code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "workOrderCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Work order code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "customerCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Customer code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "businessAreaName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Business area name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimCode10": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "employeeCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Employee code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "fixedAssetSubName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Fixed assets sub name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "accAssignmentCategoryCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Account assignment category code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimName10": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "projectCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Project code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "businessUnitCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Business unit code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "num1": {"anyOf": [
+          {
+            "description": "LineInvoicingNum1-5: Can be used for for customer-specific date fields.",
+            "type": "number"
+          },
+          {"type": "null"}
+        ]},
+        "num5": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "num4": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "num3": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "num2": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "fixedAssetSubCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Fixed asset sub code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "date5": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "date4": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "date3": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "date2": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "serviceName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Service name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "date1": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "LineInvoicingDate1-5: Can be used for for customer-specific date fields.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimCode1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "DimCode 1-10: Code fields for Customer-specific coding dimensions.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "fixedAssetCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Fixed asset code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimCode2": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimCode3": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "dimCode4": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "workOrderName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Work order name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "projectSubName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Project sub name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "accAssignmentCategoryName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Account assignment category name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "DeliveryAddress": {
+      "description": "Specifies delivery address for the purchase requisition. If no address specified, uses the default delivery address of organization (configured in P2P).\r\nDelivery address on header level applies to entire purchase reuisition. If addresses are also provided on requisition lines, these will apply only to the corresponding lines.",
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "pObox": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "PO box",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "globalLocationNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Global location number.",
+            "type": "string",
+            "maxLength": 13,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "additionalStreetName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Additional street name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "blockName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Block name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "city": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "City.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Toronto"
+          },
+          {"type": "null"}
+        ]},
+        "description": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Description.",
+            "type": "string",
+            "maxLength": 1000,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "countrySubEntityDescription": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 50,
+            "example": "Texas"
+          },
+          {"type": "null"}
+        ]},
+        "countrySubEntity": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 50,
+            "example": "TX"
+          },
+          {"type": "null"}
+        ]},
+        "room": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Room.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "buildingName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Building name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "streetName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Street name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Maple street"
+          },
+          {"type": "null"}
+        ]},
+        "countryCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Country code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "CA"
+          },
+          {"type": "null"}
+        ]},
+        "district": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "District.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "name": {
+          "minLength": 1,
+          "description": "Specifies the addressâ\u20ac™ name for the goods delivery.",
+          "type": "string",
+          "maxLength": 250,
+          "example": "Maple street office"
+        },
+        "buildingNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Building number.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "68"
+          },
+          {"type": "null"}
+        ]},
+        "countryName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Country name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Canada"
+          },
+          {"type": "null"}
+        ]},
+        "department": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Department.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "floor": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Floor.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "region": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Region.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "postalZone": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Postal zone.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "02600"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "PurchaseOrderEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "externalCode",
+        "extOrderNumber",
+        "extRequisitionNumber"
+      ],
+      "properties": {
+        "supplierOrderingEmail": {"anyOf": [
+          {
+            "minLength": 0,
+            "pattern": "^((\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*)\\s*[;]{0,1}\\s*)+$",
+            "description": "The email address(es) where the order is sent to when sending order to supplier. Can contain multiple email addresses separated by semicolon.",
+            "type": "string",
+            "maxLength": 1800,
+            "example": "Mark@supplier.com"
+          },
+          {"type": "null"}
+        ]},
+        "orderType": {"anyOf": [
+          {
+            "type": "string",
+            "enum": [
+              "Standard",
+              "Blanket"
+            ]
+          },
+          {"type": "null"}
+        ]},
+        "hidePricesFromSupplier": {"anyOf": [
+          {
+            "description": "Specifies, if all price information is hidden from the supplier in the outgoing order.",
+            "type": "boolean",
+            "example": false
+          },
+          {"type": "null"}
+        ]},
+        "externalCode": {
+          "minLength": 1,
+          "description": "External identifier that is used as a key in API.",
+          "type": "string",
+          "maxLength": 100,
+          "example": "4847-31231212-212121-1212"
+        },
+        "deliveryInstruction": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Delivery instruction to supplier (shown on header). Here users can provide free-text information in addition to deliveryTerm and deliveryLocation.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last sent to API. Set automatically.",
+          "type": "string"
+        },
+        "deliveryAddress": {"$ref": "#/definitions/DeliveryAddress"},
+        "organizationIdentifier": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "P2P company  code for buyer organisation unit. Either 'organizationUnitCode' or 'organizationIdentifier' is required.",
+            "type": "string",
+            "maxLength": 32,
+            "example": "BuyerLtd"
+          },
+          {"type": "null"}
+        ]},
+        "extRequisitionNumber": {
+          "minLength": 1,
+          "description": "Requisition number of related requisition in external system (for imported requisitions).",
+          "type": "string",
+          "maxLength": 100,
+          "example": "REQ21037756"
+        },
+        "deliveryTerm": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Delivery term. Generally Incoterms (International Commercial Terms) are used here, however customer and supplier can also agree to use different sets of delivery terms.",
+            "type": "string",
+            "maxLength": 100,
+            "example": "Supplier to Buyer via Post"
+          },
+          {"type": "null"}
+        ]},
+        "desiredDeliveryEndDate": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "Buyer requested latest delivery date.",
+            "type": "string",
+            "example": "2020-10-24T00:00:00"
+          },
+          {"type": "null"}
+        ]},
+        "noteToSupplier": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "This note is included when order is sent to supplier.",
+            "type": "string",
+            "maxLength": 2000,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "contractNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Specifies contract which this order relates to.",
+            "type": "string",
+            "maxLength": 255,
+            "example": "CON2198763"
+          },
+          {"type": "null"}
+        ]},
+        "releaseOrdersRequired": {"anyOf": [
+          {
+            "description": "Used only if the order type is blanket to specify, if the blanket order requires release orders.",
+            "type": "boolean",
+            "example": false
+          },
+          {"type": "null"}
+        ]},
+        "classification": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "\"Order classification code. Values can be specified by customer. Often used to group orders and assign different groups to be handled to different persons.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "ownerOrderingEmail": {"anyOf": [
+          {
+            "minLength": 0,
+            "pattern": "^((\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*)\\s*[;]{0,1}\\s*)+$",
+            "description": "Contact email to which supplier can send questions about the order. Note: When order is sent to supplier, it is not sent to this email. Note: Fields visible on the order sent to supplier are configured in P2P Purchase.",
+            "type": "string",
+            "maxLength": 1800,
+            "example": "john.smith@buyer.com"
+          },
+          {"type": "null"}
+        ]},
+        "purchasingGroupCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Purchasing group code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "processingStatus": {"anyOf": [
+          {
+            "description": "Processing status of the order in Basware API. Enables importing orders with > 200 lines. Possible values to POST by API user: 1) 'Uncompleted' - Order will not be imported to P2P and more lines can be added using PATCH method. 2) 'ReadyForImport' - Order will now be imported to P2P, no more lines can be sent. Default Value: 'Uncompleted'. After starting import, processingStatus changes automatically to 'ImportInProgress' and 'Imported' / 'ImportFailed' to indicate updated import status.",
+            "type": "string",
+            "enum": [
+              "Uncompleted",
+              "ReadyForImport",
+              "ImportInProgress",
+              "Imported",
+              "ImportFailed"
+            ],
+            "example": "ReadyForImport"
+          },
+          {"type": "null"}
+        ]},
+        "headerDataNum5": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "headerDataNum3": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "headerDataNum4": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "headerDataNum1": {"anyOf": [
+          {
+            "description": "HeaderDataNum1-5: Can be used for for customer-specific numeric fields.",
+            "type": "number"
+          },
+          {"type": "null"}
+        ]},
+        "validityPeriodStartDate": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "Used only if the order type is blanket to specify the start date for blanket purchase order validity period (date format: yyyy-MM-dd).",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "headerDataNum2": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "purpose": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Reason why order is placed.",
+            "type": "string",
+            "maxLength": 2000,
+            "example": "Goods for Project X"
+          },
+          {"type": "null"}
+        ]},
+        "headerDataText1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "HeaderDataText1-5: Can be used for for customer-specific numeric fields.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "purchasingGroupName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Purchasing group name.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "headerDataText2": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "supplierCode": {"anyOf": [
+          {
+            "minLength": 1,
+            "description": "Supplier code to whom the order is addressed.",
+            "type": "string",
+            "maxLength": 32,
+            "example": "321687"
+          },
+          {"type": "null"}
+        ]},
+        "headerDataText3": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "deliveryReceivers": {"anyOf": [
+          {
+            "description": "List of people who will get GR -task in Purchase for this order. The users specified needs to have appropriate permission to P2P to receive goods. Each entry must uniquely identify a user. Identifiers are applied in following order: 1) externalCode, 2) loginAccount, 3) emailAddress. This is a list with max. 20 items.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/PurchaseOrderUserEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "purchaseCurrency": {"anyOf": [
+          {
+            "minLength": 1,
+            "description": "Currency code for currency in which the order is placed.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "USD"
+          },
+          {"type": "null"}
+        ]},
+        "headerDataDate2": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "headerDataDate1": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "HeaderDataDate1-5: Can be used for for customer-specific date fields.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "headerDataDate4": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "headerDataDate3": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "headerDataDate5": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "headerDataText4": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "headerDataText5": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "attachPdfToNetworkOrder": {
+          "description": "Specifies if order is attached as pdf file when order is sent to supplier through Basware network.",
+          "type": "boolean",
+          "example": true
+        },
+        "otherOrderingEmail": {"anyOf": [
+          {
+            "pattern": "^((\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*)\\s*[;]{0,1}\\s*)+$",
+            "description": "The email address(es) where the order is sent by P2P purchase. Can contain multiple email addresses separated by semicolon. The order is sent to these addresses when orderRecipientType is 'Owner' or 'Both'.",
+            "type": "string",
+            "example": "Mark@supplier.com"
+          },
+          {"type": "null"}
+        ]},
+        "receiverToContact": {"$ref": "#/definitions/PurchaseOrderUserEntity"},
+        "paymentTermCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Order payment term code.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "30N"
+          },
+          {"type": "null"}
+        ]},
+        "lines": {"anyOf": [
+          {
+            "description": "Purchase order lines. Notes: \r\n1. Row count needs to be min 1 and max 200. At least one of the rows needs to have quantity > 0. \r\n2. If you need to import an order with more than 100 lines, this can be done by setting â\u20ac˜processingStatusâ\u20ac™ to â\u20ac˜Uncompletedâ\u20ac™ when POSTing the purchaseOrder and then adding additional lines to it using the PATCH method.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/PurchaseOrderLineEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "extOrderNumber": {
+          "minLength": 1,
+          "description": "Order number in external system",
+          "type": "string",
+          "maxLength": 100,
+          "example": "PO1235876123"
+        },
+        "supplierName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Supplier name to whom the order is addressed.",
+            "type": "string",
+            "maxLength": 255,
+            "example": "ACME supplier ltd."
+          },
+          {"type": "null"}
+        ]},
+        "owner": {"$ref": "#/definitions/PurchaseOrderUserEntity"},
+        "deliveryLocation": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Details on Delivery",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "validityPeriodEndDate": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "Used only if the order type is blanket to specify the end date for blanket purchase order validity period (date format: yyyy-MM-dd).",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "organizationUnitCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "P2P company  code for buyer organisation unit. Either 'organizationUnitCode' or 'organizationIdentifier' is required.",
+            "type": "string",
+            "maxLength": 32,
+            "example": "BE100"
+          },
+          {"type": "null"}
+        ]},
+        "orderRecipientType": {"anyOf": [
+          {
+            "description": "Determines who order is sent to.\r\n-Supplier(0) : Order is sent only to supplier.\r\n-If orderingMethod is email, order is sent to the email indicated by 'supplierOrderingEmail'. -If orderingMethod is network, the order is sent through Basware network.\r\n-Owner (1): Order is sent only to email address(es) indicated by field 'otherOrderingEmail'. Used for example when goods were picked up from a store and no order needs to be sent to supplier.\r\n-Both (2): Order is sent to both supplier and email addresses indicated by field 'otherOrderingEmail'. Order delivery method to supplier is determined by orderingMethod, same as above.",
+            "type": "string",
+            "enum": [
+              "Supplier",
+              "Owner",
+              "SupplierAndOwner"
+            ],
+            "example": "Supplier"
+          },
+          {"type": "null"}
+        ]},
+        "desiredDeliveryDate": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "Delivery date requested by buyer.",
+            "type": "string",
+            "example": "2020-10-24T00:00:00"
+          },
+          {"type": "null"}
+        ]},
+        "paymentTermName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Order payment term name.",
+            "type": "string",
+            "maxLength": 2000,
+            "example": "30 Days Net"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "PurchaseOrderUserEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "loginAccount": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Login account of user.",
+            "type": "string",
+            "maxLength": 100,
+            "example": "basware\\jyrik"
+          },
+          {"type": "null"}
+        ]},
+        "emailAddress": {"anyOf": [
+          {
+            "minLength": 0,
+            "pattern": "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$",
+            "description": "Email address of user.",
+            "type": "string",
+            "maxLength": 320,
+            "example": "testmail1@mailtest.com"
+          },
+          {"type": "null"}
+        ]},
+        "externalCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "ExternalCode of user.",
+            "type": "string",
+            "maxLength": 36,
+            "example": "4847-31231212-212121-1212"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "PurchaseOrderLineEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "externalCode",
+        "extOrderLineNumber",
+        "categoryCode",
+        "priceType",
+        "unitPrice"
+      ],
+      "properties": {
+        "lineDataDate2": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "lineDataText4": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "lineDataDate3": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "lineDataNum1": {"anyOf": [
+          {
+            "description": "LineDataNum1-5 can be used for customer-specific numeric fields. This data will go to â\u20ac˜Line dataâ\u20ac™ -tab of the order line in P2P.",
+            "type": "number"
+          },
+          {"type": "null"}
+        ]},
+        "lineDataText3": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "supplierProductName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Product name used by supplier.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Developer laptop, 15 inch"
+          },
+          {"type": "null"}
+        ]},
+        "lineDataNum2": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "lineDataDate1": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "LineDataDate1-5 can be used for customer-specific date fields. This data will go to â\u20ac˜Line dataâ\u20ac™ -tab of the order line in P2P.",
+            "type": "string",
+            "example": "2020-10-24T00:00:00"
+          },
+          {"type": "null"}
+        ]},
+        "lineDataNum3": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "lineDataText5": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "externalCode": {
+          "minLength": 1,
+          "description": "Unique external identifier that is used as a key in API. Identifies order line for updates through API.",
+          "type": "string",
+          "maxLength": 100
+        },
+        "lineDataNum4": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "lineDataNum5": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "quantityUnitName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Description for quantityUnit.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Pieces"
+          },
+          {"type": "null"}
+        ]},
+        "storageLocation": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Storage location.",
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "deliveryInstruction": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Delivery instruction for supplier.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Must be delivered before 17:00"
+          },
+          {"type": "null"}
+        ]},
+        "linePricingNum1": {"anyOf": [
+          {
+            "description": "LinePricingNum1-5 can be used for customer-specific numeric fields. This data will go to â\u20ac˜Pricingâ\u20ac™ -tab of the order line in P2P.",
+            "type": "number"
+          },
+          {"type": "null"}
+        ]},
+        "lineDataDate4": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "lineDataText2": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "linePricingNum3": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "lineDataDate5": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "lineDataText1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "LineDataText1-5 can be used for customer-specific text fields. This data will go to â\u20ac˜Line dataâ\u20ac™ -tab of the order line in P2P.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "taxJurisdictionCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Tax juristiction code.",
+            "type": "string",
+            "maxLength": 25,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "linePricingNum2": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "deliveryAddress": {"$ref": "#/definitions/DeliveryAddress"},
+        "additionalInfo": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Free-text field for additional notes regarding order line. Sent to vendor along with the order.",
+            "type": "string",
+            "maxLength": 2000,
+            "example": "one year"
+          },
+          {"type": "null"}
+        ]},
+        "taxPercent": {"anyOf": [
+          {
+            "description": "When taxCode is provided, taxPercent will be overwritten by the tax percent configured on the specified taxCode.",
+            "type": "number",
+            "example": 25
+          },
+          {"type": "null"}
+        ]},
+        "discountPercentReason": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Reason for discount.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "codingRows": {"anyOf": [
+          {
+            "description": "Coding rows.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/ImportedPurchaseOrderLineCodingRowEntity"}
+          },
+          {"type": "null"}
+        ]},
+        "unitPrice": {
+          "description": "Price per unit, without discount.",
+          "type": "number",
+          "example": 125
+        },
+        "desiredDeliveryEndDate": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "Buyer requested end date for delivery.",
+            "type": "string",
+            "example": "2020-10-24T00:00:00"
+          },
+          {"type": "null"}
+        ]},
+        "taxCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "If empty, tax code will be resolved using tax percent. If both are empty, Basware P2P resolves the value using the tax percent from the purchasing category.",
+            "type": "string",
+            "maxLength": 32,
+            "example": "T25"
+          },
+          {"type": "null"}
+        ]},
+        "conversionNumerator": {
+          "description": "Factor for conversions.",
+          "type": "number"
+        },
+        "receiveAutomatically": {
+          "description": "Specifies if order line will be received automatically. \r\nTrue - Order line will be automatically received(no user input required)\r\nFalse - Order line will not be automatically received.",
+          "type": "boolean",
+          "example": false
+        },
+        "materialGroup": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Material group.",
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "supplierProductCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Product code used by supplier.",
+            "type": "string",
+            "maxLength": 50,
+            "example": "912736320"
+          },
+          {"type": "null"}
+        ]},
+        "plant": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Plant.",
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "taxPercent2": {"anyOf": [
+          {
+            "description": "When taxCode is provided, taxPercent will be overwritten by the tax percent configured on the specified taxCode.",
+            "type": "number",
+            "example": 0
+          },
+          {"type": "null"}
+        ]},
+        "linePricingText2": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "linePricingDate1": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "LinePricingDate1-5 can be used for customer-specific date fields. This data will go to â\u20ac˜Pricingâ\u20ac™ -tab of the order line in P2P.",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "linePricingText1": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "LinePricingText1-5 can be used for customer-specific text fields. This data will go to â\u20ac˜Pricingâ\u20ac™ -tab of the order line in P2P.",
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "linePricingDate2": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "linePricingDate3": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "linePricingDate4": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "linePricingDate5": {"anyOf": [
+          {
+            "format": "date-time",
+            "type": "string",
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "linePricingText5": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "linePricingText4": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "linePricingText3": {"anyOf": [
+          {
+            "minLength": 0,
+            "type": "string",
+            "maxLength": 250,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "description": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Product description.",
+            "type": "string",
+            "maxLength": 2000,
+            "example": "Developer laptop, 15 inch, model MK2160"
+          },
+          {"type": "null"}
+        ]},
+        "quantityUnit": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Unit code for ordered quantity (pcs, kg, litre, boxes, etc).",
+            "type": "string",
+            "maxLength": 10,
+            "example": "PCS"
+          },
+          {"type": "null"}
+        ]},
+        "grNote": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Note for receiving goods.",
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "quantity": {
+          "description": "Ordered quantity.",
+          "type": "number",
+          "example": 1
+        },
+        "discountPercent": {
+          "description": "Percentage of discount on order line. This percentage amount is deducted from unitPrice by P2P when calculating discounted price.",
+          "type": "number",
+          "example": 0
+        },
+        "priceType": {
+          "description": "Specified whether price been originally net (0) or gross (1).",
+          "type": "string",
+          "enum": [
+            "Net",
+            "Gross"
+          ],
+          "example": "gross"
+        },
+        "subUOM": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Sub unit of measure.",
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "categoryCode": {
+          "minLength": 0,
+          "description": "Category code linked to product",
+          "type": "string",
+          "maxLength": 100,
+          "example": "007"
+        },
+        "unspsc": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Product classification code (UNSPC).",
+            "type": "string",
+            "maxLength": 64,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "buyerProductCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Product code used by buyer.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "ProjectLaptops100"
+          },
+          {"type": "null"}
+        ]},
+        "linePricingNum5": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "desiredDeliveryDate": {"anyOf": [
+          {
+            "format": "date-time",
+            "description": "Delivery date requested by buyer.",
+            "type": "string",
+            "example": "2020-10-24T00:00:00"
+          },
+          {"type": "null"}
+        ]},
+        "linePricingNum4": {"anyOf": [
+          {"type": "number"},
+          {"type": "null"}
+        ]},
+        "extOrderLineNumber": {
+          "minLength": 1,
+          "description": "Order line number in customer system.",
+          "type": "string",
+          "maxLength": 100,
+          "example": "1"
+        },
+        "allowPartialDeliveries": {
+          "description": "Specifies whether the goods need to be delivered in one batch.",
+          "type": "boolean",
+          "example": false
+        },
+        "conversionDenumerator": {
+          "description": "Factor for conversions.",
+          "type": "number"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,329 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ExportedContractsResponse",
+  "definitions": {
+    "ExportedContractEntity": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "externalCode",
+        "referenceCode",
+        "companyCode",
+        "title",
+        "validFrom",
+        "validTo",
+        "total",
+        "currencyCode",
+        "owner",
+        "active",
+        "suppliers"
+      ],
+      "properties": {
+        "companyCode": {
+          "minLength": 1,
+          "description": "Buyer Company Code",
+          "type": "string",
+          "maxLength": 25,
+          "example": "200"
+        },
+        "amountType": {
+          "description": "net or gross",
+          "type": "string",
+          "enum": [
+            "Net",
+            "Gross"
+          ],
+          "example": "12197627"
+        },
+        "owner": {
+          "minLength": 1,
+          "description": "The person owning the contract",
+          "type": "string",
+          "maxLength": 100,
+          "example": "Liz Black"
+        },
+        "externalCode": {
+          "minLength": 1,
+          "description": "External identifier that is used as a key in API.",
+          "type": "string",
+          "maxLength": 100,
+          "example": "4847-31231212-212121-1212"
+        },
+        "suppliers": {
+          "description": "Suppliers for contract",
+          "type": "array",
+          "items": {"$ref": "#/definitions/ExportedContractSupplier"}
+        },
+        "companyName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Buyer Company Name",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Acme Motor leasinc inc."
+          },
+          {"type": "null"}
+        ]},
+        "description": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "General information on contract",
+            "type": "string",
+            "maxLength": 2000,
+            "example": "This contract is for car leasing for Acme Motor leasing inc."
+          },
+          {"type": "null"}
+        ]},
+        "contactPerson": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "The person to contact on contract matters",
+            "type": "string",
+            "maxLength": 100,
+            "example": "Liz Black"
+          },
+          {"type": "null"}
+        ]},
+        "active": {
+          "description": "States if the contract can be used or not",
+          "type": "boolean",
+          "example": true
+        },
+        "validFrom": {
+          "format": "date-time",
+          "description": "The date on which the contract legally came in to force",
+          "type": "string",
+          "example": "2021-01-01"
+        },
+        "title": {
+          "minLength": 1,
+          "description": "A short name generally used to identify the contract in reporting",
+          "type": "string",
+          "maxLength": 250,
+          "example": "Car Leasing"
+        },
+        "type": {"anyOf": [
+          {
+            "minLength": 1,
+            "description": "Determined by the contract management system. Types are displayed only for informational purposes",
+            "type": "string",
+            "maxLength": 100,
+            "example": ""
+          },
+          {"type": "null"}
+        ]},
+        "spendPlanSpend": {
+          "description": "States if spend of spend plans using this contract is collected for spend reporting.",
+          "type": "boolean",
+          "example": true
+        },
+        "processingStatus": {
+          "description": "Processing status of the contract spend in Basware API. Use 'WaitingForExport' to get unacknowledged records.",
+          "type": "string",
+          "enum": [
+            "WaitingForExport",
+            "Exported"
+          ],
+          "example": "WaitingForExport"
+        },
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last sent to API. Set automatically.",
+          "type": "string"
+        },
+        "total": {
+          "description": "Total expected expenditure under this contract between the Start and End Dates specified above",
+          "type": "number",
+          "example": 10000
+        },
+        "paymentTermCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Payment term for this contract",
+            "type": "string",
+            "maxLength": 250,
+            "example": "NET30"
+          },
+          {"type": "null"}
+        ]},
+        "externalLinks": {"anyOf": [
+          {
+            "description": "ExternalLinks for contract",
+            "type": "array",
+            "items": {"$ref": "#/definitions/ExportedContractExternalLink"}
+          },
+          {"type": "null"}
+        ]},
+        "spendTotals": {"anyOf": [
+          {
+            "description": "Aggregate sums of all projected / spent amounts per document type. \r\n1) For 'AccountingDocument', this is the actual total spend. The spend is from invoices which are transferred to accounting (documents in circulation are not included). All invoices linked to the contract are included, whether PO, non-PO, or payment plan matched invoices. \r\n2) For 'PurchaseOrder', this is the projected total spend. Included are all purchaseOrders in P2P Purchase, which are sent to supplier and linked to the contract. It does not matter whether the orders have been invoiced or not. Spend from matching orders is not included. \r\n3) For 'SpendPlan', this is the projected total spend. Included are all active spend plans. The spend from a spend plan gets added the moment the spend plan is activated. It does not matter if the spend plan has received any invoices or not. \r\nNote: The individual spend events can be accessed through exportedContractSpends API by providing the externalCode of the contract and optionally the document type.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/ExportedContractSpendTotal"}
+          },
+          {"type": "null"}
+        ]},
+        "orderSpend": {
+          "description": "States if spend of orders using this contract is collected for spend reporting.",
+          "type": "boolean",
+          "example": true
+        },
+        "invoiceSpend": {
+          "description": "States if spend of invoices using this contract is collected for spend reporting.",
+          "type": "boolean",
+          "example": true
+        },
+        "referenceCode": {
+          "minLength": 1,
+          "description": "FreeText Reference shown in contracts view (Contract Number)",
+          "type": "string",
+          "maxLength": 255,
+          "example": "12197627"
+        },
+        "currencyCode": {
+          "minLength": 2,
+          "description": "Currency for the total value",
+          "type": "string",
+          "maxLength": 3,
+          "example": "EUR"
+        },
+        "validTo": {
+          "format": "date-time",
+          "description": "The date on which the contract will naturally end if not active decisions are made to extend or terminate early",
+          "type": "string",
+          "example": "2023-12-31"
+        }
+      }
+    },
+    "ExportedContractSupplier": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["supplierCode"],
+      "properties": {
+        "supplierName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Acme Motor Leasing inc.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "32789"
+          },
+          {"type": "null"}
+        ]},
+        "supplierCode": {
+          "minLength": 1,
+          "description": "Code of the supplier on the contract",
+          "type": "string",
+          "maxLength": 25,
+          "example": "32789"
+        }
+      }
+    },
+    "ExportedContractsResponse": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["contracts"],
+      "properties": {"contracts": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/ExportedContractEntity"}
+      }}
+    },
+    "ExportedContractExternalLink": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["externalLinkName"],
+      "properties": {
+        "externalLinkURL": {"anyOf": [
+          {
+            "minLength": 1,
+            "description": "URL used when selecting external link",
+            "type": "string",
+            "maxLength": 2000,
+            "example": "https://www.acmemotorsinc.com"
+          },
+          {"type": "null"}
+        ]},
+        "externalLinkName": {
+          "minLength": 1,
+          "description": "Name shown in UI for external link",
+          "type": "string",
+          "maxLength": 512,
+          "example": "Acme motor leasing"
+        }
+      }
+    },
+    "ExportedContractSpendTotal": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "grossSumcompany": {
+          "description": "Gross sum of spends in the currency of the company.",
+          "type": "number",
+          "example": 12685.2
+        },
+        "documentType": {
+          "description": "Specifies the type of document for which sums of projected / spent amounts are stated.",
+          "type": "string",
+          "enum": [
+            "AccountingDocument",
+            "PurchaseOrder",
+            "SpendPlan"
+          ],
+          "example": "AccountingDocument"
+        },
+        "netSumCompany": {
+          "description": "Net sum of spends in the currency of the company.",
+          "type": "number",
+          "example": 10230
+        },
+        "netSumContract": {
+          "description": "Net sum of spends in the currency of the contract.",
+          "type": "number",
+          "example": 2000
+        },
+        "netSumOrganization": {
+          "description": "Net sum of spends in the currency of the Organization.",
+          "type": "number",
+          "example": 1680
+        },
+        "grossSumOrganization": {
+          "description": "Gross sum of spends in the currency of the Organization.",
+          "type": "number",
+          "example": 2291.52
+        },
+        "currencyCodecompany": {"anyOf": [
+          {
+            "minLength": 2,
+            "description": "Currency code of the company.",
+            "type": "string",
+            "maxLength": 3,
+            "example": "SEK"
+          },
+          {"type": "null"}
+        ]},
+        "currencyCodeOrganization": {"anyOf": [
+          {
+            "minLength": 2,
+            "description": "Currency code of the Organization.",
+            "type": "string",
+            "maxLength": 3,
+            "example": "GBP"
+          },
+          {"type": "null"}
+        ]},
+        "grossSumContract": {
+          "description": "Gross sum of spends in the currency of the contract.",
+          "type": "number",
+          "example": 2480
+        },
+        "currencyCodeContract": {"anyOf": [
+          {
+            "description": "Currency code of the contract.",
+            "type": "string",
+            "example": "EUR"
+          },
+          {"type": "null"}
+        ]}
+      }
+    }
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/PaymentResponseEntity",
+  "definitions": {"PaymentResponseEntity": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+      "externalCode",
+      "success",
+      "paymentBlock"
+    ],
+    "properties": {
+      "checkNumber": {"anyOf": [
+        {
+          "minLength": 0,
+          "description": "Unique identifier from the check used in payment transaction.",
+          "type": "string",
+          "maxLength": 25,
+          "example": "123456012"
+        },
+        {"type": "null"}
+      ]},
+      "paymentBlock": {
+        "description": "Payment block.",
+        "type": "boolean",
+        "example": false
+      },
+      "externalCode": {
+        "minLength": 1,
+        "description": "External identifier that is used as a key in API. External code of the paymentResponse needs to be unique within an accountingDocument -record. You should always create a new externalCode when sending response, there is no overwriting/editing of previous response. This will enable the visibility that all responses are tracked in API. ExternalCode in response messages plays no role in P2P (other than it is used in communication between P2P and the API layer).",
+        "type": "string",
+        "maxLength": 36,
+        "example": "f24fff19120445de9c23651434129991"
+      },
+      "paymentReversalDocument": {"anyOf": [
+        {
+          "minLength": 0,
+          "description": "Payment reversal document can be updated here.",
+          "type": "string",
+          "maxLength": 250,
+          "example": "873326806"
+        },
+        {"type": "null"}
+      ]},
+      "sourceSystem": {"anyOf": [
+        {
+          "minLength": 0,
+          "description": "Indicates the system that is returning payment response.",
+          "type": "string",
+          "maxLength": 32,
+          "example": "ERP1"
+        },
+        {"type": "null"}
+      ]},
+      "paidTotal": {"anyOf": [
+        {
+          "description": "Total amount paid for the invoice so far. For partial payments, this value will increase each time more of the invoice is paid.",
+          "type": "number",
+          "example": 1136.8
+        },
+        {"type": "null"}
+      ]},
+      "paymentMessage": {"anyOf": [
+        {
+          "minLength": 0,
+          "description": "Payment message can be updated here.",
+          "type": "string",
+          "maxLength": 100,
+          "example": ""
+        },
+        {"type": "null"}
+      ]},
+      "success": {
+        "description": "Indicates a succesful response from ERP. Needs to be 'true' for P2P to update invoice data field contents.",
+        "type": "boolean",
+        "example": true
+      },
+      "paymentMethod": {"anyOf": [
+        {
+          "minLength": 0,
+          "description": "Payment method can be updated here.",
+          "type": "string",
+          "maxLength": 25,
+          "example": "BankTransfer"
+        },
+        {"type": "null"}
+      ]},
+      "paymentTermCode": {"anyOf": [
+        {
+          "minLength": 0,
+          "description": "Invoice payment term code can be updated here.",
+          "type": "string",
+          "maxLength": 25,
+          "example": "7D2-NT30"
+        },
+        {"type": "null"}
+      ]},
+      "responseMessage": {"anyOf": [
+        {
+          "minLength": 0,
+          "description": "This message is stored to P2P invoice action log.",
+          "type": "string",
+          "maxLength": 250,
+          "example": "Invoice Paid."
+        },
+        {"type": "null"}
+      ]},
+      "paymentDate": {"anyOf": [
+        {
+          "format": "date-time",
+          "description": "Date when the invoice was paid can be updated here.",
+          "type": "string"
+        },
+        {"type": "null"}
+      ]},
+      "cashDiscount": {"anyOf": [
+        {
+          "description": "discount amount can be updated here.",
+          "type": "number",
+          "example": 23.2
+        },
+        {"type": "null"}
+      ]},
+      "paymentDocument": {"anyOf": [
+        {
+          "minLength": 0,
+          "description": "Payment document number can be updated here.",
+          "type": "string",
+          "maxLength": 250,
+          "example": "873326806"
+        },
+        {"type": "null"}
+      ]},
+      "paymentNumber": {"anyOf": [
+        {
+          "minLength": 0,
+          "description": "Payment number can be updated here.",
+          "type": "string",
+          "maxLength": 250,
+          "example": "122447-55257552"
+        },
+        {"type": "null"}
+      ]}
+    }
+  }}
+}

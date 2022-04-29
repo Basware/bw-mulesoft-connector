@@ -1,0 +1,220 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ExportedContractSpendsResponse",
+  "definitions": {
+    "ExportedContractSpendEntity": {
+      "description": "Contains details on indivisual spend events. Note that a spend event can contain just a part of the whole amount indicated on spend source document, such as when part of the invoice lines correspond to a contract.",
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "externalCode",
+        "processingStatus",
+        "contractNumber"
+      ],
+      "properties": {
+        "externalCode": {
+          "minLength": 1,
+          "description": "External identifier that is used as a key in API to identify the contract spend.",
+          "type": "string",
+          "maxLength": 100,
+          "example": "4847-31231212-212121-1212"
+        },
+        "documentType": {
+          "description": "Type of the spend source document. \r\n1) AccountingDocument = An approved invoice transferred to accounting (available trough accountingDocuments API). Spend is exported when the invoice is transferred to accounting. \r\n2) PurchaseOrder = An order created in or imported to P2P Purchase, which is sent to supplier (available from exportedPurchaseOrders API when export is enabled). \r\nNote: Spend is updated whenever the order is updated. \r\n3) SpendPlan = Spend plan created in P2P. Spend is exported when Spend plan is activated in P2P and removed if the spend plan is deactivated. SpendPlans are not available through Basware API. Note: When using spendPlans or PurchaseOrders, the spend is exported twice - first on the spendplan/PO and second on the invoice. Spend of PurchaseOrders and SpendPlans are considered as spend reservations and invoice spend as the actual spend.",
+          "type": "string",
+          "enum": [
+            "AccountingDocument",
+            "PurchaseOrder",
+            "SpendPlan"
+          ],
+          "example": "WaitingForExport"
+        },
+        "documentNumber": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "DocumentNumber of the spend source document, ie. Invoice number, order number, spend plan reference. Corresponds to 'invoiceNumber' in accountingDocuments API or to 'orderNumber' in exportedPurchaseOrders API.",
+            "type": "string",
+            "maxLength": 100,
+            "example": "80000330200233"
+          },
+          {"type": "null"}
+        ]},
+        "netSumContract": {
+          "description": "Net currency amount spent on the spend document, indicated in currency of the contract.",
+          "type": "number",
+          "example": 150
+        },
+        "companyName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Buyer Company Name",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Basware Oyj"
+          },
+          {"type": "null"}
+        ]},
+        "contractExternalCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "External identifier that is used as a key in API for the contract to which this spend belongs. The contract can be found using this code from exportedContracts API.",
+            "type": "string",
+            "maxLength": 100,
+            "example": "4847-31231212-565656-3344"
+          },
+          {"type": "null"}
+        ]},
+        "supplierCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Code of the supplier in the contract spend event.",
+            "type": "string",
+            "maxLength": 25,
+            "example": "25365"
+          },
+          {"type": "null"}
+        ]},
+        "lastUpdated": {
+          "format": "date-time",
+          "description": "Timestamp when the record was last sent to API. Set automatically.",
+          "type": "string"
+        },
+        "grossSumOrganization": {
+          "description": "Gross currency amount spent on the spend document, indicated in currency of the buyer organization.",
+          "type": "number",
+          "example": 156.2
+        },
+        "currencyCodeOrganization": {"anyOf": [
+          {
+            "minLength": 2,
+            "description": "Currency of the buyer organization.",
+            "type": "string",
+            "maxLength": 3,
+            "example": "GBP"
+          },
+          {"type": "null"}
+        ]},
+        "companyCode": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Buyer Company Code",
+            "type": "string",
+            "maxLength": 25,
+            "example": "200"
+          },
+          {"type": "null"}
+        ]},
+        "supplierName": {"anyOf": [
+          {
+            "minLength": 0,
+            "description": "Name of the supplier in the contract spend event.",
+            "type": "string",
+            "maxLength": 250,
+            "example": "Acme Motor Leasing inc."
+          },
+          {"type": "null"}
+        ]},
+        "isCancelled": {
+          "description": "Indicates whether the spend is cancelled. An existing spend may be cancelled for example when wrong contract was linked to a document.",
+          "type": "boolean",
+          "example": false
+        },
+        "netSumDocument": {
+          "description": "Net currency amount spent on this contract on the spend source document, indicated in currency of the spend source document.",
+          "type": "number",
+          "example": 150
+        },
+        "netSumOrganization": {
+          "description": "Net currency amount spent on the spend document, indicated in currency of the byuer organization.",
+          "type": "number",
+          "example": 126
+        },
+        "grossSumDocument": {
+          "description": "Gross currency amount spent on this contract on the spend source document, indicated in currency of the spend source document.",
+          "type": "number",
+          "example": 250
+        },
+        "contractNumber": {
+          "minLength": 1,
+          "description": "Contract number in P2P.",
+          "type": "string",
+          "maxLength": 255,
+          "example": "2125400"
+        },
+        "grossSumCompany": {
+          "description": "Gross currency amount spent on the spend document, indicated in currency of the buyer company.",
+          "type": "number",
+          "example": 1902.16
+        },
+        "currencyCodeContract": {"anyOf": [
+          {
+            "minLength": 2,
+            "description": "Currency of the contract.",
+            "type": "string",
+            "maxLength": 3,
+            "example": "EUR"
+          },
+          {"type": "null"}
+        ]},
+        "processingStatus": {
+          "description": "Processing status of the contract spend in Basware API. Use 'WaitingForExport' to get unacknowledged records.",
+          "type": "string",
+          "enum": [
+            "WaitingForExport",
+            "Exported"
+          ],
+          "example": "WaitingForExport"
+        },
+        "currencyCodeCompany": {"anyOf": [
+          {
+            "minLength": 2,
+            "description": "Currency of the buyer company.",
+            "type": "string",
+            "maxLength": 3,
+            "example": "Liz Black"
+          },
+          {"type": "null"}
+        ]},
+        "netSumCompany": {
+          "description": "Net currency amount spent on the spend document, indicated in currency of the byuer company.",
+          "type": "number",
+          "example": 1534.5
+        },
+        "documentExternalCode": {"anyOf": [
+          {
+            "minLength": 1,
+            "description": "External identifier of the spend source document. This can be used to fetch the document from accountingDocuments API (by invoiceId) or exportedPurchaseOrders API (by externalCode).",
+            "type": "string",
+            "maxLength": 100,
+            "example": "138e7d94997847aebe7432e521b3dac9"
+          },
+          {"type": "null"}
+        ]},
+        "grossSumContract": {
+          "description": "Gross currency amount spent on the spend document, indicated in currency of the contract.",
+          "type": "number",
+          "example": 250
+        },
+        "currencyCodeDocument": {"anyOf": [
+          {
+            "minLength": 2,
+            "description": "Currency of the spend source document.",
+            "type": "string",
+            "maxLength": 3,
+            "example": "EUR"
+          },
+          {"type": "null"}
+        ]}
+      }
+    },
+    "ExportedContractSpendsResponse": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["contractSpends"],
+      "properties": {"contractSpends": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/ExportedContractSpendEntity"}
+      }}
+    }
+  }
+}
