@@ -53,15 +53,15 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
 	</file:config>
 	<flow name="transferFlow" doc:id="fa918042-1679-4524-abdc-208a4b47deb1" >
 		<http:listener doc:name="Listener" doc:id="faba0e63-0a9b-4b49-8bb1-1b14095f6a57" config-ref="HTTP_Listener_config" path="laskut"/>
-		<basware-connector:get-v1-accounting-documents doc:name="Get v1 accounting documents" doc:id="193da65e-41aa-4366-8d5e-a08a45b44cbd" config-ref="Basware_Connector_Config" processingStatusQueryParam="WAITING_FOR_TRANSFER"/>
+		<basware-connector:get-v1-accounting-documents doc:name="Get accounting documents" doc:id="193da65e-41aa-4366-8d5e-a08a45b44cbd" config-ref="Basware_Connector_Config" processingStatusQueryParam="WAITING_FOR_TRANSFER"/>
 		<logger level="INFO" doc:name="Logger" doc:id="5129d9b1-6e31-4468-bbcb-f01c21fb8017" message="#[payload]"/>
 		<foreach doc:name="For Each" doc:id="9108b269-3f60-418f-ac6b-e009aa0c63d9" collection="#[payload.*accountingDocuments]">
 			<set-variable value="#[payload]" doc:name="Set Variable" doc:id="deb28d7c-5f97-4c9b-8a7e-58e69080d082" variableName="invoicedata"/>
-			<basware-connector:post-v1-accounting-documents-invoice-id-acknowledge doc:name="Create v1 accounting documents acknowledge by invoice id" doc:id="af997f69-62c2-444c-8ba7-a32c5ad55755" config-ref="Basware_Connector_Config" contentTypeHeader="application/json" invoiceIdUriParam="#[output application/java&#10;---&#10;payload.invoiceId[0]]"/>
+			<basware-connector:post-v1-accounting-documents-invoice-id-acknowledge doc:name="Accounting documents acknowledge" doc:id="af997f69-62c2-444c-8ba7-a32c5ad55755" config-ref="Basware_Connector_Config" contentTypeHeader="application/json" invoiceIdUriParam="#[output application/java&#10;---&#10;payload.invoiceId[0]]"/>
 			<file:write doc:name="Save to ERP" doc:id="702f0a18-3f2a-4f88-94b9-8241c97b0bf3" config-ref="File_Config" path="#['C:/temp/anypointinput/output/' ++ vars.invoicedata.invoiceId[0] ++ '.json']" >
 				<file:content ><![CDATA[#[vars.invoicedata]]]></file:content>
 			</file:write>
-			<basware-connector:post-v1-accounting-documents-invoice-id-transfer-responses doc:name="Create v1 accounting documents transfer responses by invoice id" doc:id="510f0b20-8e1e-42f4-a2d5-016a1779f224" config-ref="Basware_Connector_Config" contentTypeHeader="application/json" invoiceIdUriParam="#[vars.invoicedata.invoiceId[0]]" >
+			<basware-connector:post-v1-accounting-documents-invoice-id-transfer-responses doc:name="Accounting documents transfer responses" doc:id="510f0b20-8e1e-42f4-a2d5-016a1779f224" config-ref="Basware_Connector_Config" contentTypeHeader="application/json" invoiceIdUriParam="#[vars.invoicedata.invoiceId[0]]" >
 				<basware-connector:post-v1-accounting-documents-invoice-id-transfer-responses-body ><![CDATA[#[import * from dw::core::Dates
 output application/json
 ---
@@ -118,7 +118,7 @@ output application/json
 			</ee:message>
 		</ee:transform>
 		<foreach doc:name="For Each" doc:id="b165ebce-c2df-4df4-94b9-7dd561344fb0" >
-			<basware-connector:post-v1-accounts doc:name="Create v1 accounts" doc:id="f2fae0eb-8c66-48e0-a4ca-a7b0a6be4897" config-ref="Basware_Connector_Config" contentTypeHeader="application/json">
+			<basware-connector:post-v1-accounts doc:name="Create accounts" doc:id="f2fae0eb-8c66-48e0-a4ca-a7b0a6be4897" config-ref="Basware_Connector_Config" contentTypeHeader="application/json">
 		</basware-connector:post-v1-accounts>
 		</foreach>
 		<logger level="INFO" doc:name="Logger" doc:id="e35f5bca-7801-4464-831b-0330c7abcb3b" />
@@ -142,7 +142,7 @@ __Above flow can be imported using following Mulesoft code:__
 -----------------
 <flow name="SendOrderHeaderdatatoP2P" doc:id="d2d168d7-73c0-48db-989e-c2c330919a64" >
 		<http:listener doc:name="Listener" doc:id="8b66fc36-4634-4960-9aff-028e77d6c78d" config-ref="HTTP_Listener_config" path="matchingheader"/>
-		<basware-connector:post-v1-matching-orders doc:name="Create v1 matching orders" doc:id="688a609b-33ef-4a66-82a9-6bfaae76bbd9" config-ref="Basware_Connector_Config" contentTypeHeader="application/json"/>
+		<basware-connector:post-v1-matching-orders doc:name="Create matching orders" doc:id="688a609b-33ef-4a66-82a9-6bfaae76bbd9" config-ref="Basware_Connector_Config" contentTypeHeader="application/json"/>
 		<logger level="INFO" doc:name="Logger" doc:id="e5586ecd-3171-49fc-a3d2-dbe261de450a" />
 	</flow>
 	<flow name="SendOrdelinestoP2P" doc:id="be53a586-097b-4126-adb4-c7f9bc48e5dd" >
@@ -224,7 +224,7 @@ output application/json
 			</ee:message>
 		</ee:transform>
 		<foreach doc:name="For Each" doc:id="4ef6cdd6-8053-4470-acb3-b6bab312e53e" >
-			<basware-connector:post-v1-matching-order-lines doc:name="Create v1 matching order lines" doc:id="bd040b86-a84e-4fe0-a30a-ff9031aaac61" config-ref="Basware_Connector_Config" contentTypeHeader="application/json" />
+			<basware-connector:post-v1-matching-order-lines doc:name="Create matching order lines" doc:id="bd040b86-a84e-4fe0-a30a-ff9031aaac61" config-ref="Basware_Connector_Config" contentTypeHeader="application/json" />
 		</foreach>
 		<logger level="INFO" doc:name="Logger" doc:id="8078289b-1259-4684-94ae-6f4aa41d32e3" message="#[payload]"/>
 	</flow>
@@ -264,15 +264,15 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<file:config name="File_Config" doc:name="File Config" doc:id="dbcdea94-71f6-4fe4-9315-9dbe8e2a1013" />
 	<flow name="send_requisition_to_p2p" doc:id="e12f086f-eaa0-4ee1-99a1-10fd34f062f4" >
 		<http:listener doc:name="Listener" doc:id="b50b6d76-7432-452a-8884-8716fe9ee58e" config-ref="HTTP_Listener_config" path="/sendrequisition"/>
-		<basware-connector:post-v1-purchase-requisitions doc:name="Create v1 purchase requisitions" doc:id="800e16cd-39b9-4ae5-ac2c-afe36125a189" config-ref="Basware_Connector_Config" contentTypeHeader="application/json"/>
+		<basware-connector:post-v1-purchase-requisitions doc:name="Create purchase requisitions" doc:id="800e16cd-39b9-4ae5-ac2c-afe36125a189" config-ref="Basware_Connector_Config" contentTypeHeader="application/json"/>
 	</flow>
 	<flow name="fetch_po_from_p2p" doc:id="703998c6-1a4d-42c9-9baa-1c4b61f4c3fc" >
 		<http:listener doc:name="Listener" doc:id="d172204c-7e01-4af5-8b6d-a3ae4f3b4f73" config-ref="HTTP_Listener_config" path="/fetchpo"/>
-		<basware-connector:get-v1-exported-purchase-orders doc:name="Get v1 exported purchase orders" doc:id="bc86429d-0a58-4a5c-984a-2190ff8867c8" config-ref="Basware_Connector_Config" orderStatusQueryParam="WAITING_FOR_EXPORT"/>
+		<basware-connector:get-v1-exported-purchase-orders doc:name="Get exported purchase orders" doc:id="bc86429d-0a58-4a5c-984a-2190ff8867c8" config-ref="Basware_Connector_Config" orderStatusQueryParam="WAITING_FOR_EXPORT"/>
 		<set-variable value="#[payload]" doc:name="Set Variable" doc:id="056e7aab-4988-47e6-8a36-d2adb538fac4" variableName="podata"/>
 		<file:write doc:name="Send to ERP" doc:id="e637a01c-f9c3-401f-8083-cb8119f7e5ef" config-ref="File_Config" path="C:\temp\anypointinput\purchaseflow\podata.json"/>
 		<logger level="INFO" doc:name="Logger" doc:id="9db95db8-d7dd-4964-bd3c-d26d6c4deeca" message="#[message.payload]"/>
-		<basware-connector:post-v1-exported-purchase-orders-external-code-acknowledge doc:name="Create v1 exported purchase orders acknowledge by external code" doc:id="54b02e33-e314-4c27-b427-e57d18091902" config-ref="Basware_Connector_Config" contentTypeHeader="application/json" externalCodeUriParam="#[vars.podata.exportedPurchaseOrders[0].externalCode]"/>
+		<basware-connector:post-v1-exported-purchase-orders-external-code-acknowledge doc:name="Exported purchase orders acknowledge" doc:id="54b02e33-e314-4c27-b427-e57d18091902" config-ref="Basware_Connector_Config" contentTypeHeader="application/json" externalCodeUriParam="#[vars.podata.exportedPurchaseOrders[0].externalCode]"/>
 		<logger level="INFO" doc:name="Logger" doc:id="e977afc8-fb64-4c19-94c0-42d7d6db78fc" message="#[payload].#[message]]"/>
 	</flow>
 	<flow name="update_gr_to_p2porder" doc:id="25433c0f-398c-4883-81b4-7691dde063e1" >
@@ -312,7 +312,7 @@ output application/json
         ]
     }
 ]]' doc:name="Create example gr" doc:id="3eeb6e55-fe6f-4daa-b1c2-a416b3f72c64" />
-		<basware-connector:post-v1-purchase-goods-receipts doc:name="Create v1 purchase goods receipts" doc:id="1af2dd68-2bd0-437d-b284-a7e0930bef9b" config-ref="Basware_Connector_Config" contentTypeHeader="application/json"/>
+		<basware-connector:post-v1-purchase-goods-receipts doc:name="Create purchase goods receipts" doc:id="1af2dd68-2bd0-437d-b284-a7e0930bef9b" config-ref="Basware_Connector_Config" contentTypeHeader="application/json"/>
 		<logger level="INFO" doc:name="Logger" doc:id="43694a6e-3019-4b7e-bffe-e75c4d7cf5a5" />
 	</flow>
 </mule>
@@ -354,7 +354,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 		<set-variable value="0" doc:name="Set Variable" doc:id="8ebb1c1e-de59-411c-b796-c5268907f9a0" variableName="count" />
 		<flow-ref doc:name="getPaginatedData" doc:id="03544787-89a7-4bec-a738-9821a35abdbf" name="errorfeedbackexampleFlow" />
 		<logger level="INFO" doc:name="Logger" doc:id="d299570b-4f24-40d9-a510-0ae53081f3e5" message="#[vars.accPayload]" />
-		<basware-connector:post-v1-request-status-acknowledge doc:name="Create v1 request status acknowledge" doc:id="5ff6f320-7761-4bad-a9e0-dd4210b2d045" config-ref="Basware_Connector_Config" contentTypeHeader="application/json">
+		<basware-connector:post-v1-request-status-acknowledge doc:name="Create request status acknowledge" doc:id="5ff6f320-7761-4bad-a9e0-dd4210b2d045" config-ref="Basware_Connector_Config" contentTypeHeader="application/json">
 			<basware-connector:post-v1-request-status-acknowledge-body ><![CDATA[#[output application/json
 ---
 {
@@ -370,7 +370,7 @@ vars.accPayload]]></ee:set-payload>
 		</ee:transform>
 	</sub-flow>
 	<flow name="errorfeedbackexampleFlow" doc:id="7a5634b8-9500-4f67-b62f-16bb92efad4c" >
-		<basware-connector:get-v1-request-status doc:name="Get v1 request status" doc:id="b9d3d5d4-a962-49ae-a8a6-de61f13c4fa3" config-ref="Basware_Connector_Config" statusQueryParam="ERROR" systemQueryParam="P2P" xAmzMetaContinuationtokenHeader="#[attributes.headers['x-amz-meta-continuationtoken']]"/>
+		<basware-connector:get-v1-request-status doc:name="Get request status" doc:id="b9d3d5d4-a962-49ae-a8a6-de61f13c4fa3" config-ref="Basware_Connector_Config" statusQueryParam="ERROR" systemQueryParam="P2P" xAmzMetaContinuationtokenHeader="#[attributes.headers['x-amz-meta-continuationtoken']]"/>
 		<ee:transform doc:name="Transform Message" doc:id="383ca17c-5096-4b05-91b0-3f0118f02b4c" >
 			<ee:message >
 			</ee:message>
@@ -472,7 +472,7 @@ vars.accPayload]]></ee:set-payload>
 		</ee:transform>
 	</sub-flow>
 	<sub-flow name="getPaginatedData" doc:id="e00bdae1-e3c0-4d59-9e3a-f42277274264">
-		<basware-connector:get-v1-accounts doc:name="Get v1 accounts" doc:id="996e619b-d0fe-4cab-a127-4f60ef32337d" config-ref="Basware_Connector_Config" xAmzMetaContinuationtokenHeader="#[attributes.headers['x-amz-meta-continuationtoken']]"/>
+		<basware-connector:get-v1-accounts doc:name="Get accounts" doc:id="996e619b-d0fe-4cab-a127-4f60ef32337d" config-ref="Basware_Connector_Config" xAmzMetaContinuationtokenHeader="#[attributes.headers['x-amz-meta-continuationtoken']]"/>
 		<ee:transform doc:name="isDataPresent" doc:id="4e669d82-f07a-4d4d-ad93-c6127ab15506">
 			<ee:message>
 
