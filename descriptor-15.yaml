@@ -49,7 +49,7 @@ connectorDescription: |
 connectorGav:
   groupId: com.mulesoft.connectors
   artifactId: Basware
-  version: 1.0.9-SNAPSHOT
+  version: 1.0.0-SNAPSHOT
 
 baseUri:
   value: https://api.basware.com

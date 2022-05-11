@@ -5,7 +5,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <name>Basware ConnectorOAUTH2APRILv2 Connector</name>
+    <name>Basware Connector</name>
     <description>The Basware APIs documented here are for Purchase-to-Pay use cases and for importing Master Data to Basware services. This document describes data schemas and available methods. Basware APIs work using REST API calls initiated by customer. Please visit the [P2P API pages](https://developer.basware.com/api/p2p) on Basware API developer site for full API documentation.
 
 **Data formats**
@@ -54,7 +54,7 @@ _File version: ._
     </parent>
 
     <groupId>com.mulesoft.connectors</groupId>
-    <artifactId>BaswareOAUTH2</artifactId>
+    <artifactId>Basware</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>mule-extension</packaging>
 

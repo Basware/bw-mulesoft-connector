@@ -1,9 +1,9 @@
 #% Rest Connector Descriptor 1.0
 
 apiSpec:
-  url: 'C:\alusta\connectors\mule\swagger_aprilv4.json'
+  url: 'https://api.basware.com/swagger/./v1/swagger.json'
 
-connectorName: Basware ConnectorOAUTH2APRILv2
+connectorName: Basware Connector
 connectorDescription: |
   The Basware APIs documented here are for Purchase-to-Pay use cases and for importing Master Data to Basware services. This document describes data schemas and available methods. Basware APIs work using REST API calls initiated by customer. Please visit the [P2P API pages](https://developer.basware.com/api/p2p) on Basware API developer site for full API documentation.
 
@@ -48,9 +48,124 @@ connectorDescription: |
 
 connectorGav:
   groupId: com.mulesoft.connectors
-  artifactId: BaswareOAUTH2
+  artifactId: Basware
   version: 1.0.0-SNAPSHOT
 
 baseUri:
   value: https://api.basware.com
   type: parameter
+  
+operationDisplayName:
+  expression: |
+    #[%dw 2.0
+      output text/plain
+      import * from dw::core::Strings
+      import * from connectivity::RestSdk
+      fun removeUnwantedStuff(aPath: String)=
+        aPath replace "v1" with ""
+            replace "v2" with ""                
+      fun removeUnwantedStuff2(aPath: String,aMethod: String)=
+        if (upper(aMethod) == "PATCH")
+            aPath replace "by external code" with ""
+        else
+            aPath
+      ---
+      displayNameFromOperationId(operationId)
+        default displayNameFromMethodAndPath(method, removeUnwantedStuff2(removeUnwantedStuff(path),method))
+    ]
+    
+endpoints:
+    /v1/projects:
+        ignored: true
+    /v1/accounts/{externalCode}:
+     operations:
+      patch:
+        displayName: Patch accounts
+    /v1/advancedPermissions/{externalCode}:
+     operations:
+      patch:
+        displayName: Patch advanced permissions
+    /v1/advancedValidations/{externalCode}:
+     operations:
+      patch:
+        displayName: Patch advanced validations
+    /v1/contracts/{externalCode}:
+     operations:
+      patch:
+        displayName: Patch contracts
+    /v1/costCenters/{externalCode}:
+     operations:
+      patch:
+        displayName: Patch cost centers
+    /v1/exchangeRates/{externalCode}:
+     operations:
+      patch:
+        displayName: Patch exchange rates
+    /v1/lists/{listKey}/{externalCode}:
+     operations:
+      patch:
+        displayName: Patch lists by list key
+    /v1/matchingOrderLines/{externalCode}:
+     operations:
+      patch:
+        displayName: Patch matching order lines
+    /v1/matchingOrders/{externalCode}:
+     operations:
+      patch:
+        displayName: Patch matching orders
+    /v1/paymentTerms/{externalCode}:
+     operations:
+      patch:
+        displayName: Patch payment terms
+    /v2/projects/{externalCode}:
+     operations:
+      patch:
+        displayName: Patch projects
+    /v1/purchaseOrders/{externalCode}:
+     operations:
+      patch:
+        displayName: Patch purchase orders
+    /v1/taxCodes/{externalCode}:
+     operations:
+      patch:
+        displayName: Patch tax codes
+    /v1/users/{externalCode}:
+     operations:
+      patch:
+        displayName: Patch users
+    /v1/vendors/{externalCode}:
+     operations:
+      patch:
+        displayName: Patch vendors
+    /v1/accountingDocuments/{invoiceId}/acknowledge:
+     operations:
+      post:
+        displayName: Accounting documents acknowledge
+    /v1/exportedPurchaseOrders/{externalCode}/acknowledge:
+     operations:
+      post:
+        displayName: Exported purchase orders acknowledge
+    /v1/exportedPurchaseRequisitions/{externalCode}/acknowledge:
+     operations:
+      post:
+        displayName: Exported purchase requisitions acknowledge
+    /v1/exportedContracts/acknowledge:
+     operations:
+      post:
+        displayName: Exported contracts acknowledge
+    /v1/exportedContractSpends/acknowledge:
+     operations:
+      post:
+        displayName: Exported contracts spends acknowledge
+    /v1/accountingDocuments/{invoiceId}/transferResponses:
+     operations:
+      post:
+        displayName: Accounting documents transfer responses
+    /v1/accountingDocuments/{invoiceId}/prebookResponses:
+     operations:
+      post:
+        displayName: Accounting documents prebook responses
+    /v1/accountingDocuments/{invoiceId}/paymentResponses:
+     operations:
+      post:
+        displayName: Accounting documents payment responses
