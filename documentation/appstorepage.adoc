@@ -19,6 +19,3 @@ The Basware Connector provides the connectivity to the Basware Rest API.
 * Connector Help https://help.mulesoft.com/s/topic/0TO2T0000009a3bWAA/connectors
 * https://developer.basware.com/api/p2p[Basware API developer site]
 * https://developer.basware.com/api/p2p/api_reference[Basware API reference]
-
-== TODO
-COnsider adding sections similiar to here https://www.mulesoft.com/exchange/com.mulesoft.connectors/mule4-magento-connector/
