@@ -1,0 +1,1823 @@
+Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+Maven home: C:\apache-maven-3.6.3\bin\..
+Java version: 1.8.0-262, vendor: OpenLogic-OpenJDK, runtime: C:\Program Files\OpenJDK\jdk-8.0.262.10-hotspot\jre
+Default locale: en_US, platform encoding: Cp1252
+OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
+[DEBUG] Created new class realm maven.api
+[DEBUG] Importing foreign packages into class realm maven.api
+[DEBUG]   Imported: javax.annotation.* < plexus.core
+[DEBUG]   Imported: javax.annotation.security.* < plexus.core
+[DEBUG]   Imported: javax.enterprise.inject.* < plexus.core
+[DEBUG]   Imported: javax.enterprise.util.* < plexus.core
+[DEBUG]   Imported: javax.inject.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.artifact < plexus.core
+[DEBUG]   Imported: org.apache.maven.classrealm < plexus.core
+[DEBUG]   Imported: org.apache.maven.cli < plexus.core
+[DEBUG]   Imported: org.apache.maven.configuration < plexus.core
+[DEBUG]   Imported: org.apache.maven.exception < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution.scope < plexus.core
+[DEBUG]   Imported: org.apache.maven.lifecycle < plexus.core
+[DEBUG]   Imported: org.apache.maven.model < plexus.core
+[DEBUG]   Imported: org.apache.maven.monitor < plexus.core
+[DEBUG]   Imported: org.apache.maven.plugin < plexus.core
+[DEBUG]   Imported: org.apache.maven.profiles < plexus.core
+[DEBUG]   Imported: org.apache.maven.project < plexus.core
+[DEBUG]   Imported: org.apache.maven.reporting < plexus.core
+[DEBUG]   Imported: org.apache.maven.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.rtinfo < plexus.core
+[DEBUG]   Imported: org.apache.maven.settings < plexus.core
+[DEBUG]   Imported: org.apache.maven.toolchain < plexus.core
+[DEBUG]   Imported: org.apache.maven.usability < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authentication < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authorization < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.events < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.observers < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.proxy < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.resource < plexus.core
+[DEBUG]   Imported: org.codehaus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.* < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.component < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.configuration < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.container < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.context < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.lifecycle < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.logging < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.personality < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.Xpp3Dom < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParser < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParserException < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlSerializer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.* < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.artifact < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.collection < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.deployment < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.graph < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.installation < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.internal.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.metadata < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.repository < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.resolution < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.spi < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.transfer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.version < plexus.core
+[DEBUG]   Imported: org.fusesource.jansi.* < plexus.core
+[DEBUG]   Imported: org.slf4j.* < plexus.core
+[DEBUG]   Imported: org.slf4j.event.* < plexus.core
+[DEBUG]   Imported: org.slf4j.helpers.* < plexus.core
+[DEBUG]   Imported: org.slf4j.spi.* < plexus.core
+[DEBUG] Populating class realm maven.api
+[INFO] Error stacktraces are turned on.
+[DEBUG] Message scheme: color
+[DEBUG] Message styles: debug info warning error success failure strong mojo project
+[DEBUG] Reading global settings from C:\apache-maven-3.6.3\bin\..\conf\settings.xml
+[DEBUG] Reading user settings from C:\Users\ristoh\.m2\settings.xml
+[DEBUG] Reading global toolchains from C:\apache-maven-3.6.3\bin\..\conf\toolchains.xml
+[DEBUG] Reading user toolchains from C:\Users\ristoh\.m2\toolchains.xml
+[DEBUG] Using local repository at C:\Users\ristoh\.m2\repository
+[DEBUG] Using manager EnhancedLocalRepositoryManager with priority 10.0 for C:\Users\ristoh\.m2\repository
+[INFO] Scanning for projects...
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=1443200, ConflictMarker.markTime=666700, ConflictMarker.nodeCount=565, ConflictIdSorter.graphTime=878400, ConflictIdSorter.topsortTime=387500, ConflictIdSorter.conflictIdCount=198, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=11863500, ConflictResolver.conflictItemCount=443, DefaultDependencyCollector.collectTime=723373600, DefaultDependencyCollector.transformTime=16704300}
+[DEBUG] org.mule.runtime.plugins:mule-extensions-maven-plugin:jar:1.3.1
+[DEBUG]    org.mule.runtime.plugins:mule-packager-plugins-base:jar:1.3.1:compile
+[DEBUG]       org.mule.runtime:mule-api:jar:1.3.0:compile
+[DEBUG]          org.mule.runtime:mule-metadata-model-api:jar:1.3.0:compile
+[DEBUG]          org.mule.runtime:mule-message-metadata-model:jar:1.3.0:compile
+[DEBUG]          com.google.code.gson:gson:jar:2.8.5:compile
+[DEBUG]          javax.inject:javax.inject:jar:1:compile
+[DEBUG]          com.github.ben-manes.caffeine:caffeine:jar:2.8.0:compile
+[DEBUG]          org.mule.runtime:mule-artifact-declaration:jar:1.3.0:compile
+[DEBUG]       org.apache.maven:maven-plugin-api:jar:3.3.9:compile
+[DEBUG]          org.apache.maven:maven-artifact:jar:3.3.9:compile
+[DEBUG]       org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.4:compile
+[DEBUG]       org.apache.maven:maven-core:jar:3.3.9:compile
+[DEBUG]          org.apache.maven:maven-settings:jar:3.3.9:compile
+[DEBUG]          org.apache.maven:maven-repository-metadata:jar:3.3.9:compile
+[DEBUG]          org.apache.maven:maven-model-builder:jar:3.3.9:compile
+[DEBUG]          com.google.inject:guice:jar:no_aop:4.0:compile
+[DEBUG]             aopalliance:aopalliance:jar:1.0:compile
+[DEBUG]          org.codehaus.plexus:plexus-interpolation:jar:1.21:compile
+[DEBUG]          org.codehaus.plexus:plexus-classworlds:jar:2.5.2:compile
+[DEBUG]          org.codehaus.plexus:plexus-component-annotations:jar:1.6:compile
+[DEBUG]          org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile
+[DEBUG]             org.sonatype.plexus:plexus-cipher:jar:1.4:compile
+[DEBUG]       org.codehaus.plexus:plexus-archiver:jar:3.6.0:compile
+[DEBUG]          org.codehaus.plexus:plexus-io:jar:3.0.1:compile
+[DEBUG]          org.apache.commons:commons-compress:jar:1.16.1:compile
+[DEBUG]             org.objenesis:objenesis:jar:2.6:compile
+[DEBUG]          org.iq80.snappy:snappy:jar:0.4:compile
+[DEBUG]          org.tukaani:xz:jar:1.8:runtime
+[DEBUG]       org.apache.commons:commons-lang3:jar:3.7:compile
+[DEBUG]    org.mule:mule-maven-client-api:jar:1.5.0:compile
+[DEBUG]       org.apache.maven:maven-model:jar:3.3.9:compile
+[DEBUG]       org.codehaus.plexus:plexus-utils:jar:3.0.24:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.26:compile
+[DEBUG]       org.mule.runtime:api-annotations:jar:1.2.0:compile
+[DEBUG]    org.mule:mule-maven-client-impl:jar:1.5.0:compile
+[DEBUG]       com.vdurmont:semver4j:jar:2.0.3:compile
+[DEBUG]       org.eclipse.aether:aether-api:jar:1.0.2.v20150114:compile
+[DEBUG]       org.eclipse.aether:aether-util:jar:1.0.2.v20150114:compile
+[DEBUG]       org.eclipse.aether:aether-connector-basic:jar:1.0.2.v20150114:compile
+[DEBUG]          org.eclipse.aether:aether-spi:jar:1.0.2.v20150114:compile
+[DEBUG]       org.eclipse.aether:aether-transport-file:jar:1.0.2.v20150114:compile
+[DEBUG]       org.eclipse.aether:aether-transport-http:jar:1.0.2.v20150114:compile
+[DEBUG]          org.slf4j:jcl-over-slf4j:jar:1.6.2:compile
+[DEBUG]       org.apache.httpcomponents:httpclient:jar:4.5.10:compile
+[DEBUG]          org.apache.httpcomponents:httpcore:jar:4.4.12:compile
+[DEBUG]          commons-logging:commons-logging:jar:1.2:compile
+[DEBUG]          commons-codec:commons-codec:jar:1.11:compile
+[DEBUG]       org.apache.maven:maven-settings-builder:jar:3.3.9:compile
+[DEBUG]          org.apache.maven:maven-builder-support:jar:3.3.9:compile
+[DEBUG]       org.apache.maven:maven-aether-provider:jar:3.3.9:compile
+[DEBUG]       commons-io:commons-io:jar:2.6:compile
+[DEBUG]       com.beust:jcommander:jar:1.69:compile
+[DEBUG]       org.eclipse.sisu:org.eclipse.sisu.plexus:jar:0.3.2:compile
+[DEBUG]    org.apache.velocity:velocity:jar:1.7:compile
+[DEBUG]       commons-collections:commons-collections:jar:3.2.1:compile
+[DEBUG]       commons-lang:commons-lang:jar:2.4:compile
+[DEBUG]    org.apache.velocity.tools:velocity-tools-generic:jar:3.0:compile
+[DEBUG]       org.apache.velocity:velocity-engine-core:jar:2.0:compile
+[DEBUG]       commons-beanutils:commons-beanutils:jar:1.9.3:compile
+[DEBUG]       org.apache.commons:commons-digester3:jar:3.2:compile
+[DEBUG]       com.github.cliftonlabs:json-simple:jar:3.0.2:compile
+[DEBUG]    org.jruby:jruby-complete:jar:1.7.17:compile
+[DEBUG]    org.asciidoctor:asciidoctorj:jar:1.5.2:compile
+[DEBUG]    org.zeroturnaround:zt-zip:jar:1.11:compile
+[DEBUG]    org.mule.runtime:mule-extensions-api:jar:1.3.0:compile
+[DEBUG]       org.mule.runtime:mule-metadata-model-java:jar:1.3.0:compile
+[DEBUG]       com.google.guava:guava:jar:25.1-jre:compile
+[DEBUG]          com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[DEBUG]          org.checkerframework:checker-qual:jar:2.0.0:compile
+[DEBUG]          com.google.errorprone:error_prone_annotations:jar:2.1.3:compile
+[DEBUG]          com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[DEBUG]          org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[DEBUG]       org.reactivestreams:reactive-streams:jar:1.0.2:compile
+[DEBUG]       com.sun.activation:javax.activation:jar:1.2.0:compile
+[DEBUG]       javax.transaction:javax.transaction-api:jar:1.3:compile
+[DEBUG]    org.mule.runtime:mule-extensions-api-persistence:jar:1.3.0:compile
+[DEBUG]       org.mule.runtime:mule-metadata-model-persistence:jar:1.3.0:compile
+[DEBUG]          org.mule.runtime:mule-metadata-model-json:jar:1.3.0:compile
+[DEBUG]          org.mule.runtime:mule-metadata-model-xml:jar:1.3.0:compile
+[DEBUG]             org.apache.xmlbeans:xmlbeans:jar:3.1.0:compile
+[DEBUG]             org.mule.apache:xerces2-xsd11:jar:2.11.3:compile
+[DEBUG]    org.mule.runtime:mule-module-deployment-model-impl:jar:4.3.0:compile
+[DEBUG]       org.mule.runtime:mule-core:jar:4.3.0:compile
+[DEBUG]          org.mule.runtime:mule-module-dsl-api:jar:1.3.0:compile
+[DEBUG]          org.mule.runtime:mule-module-http-policy-api:jar:1.3.0:compile
+[DEBUG]             org.mule.runtime:mule-module-policy-api:jar:1.3.0:compile
+[DEBUG]          org.mule.com.github.stephenc.eaio-uuid:uuid:jar:3.4.2-MULE-001:compile
+[DEBUG]          javax.annotation:javax.annotation-api:jar:1.3.2:compile
+[DEBUG]          commons-cli:commons-cli:jar:1.2:compile
+[DEBUG]          commons-pool:commons-pool:jar:1.6:compile
+[DEBUG]          org.apache.geronimo.specs:geronimo-j2ee-connector_1.5_spec:jar:2.0.0:compile
+[DEBUG]          org.mule.mvel:mule-mvel2:jar:2.1.9-MULE-020:compile
+[DEBUG]          org.jgrapht:jgrapht-core:jar:1.3.1:compile
+[DEBUG]             org.jheaps:jheaps:jar:0.10:compile
+[DEBUG]          org.reflections:reflections:jar:0.9.10:compile
+[DEBUG]          io.projectreactor:reactor-core:jar:3.2.12.RELEASE:compile
+[DEBUG]          io.projectreactor.addons:reactor-extra:jar:3.2.3.RELEASE:compile
+[DEBUG]          org.yaml:snakeyaml:jar:1.26:compile
+[DEBUG]          cglib:cglib-nodep:jar:3.2.10:compile
+[DEBUG]          org.apache.commons:commons-pool2:jar:2.6.2:compile
+[DEBUG]          org.apache.commons:commons-math3:jar:3.6.1:compile
+[DEBUG]          it.unimi.dsi:fastutil:jar:8.1.1:compile
+[DEBUG]          net.jodah:failsafe:jar:2.1.1:compile
+[DEBUG]          org.vibur:vibur-object-pool:jar:23.0:compile
+[DEBUG]          com.conversantmedia:disruptor:jar:1.2.10:compile
+[DEBUG]          javax.jms:javax.jms-api:jar:2.0.1:compile
+[DEBUG]       org.mule.runtime:mule-module-artifact:jar:4.3.0:compile
+[DEBUG]       org.mule.runtime:mule-module-license-api:jar:4.3.0:compile
+[DEBUG]       org.mule.runtime:mule-module-deployment-model:jar:4.3.0:compile
+[DEBUG]       org.mule.runtime:mule-module-global-config:jar:4.3.0:compile
+[DEBUG]          com.typesafe:config:jar:1.3.1:compile
+[DEBUG]          org.everit.json:org.everit.json.schema:jar:1.5.1:compile
+[DEBUG]             org.json:json:jar:20160810:compile
+[DEBUG]       org.mule.runtime:mule-module-extensions-support:jar:4.3.0:compile
+[DEBUG]          org.mule.runtime:mule-extensions-api-dsql:jar:1.3.0:compile
+[DEBUG]             org.antlr:antlr-runtime:jar:3.5:compile
+[DEBUG]                org.antlr:stringtemplate:jar:3.2.1:compile
+[DEBUG]          org.mule.runtime:mule-artifact-ast:jar:0.8.0:compile
+[DEBUG]          org.mule.runtime:mule-service-oauth-api:jar:4.3.0:compile
+[DEBUG]          net.bytebuddy:byte-buddy:jar:1.10.7:compile
+[DEBUG]       org.mule.runtime:mule-module-extensions-xml-support:jar:4.3.0:compile
+[DEBUG]          org.mule.runtime:mule-metadata-model-catalog:jar:1.3.0:compile
+[DEBUG]             org.mule.runtime:mule-metadata-model-raml:jar:1.3.0:compile
+[DEBUG]                org.raml:raml-parser-2:jar:1.0.49:compile
+[DEBUG]                   org.raml:yagi:jar:1.0.49:compile
+[DEBUG]                      com.google.code.findbugs:annotations:jar:3.0.0:compile
+[DEBUG]                      com.fasterxml.jackson.module:jackson-module-jsonSchema:jar:2.10.0:compile
+[DEBUG]                         com.fasterxml.jackson.core:jackson-annotations:jar:2.10.0:compile
+[DEBUG]                         com.fasterxml.jackson.core:jackson-core:jar:2.10.0:compile
+[DEBUG]                         com.fasterxml.jackson.core:jackson-databind:jar:2.10.0:compile
+[DEBUG]                         javax.validation:validation-api:jar:1.1.0.Final:compile
+[DEBUG]                   com.github.java-json-tools:json-schema-validator:jar:2.2.10:compile
+[DEBUG]                      com.github.java-json-tools:json-schema-core:jar:1.2.10:compile
+[DEBUG]                         com.github.java-json-tools:jackson-coreutils:jar:1.9:compile
+[DEBUG]                            com.github.fge:msg-simple:jar:1.1:compile
+[DEBUG]                               com.github.fge:btf:jar:1.2:compile
+[DEBUG]                         com.github.fge:uri-template:jar:0.9:compile
+[DEBUG]                      com.googlecode.libphonenumber:libphonenumber:jar:8.0.0:compile
+[DEBUG]                      net.sf.jopt-simple:jopt-simple:jar:5.0.3:compile
+[DEBUG]                   com.googlecode.juniversalchardet:juniversalchardet:jar:1.0.3:compile
+[DEBUG]                   org.apache.ws.xmlschema:xmlschema-core:jar:2.2.1:compile
+[DEBUG]                   javax.json:javax.json-api:jar:1.0:compile
+[DEBUG]                   org.glassfish:javax.json:jar:1.0.4:compile
+[DEBUG]                   com.sun.mail:jakarta.mail:jar:1.6.3:compile
+[DEBUG]                      com.sun.activation:jakarta.activation:jar:1.2.1:compile
+[DEBUG]                org.mozilla:rhino:jar:1.7.12:compile
+[DEBUG]          org.mule.runtime:mule-module-spring-config:jar:4.3.0:compile
+[DEBUG]             org.mule.runtime:mule-artifact-ast-dependency-graph:jar:0.8.0:compile
+[DEBUG]             org.springframework:spring-context:jar:5.1.6.RELEASE:compile
+[DEBUG]                org.springframework:spring-beans:jar:5.1.6.RELEASE:compile
+[DEBUG]                org.springframework:spring-core:jar:5.1.6.RELEASE:compile
+[DEBUG]                   org.springframework:spring-jcl:jar:5.1.6.RELEASE:compile
+[DEBUG]                org.springframework:spring-expression:jar:5.1.6.RELEASE:compile
+[DEBUG]             org.springframework:spring-aop:jar:5.1.6.RELEASE:compile
+[DEBUG]             org.mule.runtime:mule-module-logging:jar:4.3.0:compile
+[DEBUG]                com.lmax:disruptor:jar:3.3.7:compile
+[DEBUG]                org.slf4j:slf4j-ext:jar:1.7.30:compile
+[DEBUG]                org.apache.logging.log4j:log4j-api:jar:2.13.1:compile
+[DEBUG]                org.apache.logging.log4j:log4j-core:jar:2.13.1:compile
+[DEBUG]                org.apache.logging.log4j:log4j-slf4j-impl:jar:2.13.1:compile
+[DEBUG]                org.apache.logging.log4j:log4j-1.2-api:jar:2.13.1:compile
+[DEBUG]                org.slf4j:jul-to-slf4j:jar:1.7.30:compile
+[DEBUG]          org.mule.runtime:mule-module-extensions-spring-support:jar:4.3.0:compile
+[DEBUG]             org.jsoup:jsoup:jar:1.11.3:compile
+[DEBUG]             org.mule.runtime:mule-module-extensions-soap-support:jar:4.3.0:compile
+[DEBUG]                org.mule.runtime:mule-extensions-soap-api:jar:1.3.0:compile
+[DEBUG]                org.mule.runtime:mule-service-soap-api:jar:4.3.0:compile
+[DEBUG]                   org.mule.runtime:mule-service-http-api:jar:4.3.0:compile
+[DEBUG]             org.mule.runtime:mule-module-tls:jar:4.3.0:compile
+[DEBUG]             org.mule.runtime:mule-module-javaee:jar:4.3.0:compile
+[DEBUG]                javax.jws:javax.jws-api:jar:1.1:compile
+[DEBUG]                com.sun.xml.bind:jaxb-impl:jar:2.3.1-MULE-001:compile
+[DEBUG]                com.sun.xml.bind:jaxb-core:jar:2.3.0.1:compile
+[DEBUG]                javax.xml.soap:javax.xml.soap-api:jar:1.4.0:compile
+[DEBUG]                javax.xml.ws:jaxws-api:jar:2.3.1:compile
+[DEBUG]             jboss:javassist:jar:3.7.ga:compile
+[DEBUG]             joda-time:joda-time:jar:2.9.1:compile
+[DEBUG]             org.dom4j:dom4j:jar:2.1.1:compile
+[DEBUG]       org.mule.runtime:mule-module-container:jar:4.3.0:compile
+[DEBUG]       org.mule.runtime:mule-module-service:jar:4.3.0:compile
+[DEBUG]       org.mule.runtime:mule-module-reboot:jar:4.3.0:compile
+[DEBUG]          tanukisoft:wrapper:jar:3.2.3:compile
+[DEBUG]       org.eclipse.aether:aether-impl:jar:1.0.2.v20150114:compile
+[DEBUG]       org.mule.tools.maven:mule-classloader-model:jar:3.4.0:compile
+[DEBUG]    org.mule.glassfish.jaxb:jaxb-runtime:jar:2.3.1-MULE-001:compile
+[DEBUG]       javax.xml.bind:jaxb-api:jar:2.3.1:compile
+[DEBUG]       org.mule.glassfish.jaxb:txw2:jar:2.3.1-MULE-001:compile
+[DEBUG]       com.sun.istack:istack-commons-runtime:jar:3.0.7:compile
+[DEBUG]       org.jvnet.staxex:stax-ex:jar:1.8:compile
+[DEBUG]       com.sun.xml.fastinfoset:FastInfoset:jar:1.2.15:compile
+[DEBUG]       javax.activation:javax.activation-api:jar:1.2.0:compile
+[DEBUG]    javax.activation:activation:jar:1.1.1:compile
+[DEBUG] Created new class realm extension>org.mule.runtime.plugins:mule-extensions-maven-plugin:1.3.1
+[DEBUG] Importing foreign packages into class realm extension>org.mule.runtime.plugins:mule-extensions-maven-plugin:1.3.1
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm extension>org.mule.runtime.plugins:mule-extensions-maven-plugin:1.3.1
+[DEBUG]   Included: org.mule.runtime.plugins:mule-extensions-maven-plugin:jar:1.3.1
+[DEBUG]   Included: org.mule.runtime.plugins:mule-packager-plugins-base:jar:1.3.1
+[DEBUG]   Included: org.mule.runtime:mule-api:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:mule-metadata-model-api:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:mule-message-metadata-model:jar:1.3.0
+[DEBUG]   Included: com.google.code.gson:gson:jar:2.8.5
+[DEBUG]   Included: com.github.ben-manes.caffeine:caffeine:jar:2.8.0
+[DEBUG]   Included: org.mule.runtime:mule-artifact-declaration:jar:1.3.0
+[DEBUG]   Included: org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.4
+[DEBUG]   Included: com.google.inject:guice:jar:no_aop:4.0
+[DEBUG]   Included: aopalliance:aopalliance:jar:1.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.21
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.6
+[DEBUG]   Included: org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3
+[DEBUG]   Included: org.sonatype.plexus:plexus-cipher:jar:1.4
+[DEBUG]   Included: org.codehaus.plexus:plexus-archiver:jar:3.6.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-io:jar:3.0.1
+[DEBUG]   Included: org.apache.commons:commons-compress:jar:1.16.1
+[DEBUG]   Included: org.objenesis:objenesis:jar:2.6
+[DEBUG]   Included: org.iq80.snappy:snappy:jar:0.4
+[DEBUG]   Included: org.tukaani:xz:jar:1.8
+[DEBUG]   Included: org.apache.commons:commons-lang3:jar:3.7
+[DEBUG]   Included: org.mule:mule-maven-client-api:jar:1.5.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.0.24
+[DEBUG]   Included: org.mule.runtime:api-annotations:jar:1.2.0
+[DEBUG]   Included: org.mule:mule-maven-client-impl:jar:1.5.0
+[DEBUG]   Included: com.vdurmont:semver4j:jar:2.0.3
+[DEBUG]   Included: org.eclipse.aether:aether-util:jar:1.0.2.v20150114
+[DEBUG]   Included: org.eclipse.aether:aether-connector-basic:jar:1.0.2.v20150114
+[DEBUG]   Included: org.eclipse.aether:aether-transport-file:jar:1.0.2.v20150114
+[DEBUG]   Included: org.eclipse.aether:aether-transport-http:jar:1.0.2.v20150114
+[DEBUG]   Included: org.slf4j:jcl-over-slf4j:jar:1.6.2
+[DEBUG]   Included: org.apache.httpcomponents:httpclient:jar:4.5.10
+[DEBUG]   Included: org.apache.httpcomponents:httpcore:jar:4.4.12
+[DEBUG]   Included: commons-logging:commons-logging:jar:1.2
+[DEBUG]   Included: commons-codec:commons-codec:jar:1.11
+[DEBUG]   Included: org.apache.maven:maven-builder-support:jar:3.3.9
+[DEBUG]   Included: commons-io:commons-io:jar:2.6
+[DEBUG]   Included: com.beust:jcommander:jar:1.69
+[DEBUG]   Included: org.apache.velocity:velocity:jar:1.7
+[DEBUG]   Included: commons-collections:commons-collections:jar:3.2.1
+[DEBUG]   Included: commons-lang:commons-lang:jar:2.4
+[DEBUG]   Included: org.apache.velocity.tools:velocity-tools-generic:jar:3.0
+[DEBUG]   Included: org.apache.velocity:velocity-engine-core:jar:2.0
+[DEBUG]   Included: commons-beanutils:commons-beanutils:jar:1.9.3
+[DEBUG]   Included: org.apache.commons:commons-digester3:jar:3.2
+[DEBUG]   Included: com.github.cliftonlabs:json-simple:jar:3.0.2
+[DEBUG]   Included: org.jruby:jruby-complete:jar:1.7.17
+[DEBUG]   Included: org.asciidoctor:asciidoctorj:jar:1.5.2
+[DEBUG]   Included: org.zeroturnaround:zt-zip:jar:1.11
+[DEBUG]   Included: org.mule.runtime:mule-extensions-api:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:mule-metadata-model-java:jar:1.3.0
+[DEBUG]   Included: com.google.guava:guava:jar:25.1-jre
+[DEBUG]   Included: com.google.code.findbugs:jsr305:jar:3.0.2
+[DEBUG]   Included: org.checkerframework:checker-qual:jar:2.0.0
+[DEBUG]   Included: com.google.errorprone:error_prone_annotations:jar:2.1.3
+[DEBUG]   Included: com.google.j2objc:j2objc-annotations:jar:1.1
+[DEBUG]   Included: org.codehaus.mojo:animal-sniffer-annotations:jar:1.14
+[DEBUG]   Included: org.reactivestreams:reactive-streams:jar:1.0.2
+[DEBUG]   Included: com.sun.activation:javax.activation:jar:1.2.0
+[DEBUG]   Included: javax.transaction:javax.transaction-api:jar:1.3
+[DEBUG]   Included: org.mule.runtime:mule-extensions-api-persistence:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:mule-metadata-model-persistence:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:mule-metadata-model-json:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:mule-metadata-model-xml:jar:1.3.0
+[DEBUG]   Included: org.apache.xmlbeans:xmlbeans:jar:3.1.0
+[DEBUG]   Included: org.mule.apache:xerces2-xsd11:jar:2.11.3
+[DEBUG]   Included: org.mule.runtime:mule-module-deployment-model-impl:jar:4.3.0
+[DEBUG]   Included: org.mule.runtime:mule-core:jar:4.3.0
+[DEBUG]   Included: org.mule.runtime:mule-module-dsl-api:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:mule-module-http-policy-api:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:mule-module-policy-api:jar:1.3.0
+[DEBUG]   Included: org.mule.com.github.stephenc.eaio-uuid:uuid:jar:3.4.2-MULE-001
+[DEBUG]   Included: javax.annotation:javax.annotation-api:jar:1.3.2
+[DEBUG]   Included: commons-cli:commons-cli:jar:1.2
+[DEBUG]   Included: commons-pool:commons-pool:jar:1.6
+[DEBUG]   Included: org.apache.geronimo.specs:geronimo-j2ee-connector_1.5_spec:jar:2.0.0
+[DEBUG]   Included: org.mule.mvel:mule-mvel2:jar:2.1.9-MULE-020
+[DEBUG]   Included: org.jgrapht:jgrapht-core:jar:1.3.1
+[DEBUG]   Included: org.jheaps:jheaps:jar:0.10
+[DEBUG]   Included: org.reflections:reflections:jar:0.9.10
+[DEBUG]   Included: io.projectreactor:reactor-core:jar:3.2.12.RELEASE
+[DEBUG]   Included: io.projectreactor.addons:reactor-extra:jar:3.2.3.RELEASE
+[DEBUG]   Included: org.yaml:snakeyaml:jar:1.26
+[DEBUG]   Included: cglib:cglib-nodep:jar:3.2.10
+[DEBUG]   Included: org.apache.commons:commons-pool2:jar:2.6.2
+[DEBUG]   Included: org.apache.commons:commons-math3:jar:3.6.1
+[DEBUG]   Included: it.unimi.dsi:fastutil:jar:8.1.1
+[DEBUG]   Included: net.jodah:failsafe:jar:2.1.1
+[DEBUG]   Included: org.vibur:vibur-object-pool:jar:23.0
+[DEBUG]   Included: com.conversantmedia:disruptor:jar:1.2.10
+[DEBUG]   Included: javax.jms:javax.jms-api:jar:2.0.1
+[DEBUG]   Included: org.mule.runtime:mule-module-artifact:jar:4.3.0
+[DEBUG]   Included: org.mule.runtime:mule-module-license-api:jar:4.3.0
+[DEBUG]   Included: org.mule.runtime:mule-module-deployment-model:jar:4.3.0
+[DEBUG]   Included: org.mule.runtime:mule-module-global-config:jar:4.3.0
+[DEBUG]   Included: com.typesafe:config:jar:1.3.1
+[DEBUG]   Included: org.everit.json:org.everit.json.schema:jar:1.5.1
+[DEBUG]   Included: org.json:json:jar:20160810
+[DEBUG]   Included: org.mule.runtime:mule-module-extensions-support:jar:4.3.0
+[DEBUG]   Included: org.mule.runtime:mule-extensions-api-dsql:jar:1.3.0
+[DEBUG]   Included: org.antlr:antlr-runtime:jar:3.5
+[DEBUG]   Included: org.antlr:stringtemplate:jar:3.2.1
+[DEBUG]   Included: org.mule.runtime:mule-artifact-ast:jar:0.8.0
+[DEBUG]   Included: org.mule.runtime:mule-service-oauth-api:jar:4.3.0
+[DEBUG]   Included: net.bytebuddy:byte-buddy:jar:1.10.7
+[DEBUG]   Included: org.mule.runtime:mule-module-extensions-xml-support:jar:4.3.0
+[DEBUG]   Included: org.mule.runtime:mule-metadata-model-catalog:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:mule-metadata-model-raml:jar:1.3.0
+[DEBUG]   Included: org.raml:raml-parser-2:jar:1.0.49
+[DEBUG]   Included: org.raml:yagi:jar:1.0.49
+[DEBUG]   Included: com.google.code.findbugs:annotations:jar:3.0.0
+[DEBUG]   Included: com.fasterxml.jackson.module:jackson-module-jsonSchema:jar:2.10.0
+[DEBUG]   Included: com.fasterxml.jackson.core:jackson-annotations:jar:2.10.0
+[DEBUG]   Included: com.fasterxml.jackson.core:jackson-core:jar:2.10.0
+[DEBUG]   Included: com.fasterxml.jackson.core:jackson-databind:jar:2.10.0
+[DEBUG]   Included: javax.validation:validation-api:jar:1.1.0.Final
+[DEBUG]   Included: com.github.java-json-tools:json-schema-validator:jar:2.2.10
+[DEBUG]   Included: com.github.java-json-tools:json-schema-core:jar:1.2.10
+[DEBUG]   Included: com.github.java-json-tools:jackson-coreutils:jar:1.9
+[DEBUG]   Included: com.github.fge:msg-simple:jar:1.1
+[DEBUG]   Included: com.github.fge:btf:jar:1.2
+[DEBUG]   Included: com.github.fge:uri-template:jar:0.9
+[DEBUG]   Included: com.googlecode.libphonenumber:libphonenumber:jar:8.0.0
+[DEBUG]   Included: net.sf.jopt-simple:jopt-simple:jar:5.0.3
+[DEBUG]   Included: com.googlecode.juniversalchardet:juniversalchardet:jar:1.0.3
+[DEBUG]   Included: org.apache.ws.xmlschema:xmlschema-core:jar:2.2.1
+[DEBUG]   Included: javax.json:javax.json-api:jar:1.0
+[DEBUG]   Included: org.glassfish:javax.json:jar:1.0.4
+[DEBUG]   Included: com.sun.mail:jakarta.mail:jar:1.6.3
+[DEBUG]   Included: com.sun.activation:jakarta.activation:jar:1.2.1
+[DEBUG]   Included: org.mozilla:rhino:jar:1.7.12
+[DEBUG]   Included: org.mule.runtime:mule-module-spring-config:jar:4.3.0
+[DEBUG]   Included: org.mule.runtime:mule-artifact-ast-dependency-graph:jar:0.8.0
+[DEBUG]   Included: org.springframework:spring-context:jar:5.1.6.RELEASE
+[DEBUG]   Included: org.springframework:spring-beans:jar:5.1.6.RELEASE
+[DEBUG]   Included: org.springframework:spring-core:jar:5.1.6.RELEASE
+[DEBUG]   Included: org.springframework:spring-jcl:jar:5.1.6.RELEASE
+[DEBUG]   Included: org.springframework:spring-expression:jar:5.1.6.RELEASE
+[DEBUG]   Included: org.springframework:spring-aop:jar:5.1.6.RELEASE
+[DEBUG]   Included: org.mule.runtime:mule-module-logging:jar:4.3.0
+[DEBUG]   Included: com.lmax:disruptor:jar:3.3.7
+[DEBUG]   Included: org.slf4j:slf4j-ext:jar:1.7.30
+[DEBUG]   Included: org.apache.logging.log4j:log4j-api:jar:2.13.1
+[DEBUG]   Included: org.apache.logging.log4j:log4j-core:jar:2.13.1
+[DEBUG]   Included: org.apache.logging.log4j:log4j-slf4j-impl:jar:2.13.1
+[DEBUG]   Included: org.apache.logging.log4j:log4j-1.2-api:jar:2.13.1
+[DEBUG]   Included: org.slf4j:jul-to-slf4j:jar:1.7.30
+[DEBUG]   Included: org.mule.runtime:mule-module-extensions-spring-support:jar:4.3.0
+[DEBUG]   Included: org.jsoup:jsoup:jar:1.11.3
+[DEBUG]   Included: org.mule.runtime:mule-module-extensions-soap-support:jar:4.3.0
+[DEBUG]   Included: org.mule.runtime:mule-extensions-soap-api:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:mule-service-soap-api:jar:4.3.0
+[DEBUG]   Included: org.mule.runtime:mule-service-http-api:jar:4.3.0
+[DEBUG]   Included: org.mule.runtime:mule-module-tls:jar:4.3.0
+[DEBUG]   Included: org.mule.runtime:mule-module-javaee:jar:4.3.0
+[DEBUG]   Included: javax.jws:javax.jws-api:jar:1.1
+[DEBUG]   Included: com.sun.xml.bind:jaxb-impl:jar:2.3.1-MULE-001
+[DEBUG]   Included: com.sun.xml.bind:jaxb-core:jar:2.3.0.1
+[DEBUG]   Included: javax.xml.soap:javax.xml.soap-api:jar:1.4.0
+[DEBUG]   Included: javax.xml.ws:jaxws-api:jar:2.3.1
+[DEBUG]   Included: jboss:javassist:jar:3.7.ga
+[DEBUG]   Included: joda-time:joda-time:jar:2.9.1
+[DEBUG]   Included: org.dom4j:dom4j:jar:2.1.1
+[DEBUG]   Included: org.mule.runtime:mule-module-container:jar:4.3.0
+[DEBUG]   Included: org.mule.runtime:mule-module-service:jar:4.3.0
+[DEBUG]   Included: org.mule.runtime:mule-module-reboot:jar:4.3.0
+[DEBUG]   Included: tanukisoft:wrapper:jar:3.2.3
+[DEBUG]   Included: org.mule.tools.maven:mule-classloader-model:jar:3.4.0
+[DEBUG]   Included: org.mule.glassfish.jaxb:jaxb-runtime:jar:2.3.1-MULE-001
+[DEBUG]   Included: javax.xml.bind:jaxb-api:jar:2.3.1
+[DEBUG]   Included: org.mule.glassfish.jaxb:txw2:jar:2.3.1-MULE-001
+[DEBUG]   Included: com.sun.istack:istack-commons-runtime:jar:3.0.7
+[DEBUG]   Included: org.jvnet.staxex:stax-ex:jar:1.8
+[DEBUG]   Included: com.sun.xml.fastinfoset:FastInfoset:jar:1.2.15
+[DEBUG]   Included: javax.activation:javax.activation-api:jar:1.2.0
+[DEBUG]   Included: javax.activation:activation:jar:1.1.1
+[DEBUG] Extension realms for project com.mulesoft.connectors:Basware:mule-extension:1.0.0-SNAPSHOT: [ClassRealm[extension>org.mule.runtime.plugins:mule-extensions-maven-plugin:1.3.1, parent: sun.misc.Launcher$AppClassLoader@4e25154f]]
+[DEBUG] Created new class realm project>com.mulesoft.connectors:Basware:1.0.0-SNAPSHOT
+[DEBUG] Populating class realm project>com.mulesoft.connectors:Basware:1.0.0-SNAPSHOT
+[DEBUG] Looking up lifecycle mappings for packaging mule-extension from ClassRealm[project>com.mulesoft.connectors:Basware:1.0.0-SNAPSHOT, parent: ClassRealm[maven.api, parent: null]]
+[DEBUG] Extension realms for project com.mulesoft.connectivity:rest-sdk-connector-parent-pom:pom:0.8.0-RC2: [ClassRealm[extension>org.mule.runtime.plugins:mule-extensions-maven-plugin:1.3.1, parent: sun.misc.Launcher$AppClassLoader@4e25154f]]
+[DEBUG] Looking up lifecycle mappings for packaging pom from ClassRealm[project>com.mulesoft.connectors:Basware:1.0.0-SNAPSHOT, parent: ClassRealm[maven.api, parent: null]]
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=125200, ConflictMarker.markTime=56700, ConflictMarker.nodeCount=191, ConflictIdSorter.graphTime=82100, ConflictIdSorter.topsortTime=42800, ConflictIdSorter.conflictIdCount=89, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=1156700, ConflictResolver.conflictItemCount=182, DefaultDependencyCollector.collectTime=7699600, DefaultDependencyCollector.transformTime=1512100}
+[DEBUG] org.mule.runtime.plugins:mule-extensions-maven-plugin:jar:1.3.0
+[DEBUG]    org.mule.runtime.plugins:mule-packager-plugins-base:jar:1.3.0:compile
+[DEBUG]       org.mule.runtime:mule-api:jar:1.3.0:compile
+[DEBUG]          org.mule.runtime:mule-metadata-model-api:jar:1.3.0:compile
+[DEBUG]          org.mule.runtime:mule-message-metadata-model:jar:1.3.0:compile
+[DEBUG]          commons-io:commons-io:jar:2.6:compile
+[DEBUG]          com.google.code.gson:gson:jar:2.8.5:compile
+[DEBUG]          javax.inject:javax.inject:jar:1:compile
+[DEBUG]          com.github.ben-manes.caffeine:caffeine:jar:2.8.0:compile
+[DEBUG]          com.vdurmont:semver4j:jar:3.1.0:compile
+[DEBUG]          org.mule.runtime:mule-artifact-declaration:jar:1.3.0:compile
+[DEBUG]          org.mule.runtime:api-annotations:jar:1.2.0:compile
+[DEBUG]       org.apache.maven:maven-plugin-api:jar:3.3.9:compile
+[DEBUG]          org.apache.maven:maven-model:jar:3.3.9:compile
+[DEBUG]          org.apache.maven:maven-artifact:jar:3.3.9:compile
+[DEBUG]          org.eclipse.sisu:org.eclipse.sisu.plexus:jar:0.3.2:compile
+[DEBUG]             javax.enterprise:cdi-api:jar:1.0:compile
+[DEBUG]                javax.annotation:jsr250-api:jar:1.0:compile
+[DEBUG]             org.eclipse.sisu:org.eclipse.sisu.inject:jar:0.3.2:compile
+[DEBUG]       org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.4:compile
+[DEBUG]       org.apache.maven:maven-core:jar:3.3.9:compile
+[DEBUG]          org.apache.maven:maven-settings:jar:3.3.9:compile
+[DEBUG]          org.apache.maven:maven-settings-builder:jar:3.3.9:compile
+[DEBUG]             org.apache.maven:maven-builder-support:jar:3.3.9:compile
+[DEBUG]          org.apache.maven:maven-repository-metadata:jar:3.3.9:compile
+[DEBUG]          org.apache.maven:maven-model-builder:jar:3.3.9:compile
+[DEBUG]          org.apache.maven:maven-aether-provider:jar:3.3.9:compile
+[DEBUG]             org.eclipse.aether:aether-spi:jar:1.0.2.v20150114:compile
+[DEBUG]          org.eclipse.aether:aether-impl:jar:1.0.2.v20150114:compile
+[DEBUG]          org.eclipse.aether:aether-api:jar:1.0.2.v20150114:compile
+[DEBUG]          org.eclipse.aether:aether-util:jar:1.0.2.v20150114:compile
+[DEBUG]          com.google.inject:guice:jar:no_aop:4.0:compile
+[DEBUG]             aopalliance:aopalliance:jar:1.0:compile
+[DEBUG]          org.codehaus.plexus:plexus-interpolation:jar:1.21:compile
+[DEBUG]          org.codehaus.plexus:plexus-utils:jar:3.0.22:compile
+[DEBUG]          org.codehaus.plexus:plexus-classworlds:jar:2.5.2:compile
+[DEBUG]          org.codehaus.plexus:plexus-component-annotations:jar:1.6:compile
+[DEBUG]          org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile
+[DEBUG]             org.sonatype.plexus:plexus-cipher:jar:1.4:compile
+[DEBUG]       org.codehaus.plexus:plexus-archiver:jar:3.6.0:compile
+[DEBUG]          org.codehaus.plexus:plexus-io:jar:3.0.1:compile
+[DEBUG]          org.apache.commons:commons-compress:jar:1.16.1:compile
+[DEBUG]             org.objenesis:objenesis:jar:2.6:compile
+[DEBUG]          org.iq80.snappy:snappy:jar:0.4:compile
+[DEBUG]          org.tukaani:xz:jar:1.8:runtime
+[DEBUG]       org.apache.commons:commons-lang3:jar:3.7:compile
+[DEBUG]    org.apache.velocity:velocity:jar:1.7:compile
+[DEBUG]       commons-collections:commons-collections:jar:3.2.1:compile
+[DEBUG]       commons-lang:commons-lang:jar:2.4:compile
+[DEBUG]    org.apache.velocity.tools:velocity-tools-generic:jar:3.0:compile
+[DEBUG]       org.apache.velocity:velocity-engine-core:jar:2.0:compile
+[DEBUG]       commons-beanutils:commons-beanutils:jar:1.9.3:compile
+[DEBUG]          commons-logging:commons-logging:jar:1.2:compile
+[DEBUG]       org.apache.commons:commons-digester3:jar:3.2:compile
+[DEBUG]          cglib:cglib:jar:2.2.2:compile
+[DEBUG]             asm:asm:jar:3.3.1:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.25:compile
+[DEBUG]       com.github.cliftonlabs:json-simple:jar:3.0.2:compile
+[DEBUG]    org.jruby:jruby-complete:jar:1.7.17:compile
+[DEBUG]    org.asciidoctor:asciidoctorj:jar:1.5.2:compile
+[DEBUG]       com.beust:jcommander:jar:1.35:runtime
+[DEBUG]    org.zeroturnaround:zt-zip:jar:1.11:compile
+[DEBUG]    org.mule.runtime:mule-extensions-api:jar:1.3.0:compile
+[DEBUG]       org.mule.runtime:mule-metadata-model-java:jar:1.3.0:compile
+[DEBUG]       com.google.guava:guava:jar:25.1-jre:compile
+[DEBUG]          com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[DEBUG]          org.checkerframework:checker-qual:jar:2.0.0:compile
+[DEBUG]          com.google.errorprone:error_prone_annotations:jar:2.1.3:compile
+[DEBUG]          com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[DEBUG]          org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[DEBUG]       org.reactivestreams:reactive-streams:jar:1.0.2:compile
+[DEBUG]       com.sun.activation:javax.activation:jar:1.2.0:compile
+[DEBUG]       javax.transaction:javax.transaction-api:jar:1.3:compile
+[DEBUG]    org.mule.runtime:mule-extensions-api-persistence:jar:1.3.0:compile
+[DEBUG]       org.mule.runtime:mule-metadata-model-persistence:jar:1.3.0:compile
+[DEBUG]          org.mule.runtime:mule-metadata-model-json:jar:1.3.0:compile
+[DEBUG]             org.everit.json:org.everit.json.schema:jar:1.5.1:compile
+[DEBUG]                org.json:json:jar:20160810:compile
+[DEBUG]          org.mule.runtime:mule-metadata-model-xml:jar:1.3.0:compile
+[DEBUG]             org.apache.xmlbeans:xmlbeans:jar:3.1.0:compile
+[DEBUG]             org.mule.apache:xerces2-xsd11:jar:2.11.3:compile
+[DEBUG]    org.mule.glassfish.jaxb:jaxb-runtime:jar:2.3.1-MULE-001:compile
+[DEBUG]       javax.xml.bind:jaxb-api:jar:2.3.1:compile
+[DEBUG]       org.mule.glassfish.jaxb:txw2:jar:2.3.1-MULE-001:compile
+[DEBUG]       com.sun.istack:istack-commons-runtime:jar:3.0.7:compile
+[DEBUG]       org.jvnet.staxex:stax-ex:jar:1.8:compile
+[DEBUG]       com.sun.xml.fastinfoset:FastInfoset:jar:1.2.15:compile
+[DEBUG]       javax.activation:javax.activation-api:jar:1.2.0:compile
+[DEBUG]    javax.activation:activation:jar:1.1.1:compile
+[DEBUG] Created new class realm extension>org.mule.runtime.plugins:mule-extensions-maven-plugin:1.3.0
+[DEBUG] Importing foreign packages into class realm extension>org.mule.runtime.plugins:mule-extensions-maven-plugin:1.3.0
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm extension>org.mule.runtime.plugins:mule-extensions-maven-plugin:1.3.0
+[DEBUG]   Included: org.mule.runtime.plugins:mule-extensions-maven-plugin:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime.plugins:mule-packager-plugins-base:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:mule-api:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:mule-metadata-model-api:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:mule-message-metadata-model:jar:1.3.0
+[DEBUG]   Included: commons-io:commons-io:jar:2.6
+[DEBUG]   Included: com.google.code.gson:gson:jar:2.8.5
+[DEBUG]   Included: com.github.ben-manes.caffeine:caffeine:jar:2.8.0
+[DEBUG]   Included: com.vdurmont:semver4j:jar:3.1.0
+[DEBUG]   Included: org.mule.runtime:mule-artifact-declaration:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:api-annotations:jar:1.2.0
+[DEBUG]   Included: javax.enterprise:cdi-api:jar:1.0
+[DEBUG]   Included: org.eclipse.sisu:org.eclipse.sisu.inject:jar:0.3.2
+[DEBUG]   Included: org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.4
+[DEBUG]   Included: org.apache.maven:maven-builder-support:jar:3.3.9
+[DEBUG]   Included: org.eclipse.aether:aether-util:jar:1.0.2.v20150114
+[DEBUG]   Included: com.google.inject:guice:jar:no_aop:4.0
+[DEBUG]   Included: aopalliance:aopalliance:jar:1.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.21
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.0.22
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.6
+[DEBUG]   Included: org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3
+[DEBUG]   Included: org.sonatype.plexus:plexus-cipher:jar:1.4
+[DEBUG]   Included: org.codehaus.plexus:plexus-archiver:jar:3.6.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-io:jar:3.0.1
+[DEBUG]   Included: org.apache.commons:commons-compress:jar:1.16.1
+[DEBUG]   Included: org.objenesis:objenesis:jar:2.6
+[DEBUG]   Included: org.iq80.snappy:snappy:jar:0.4
+[DEBUG]   Included: org.tukaani:xz:jar:1.8
+[DEBUG]   Included: org.apache.commons:commons-lang3:jar:3.7
+[DEBUG]   Included: org.apache.velocity:velocity:jar:1.7
+[DEBUG]   Included: commons-collections:commons-collections:jar:3.2.1
+[DEBUG]   Included: commons-lang:commons-lang:jar:2.4
+[DEBUG]   Included: org.apache.velocity.tools:velocity-tools-generic:jar:3.0
+[DEBUG]   Included: org.apache.velocity:velocity-engine-core:jar:2.0
+[DEBUG]   Included: commons-beanutils:commons-beanutils:jar:1.9.3
+[DEBUG]   Included: commons-logging:commons-logging:jar:1.2
+[DEBUG]   Included: org.apache.commons:commons-digester3:jar:3.2
+[DEBUG]   Included: cglib:cglib:jar:2.2.2
+[DEBUG]   Included: asm:asm:jar:3.3.1
+[DEBUG]   Included: com.github.cliftonlabs:json-simple:jar:3.0.2
+[DEBUG]   Included: org.jruby:jruby-complete:jar:1.7.17
+[DEBUG]   Included: org.asciidoctor:asciidoctorj:jar:1.5.2
+[DEBUG]   Included: com.beust:jcommander:jar:1.35
+[DEBUG]   Included: org.zeroturnaround:zt-zip:jar:1.11
+[DEBUG]   Included: org.mule.runtime:mule-extensions-api:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:mule-metadata-model-java:jar:1.3.0
+[DEBUG]   Included: com.google.guava:guava:jar:25.1-jre
+[DEBUG]   Included: com.google.code.findbugs:jsr305:jar:3.0.2
+[DEBUG]   Included: org.checkerframework:checker-qual:jar:2.0.0
+[DEBUG]   Included: com.google.errorprone:error_prone_annotations:jar:2.1.3
+[DEBUG]   Included: com.google.j2objc:j2objc-annotations:jar:1.1
+[DEBUG]   Included: org.codehaus.mojo:animal-sniffer-annotations:jar:1.14
+[DEBUG]   Included: org.reactivestreams:reactive-streams:jar:1.0.2
+[DEBUG]   Included: com.sun.activation:javax.activation:jar:1.2.0
+[DEBUG]   Included: javax.transaction:javax.transaction-api:jar:1.3
+[DEBUG]   Included: org.mule.runtime:mule-extensions-api-persistence:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:mule-metadata-model-persistence:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:mule-metadata-model-json:jar:1.3.0
+[DEBUG]   Included: org.everit.json:org.everit.json.schema:jar:1.5.1
+[DEBUG]   Included: org.json:json:jar:20160810
+[DEBUG]   Included: org.mule.runtime:mule-metadata-model-xml:jar:1.3.0
+[DEBUG]   Included: org.apache.xmlbeans:xmlbeans:jar:3.1.0
+[DEBUG]   Included: org.mule.apache:xerces2-xsd11:jar:2.11.3
+[DEBUG]   Included: org.mule.glassfish.jaxb:jaxb-runtime:jar:2.3.1-MULE-001
+[DEBUG]   Included: javax.xml.bind:jaxb-api:jar:2.3.1
+[DEBUG]   Included: org.mule.glassfish.jaxb:txw2:jar:2.3.1-MULE-001
+[DEBUG]   Included: com.sun.istack:istack-commons-runtime:jar:3.0.7
+[DEBUG]   Included: org.jvnet.staxex:stax-ex:jar:1.8
+[DEBUG]   Included: com.sun.xml.fastinfoset:FastInfoset:jar:1.2.15
+[DEBUG]   Included: javax.activation:javax.activation-api:jar:1.2.0
+[DEBUG]   Included: javax.activation:activation:jar:1.1.1
+[DEBUG] Extension realms for project org.mule.extensions:mule-modules-parent:pom:1.3.0: [ClassRealm[extension>org.mule.runtime.plugins:mule-extensions-maven-plugin:1.3.0, parent: sun.misc.Launcher$AppClassLoader@4e25154f]]
+[DEBUG] Created new class realm project>org.mule.extensions:mule-modules-parent:1.3.0
+[DEBUG] Populating class realm project>org.mule.extensions:mule-modules-parent:1.3.0
+[DEBUG] Looking up lifecycle mappings for packaging pom from ClassRealm[project>org.mule.extensions:mule-modules-parent:1.3.0, parent: ClassRealm[maven.api, parent: null]]
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.mulesoft.connectors:Basware:mule-extension:1.0.0-SNAPSHOT
+[WARNING] 'parent.relativePath' of POM com.mulesoft.connectors:Basware:1.0.0-SNAPSHOT (C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\pom.xml) points at com.mulesoft.connectors:BaswareOAUTH2 instead of com.mulesoft.connectivity:rest-sdk-connector-parent-pom, please verify your project structure @ line 50, column 13
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[DEBUG] === REACTOR BUILD PLAN ================================================
+[DEBUG] Project: com.mulesoft.connectors:Basware:mule-extension:1.0.0-SNAPSHOT
+[DEBUG] Tasks:   [clean, install]
+[DEBUG] Style:   Regular
+[DEBUG] =======================================================================
+[INFO] 
+[INFO] ------------------< com.mulesoft.connectors:Basware >-------------------
+[INFO] Building Basware Connector 1.0.0-SNAPSHOT
+[INFO] ---------------------------[ mule-extension ]---------------------------
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       com.mulesoft.connectors:Basware:1.0.0-SNAPSHOT
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [compile, runtime, test]
+[DEBUG] Repositories (dependencies): [MuleRepository (https://repository.mulesoft.org/nexus-ee/content/repositories/releases-ee/, default, releases+snapshots), mule-public (https://repository.mulesoft.org/nexus/content/repositories/public, default, releases+snapshots), mule-releases (https://repository.mulesoft.org/nexus/content/repositories/releases/, default, releases+snapshots), mule (https://repository.mulesoft.org/nexus/content/repositories/public/, default, releases+snapshots), central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] Repositories (plugins)     : [mule-ee-releases (https://repository.mulesoft.org/nexus-ee/content/repositories/releases-ee/, default, releases+snapshots), mule-public-releases (https://repository.mulesoft.org/nexus/content/repositories/releases/, default, releases+snapshots), mule-public (https://repository.mulesoft.org/nexus/content/repositories/public, default, releases+snapshots), mulesoft-plugin-releases (https://repository.mulesoft.org/releases/, default, releases+snapshots), mulesoft-plugin-snapshots (https://repository.mulesoft.org/snapshots/, default, releases+snapshots), central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean (default-clean)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <directory default-value="${project.build.directory}"/>
+  <excludeDefaultDirectories default-value="false">${maven.clean.excludeDefaultDirectories}</excludeDefaultDirectories>
+  <failOnError default-value="true">${maven.clean.failOnError}</failOnError>
+  <followSymLinks default-value="false">${maven.clean.followSymLinks}</followSymLinks>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <reportDirectory default-value="${project.build.outputDirectory}"/>
+  <retryOnError default-value="true">${maven.clean.retryOnError}</retryOnError>
+  <skip default-value="false">${maven.clean.skip}</skip>
+  <testOutputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <verbose>${maven.clean.verbose}</verbose>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.bsc.maven:maven-processor-plugin:3.3.3:process (process)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addCompileSourceRoots default-value="false"/>
+  <additionalSourceDirectories>
+    <additionalSourceDirectory>C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target/generated-sources/</additionalSourceDirectory>
+  </additionalSourceDirectories>
+  <appendSourceArtifacts default-value="false"/>
+  <classpathElements default-value="${project.compileClasspathElements}"/>
+  <defaultOutputDirectory default-value="${project.build.directory}/generated-sources/apt"/>
+  <encoding>${project.build.sourceEncoding}</encoding>
+  <failOnError default-value="true">${annotation.failOnError}</failOnError>
+  <fork default-value="false">${fork}</fork>
+  <optionMap>
+    <extension.version>1.0.0-SNAPSHOT</extension.version>
+  </optionMap>
+  <outputClassDirectory default-value="${project.build.outputDirectory}"/>
+  <outputDiagnostics default-value="true">${annotation.outputDiagnostics}</outputDiagnostics>
+  <outputDirectory>target/classes/META-INF</outputDirectory>
+  <pluginArtifacts>${plugin.artifacts}</pluginArtifacts>
+  <processors>
+    <processor>org.mule.runtime.ast.internal.extension.loader.ASTExtensionResourcesGeneratorAnnotationProcessor</processor>
+  </processors>
+  <remoteRepos default-value="${project.remoteProjectRepositories}"/>
+  <repoSession default-value="${repositorySystemSession}"/>
+  <skip default-value="false">${skipAnnotationProcessing}</skip>
+  <sourceDirectory default-value="${project.build.sourceDirectory}"/>
+  <systemProperties>
+    <exportedPackagesValidator.skip>false</exportedPackagesValidator.skip>
+    <exportedPackagesValidator.strictValidation>false</exportedPackagesValidator.strictValidation>
+  </systemProperties>
+  <project default-value="${project}"/>
+  <session default-value="${session}"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-resources-plugin:3.1.0:resources (default-resources)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addDefaultExcludes default-value="true"/>
+  <buildFilters default-value="${project.build.filters}"/>
+  <encoding default-value="${project.build.sourceEncoding}"/>
+  <escapeWindowsPaths default-value="true"/>
+  <fileNameFiltering default-value="false"/>
+  <includeEmptyDirs default-value="false"/>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <overwrite default-value="false"/>
+  <project default-value="${project}"/>
+  <resources default-value="${project.resources}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.resources.skip}</skip>
+  <supportMultiLineFiltering default-value="false"/>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile (default-compile)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <compilePath default-value="${project.compileClasspathElements}"/>
+  <compileSourceRoots default-value="${project.compileSourceRoots}"/>
+  <compilerArgs>
+    <arg>-parameters</arg>
+  </compilerArgs>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerReuseStrategy default-value="${reuseCreated}">${maven.compiler.compilerReuseStrategy}</compilerReuseStrategy>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <encoding default-value="${project.build.sourceEncoding}">ISO-8859-1</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <failOnWarning default-value="false">${maven.compiler.failOnWarning}</failOnWarning>
+  <forceJavacCompilerUse default-value="false">${maven.compiler.forceJavacCompilerUse}</forceJavacCompilerUse>
+  <fork default-value="false">true</fork>
+  <generatedSourcesDirectory default-value="${project.build.directory}/generated-sources/annotations"/>
+  <maxmem>512m</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <mojoExecution default-value="${mojoExecution}"/>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <parameters default-value="false">${maven.compiler.parameters}</parameters>
+  <proc>none</proc>
+  <project default-value="${project}"/>
+  <projectArtifact default-value="${project.artifact}"/>
+  <release>${maven.compiler.release}</release>
+  <session default-value="${session}"/>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="false">${maven.compiler.showWarnings}</showWarnings>
+  <skipMain>${maven.main.skip}</skipMain>
+  <skipMultiThreadWarning default-value="false">${maven.compiler.skipMultiThreadWarning}</skipMultiThreadWarning>
+  <source default-value="1.6">1.8</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.6">1.8</target>
+  <useIncrementalCompilation default-value="true">false</useIncrementalCompilation>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.mule.runtime.plugins:mule-extensions-maven-plugin:1.3.1:extension-descriptor (default-extension-descriptor)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appDirectory default-value="${project.build.directory}/src/main/app"/>
+  <finalName default-value="${project.build.finalName}"/>
+  <outputDirectory default-value="${project.build.directory}"/>
+  <project default-value="${project}"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-resources-plugin:3.1.0:testResources (default-testResources)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addDefaultExcludes default-value="true"/>
+  <buildFilters default-value="${project.build.filters}"/>
+  <encoding default-value="${project.build.sourceEncoding}"/>
+  <escapeWindowsPaths default-value="true"/>
+  <fileNameFiltering default-value="false"/>
+  <includeEmptyDirs default-value="false"/>
+  <outputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <overwrite default-value="false"/>
+  <project default-value="${project}"/>
+  <resources default-value="${project.testResources}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.test.skip}</skip>
+  <supportMultiLineFiltering default-value="false"/>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-resources-plugin:3.1.0:copy-resources (copy-munit-resources)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addDefaultExcludes default-value="true"/>
+  <buildFilters default-value="${project.build.filters}"/>
+  <encoding default-value="${project.build.sourceEncoding}"/>
+  <escapeWindowsPaths default-value="true"/>
+  <fileNameFiltering default-value="false"/>
+  <includeEmptyDirs default-value="false"/>
+  <outputDirectory>C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo/target/test-mule/munit</outputDirectory>
+  <overwrite default-value="false"/>
+  <project default-value="${project}"/>
+  <resources>
+    <resource>
+      <directory>src/test/munit</directory>
+      <filtering>true</filtering>
+    </resource>
+  </resources>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.resources.skip}</skip>
+  <supportMultiLineFiltering default-value="false"/>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-compiler-plugin:3.8.0:testCompile (default-testCompile)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <compilePath default-value="${project.compileClasspathElements}"/>
+  <compileSourceRoots default-value="${project.testCompileSourceRoots}"/>
+  <compilerArgs>
+    <arg>-parameters</arg>
+  </compilerArgs>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerReuseStrategy default-value="${reuseCreated}">${maven.compiler.compilerReuseStrategy}</compilerReuseStrategy>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <encoding default-value="${project.build.sourceEncoding}">ISO-8859-1</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <failOnWarning default-value="false">${maven.compiler.failOnWarning}</failOnWarning>
+  <forceJavacCompilerUse default-value="false">${maven.compiler.forceJavacCompilerUse}</forceJavacCompilerUse>
+  <fork default-value="false">true</fork>
+  <generatedTestSourcesDirectory default-value="${project.build.directory}/generated-test-sources/test-annotations"/>
+  <maxmem>512m</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <mojoExecution default-value="${mojoExecution}"/>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <parameters default-value="false">${maven.compiler.parameters}</parameters>
+  <proc>none</proc>
+  <project default-value="${project}"/>
+  <release>${maven.compiler.release}</release>
+  <session default-value="${session}"/>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="false">${maven.compiler.showWarnings}</showWarnings>
+  <skip>${maven.test.skip}</skip>
+  <skipMultiThreadWarning default-value="false">${maven.compiler.skipMultiThreadWarning}</skipMultiThreadWarning>
+  <source default-value="1.6">1.8</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.6">1.8</target>
+  <testCompilerArgument>-parameters</testCompilerArgument>
+  <testPath default-value="${project.testClasspathElements}"/>
+  <testRelease>${maven.compiler.testRelease}</testRelease>
+  <testSource>${maven.compiler.testSource}</testSource>
+  <testTarget>${maven.compiler.testTarget}</testTarget>
+  <useIncrementalCompilation default-value="true">false</useIncrementalCompilation>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <additionalClasspathElements>${maven.test.additionalClasspath}</additionalClasspathElements>
+  <argLine>${argLine}</argLine>
+  <basedir default-value="${basedir}"/>
+  <childDelegation default-value="false">${childDelegation}</childDelegation>
+  <classesDirectory default-value="${project.build.outputDirectory}"/>
+  <classpathDependencyExcludes>${maven.test.dependency.excludes}</classpathDependencyExcludes>
+  <debugForkedProcess>${maven.surefire.debug}</debugForkedProcess>
+  <dependenciesToScan>${dependenciesToScan}</dependenciesToScan>
+  <disableXmlReport default-value="false">${disableXmlReport}</disableXmlReport>
+  <enableAssertions default-value="true">${enableAssertions}</enableAssertions>
+  <encoding default-value="${project.reporting.outputEncoding}">${surefire.encoding}</encoding>
+  <excludedGroups>${excludedGroups}</excludedGroups>
+  <excludesFile>${surefire.excludesFile}</excludesFile>
+  <failIfNoSpecifiedTests>${surefire.failIfNoSpecifiedTests}</failIfNoSpecifiedTests>
+  <failIfNoTests>${failIfNoTests}</failIfNoTests>
+  <forkCount default-value="1">${forkCount}</forkCount>
+  <forkMode default-value="once">${forkMode}</forkMode>
+  <forkedProcessExitTimeoutInSeconds default-value="30">${surefire.exitTimeout}</forkedProcessExitTimeoutInSeconds>
+  <forkedProcessTimeoutInSeconds>${surefire.timeout}</forkedProcessTimeoutInSeconds>
+  <groups>${groups}</groups>
+  <includesFile>${surefire.includesFile}</includesFile>
+  <junitArtifactName default-value="junit:junit">${junitArtifactName}</junitArtifactName>
+  <junitPlatformArtifactName default-value="org.junit.platform:junit-platform-engine">${junitPlatformArtifactName}</junitPlatformArtifactName>
+  <jvm>${jvm}</jvm>
+  <localRepository default-value="${localRepository}"/>
+  <objectFactory>${objectFactory}</objectFactory>
+  <parallel>${parallel}</parallel>
+  <parallelMavenExecution default-value="${session.parallel}"/>
+  <parallelOptimized default-value="true">${parallelOptimized}</parallelOptimized>
+  <parallelTestsTimeoutForcedInSeconds>${surefire.parallel.forcedTimeout}</parallelTestsTimeoutForcedInSeconds>
+  <parallelTestsTimeoutInSeconds>${surefire.parallel.timeout}</parallelTestsTimeoutInSeconds>
+  <perCoreThreadCount default-value="true">${perCoreThreadCount}</perCoreThreadCount>
+  <pluginArtifactMap>${plugin.artifactMap}</pluginArtifactMap>
+  <pluginDescriptor default-value="${plugin}"/>
+  <printSummary default-value="true">${surefire.printSummary}</printSummary>
+  <projectArtifactMap>${project.artifactMap}</projectArtifactMap>
+  <projectBuildDirectory default-value="${project.build.directory}"/>
+  <redirectTestOutputToFile default-value="false">${maven.test.redirectTestOutputToFile}</redirectTestOutputToFile>
+  <remoteRepositories default-value="${project.pluginArtifactRepositories}"/>
+  <reportFormat default-value="brief">${surefire.reportFormat}</reportFormat>
+  <reportNameSuffix default-value="">${surefire.reportNameSuffix}</reportNameSuffix>
+  <reportsDirectory default-value="${project.build.directory}/surefire-reports"/>
+  <rerunFailingTestsCount default-value="0">${surefire.rerunFailingTestsCount}</rerunFailingTestsCount>
+  <reuseForks default-value="true">${reuseForks}</reuseForks>
+  <runOrder default-value="filesystem">${surefire.runOrder}</runOrder>
+  <shutdown default-value="testset">${surefire.shutdown}</shutdown>
+  <skip default-value="false">${maven.test.skip}</skip>
+  <skipAfterFailureCount default-value="0">${surefire.skipAfterFailureCount}</skipAfterFailureCount>
+  <skipExec>${maven.test.skip.exec}</skipExec>
+  <skipTests default-value="false">${skipTests}</skipTests>
+  <suiteXmlFiles>${surefire.suiteXmlFiles}</suiteXmlFiles>
+  <tempDir default-value="surefire">${tempDir}</tempDir>
+  <test>${test}</test>
+  <testClassesDirectory default-value="${project.build.testOutputDirectory}"/>
+  <testFailureIgnore default-value="false">${maven.test.failure.ignore}</testFailureIgnore>
+  <testNGArtifactName default-value="org.testng:testng">${testNGArtifactName}</testNGArtifactName>
+  <testSourceDirectory default-value="${project.build.testSourceDirectory}"/>
+  <threadCount>${threadCount}</threadCount>
+  <threadCountClasses default-value="0">${threadCountClasses}</threadCountClasses>
+  <threadCountMethods default-value="0">${threadCountMethods}</threadCountMethods>
+  <threadCountSuites default-value="0">${threadCountSuites}</threadCountSuites>
+  <trimStackTrace default-value="true">${trimStackTrace}</trimStackTrace>
+  <useFile default-value="true">${surefire.useFile}</useFile>
+  <useManifestOnlyJar default-value="true">${surefire.useManifestOnlyJar}</useManifestOnlyJar>
+  <useSystemClassLoader default-value="true">${surefire.useSystemClassLoader}</useSystemClassLoader>
+  <useUnlimitedThreads default-value="false">${useUnlimitedThreads}</useUnlimitedThreads>
+  <workingDirectory>${basedir}</workingDirectory>
+  <project default-value="${project}"/>
+  <session default-value="${session}"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.mule.runtime.plugins:mule-extensions-maven-plugin:1.3.1:extension-model (default-extension-model)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appDirectory default-value="${project.build.directory}/src/main/app"/>
+  <finalName default-value="${project.build.finalName}"/>
+  <outputDirectory default-value="${project.build.directory}"/>
+  <pluginDescriptor default-value="${plugin}"/>
+  <project default-value="${project}"/>
+  <session default-value="${session}"/>
+  <skipExtensionModelValidation default-value="false">${skipExtensionModelValidation}</skipExtensionModelValidation>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.mule.runtime.plugins:mule-extensions-maven-plugin:1.3.1:documentation (default-documentation)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appDirectory default-value="${project.build.directory}/src/main/app"/>
+  <finalName default-value="${project.build.finalName}"/>
+  <outputDir default-value="${project.build.directory}/docs"/>
+  <outputDirectory default-value="${project.build.directory}"/>
+  <project default-value="${project}"/>
+  <skipDocumentation default-value="false">${skipDocumentation}</skipDocumentation>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.mule.runtime.plugins:mule-extensions-maven-plugin:1.3.1:package (default-package)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appDirectory default-value="${project.build.directory}/src/main/app"/>
+  <finalName default-value="${project.build.finalName}"/>
+  <outputDirectory default-value="${project.build.directory}"/>
+  <project default-value="${project}"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-javadoc-plugin:3.1.1:jar (attach-javadocs)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <additionalJOption>${additionalJOption}</additionalJOption>
+  <applyJavadocSecurityFix default-value="true">${maven.javadoc.applyJavadocSecurityFix}</applyJavadocSecurityFix>
+  <attach default-value="true">${attach}</attach>
+  <author default-value="true">${author}</author>
+  <bootclasspath>${bootclasspath}</bootclasspath>
+  <bootclasspathArtifacts>${bootclasspathArtifacts}</bootclasspathArtifacts>
+  <bottom default-value="Copyright &amp;#169; {inceptionYear}&amp;#x2013;{currentYear} {organizationName}. All rights reserved.">${bottom}</bottom>
+  <breakiterator default-value="false">${breakiterator}</breakiterator>
+  <charset>${charset}</charset>
+  <classifier default-value="javadoc">${maven.javadoc.classifier}</classifier>
+  <debug default-value="false">${debug}</debug>
+  <defaultManifestFile default-value="${project.build.outputDirectory}/META-INF/MANIFEST.MF"/>
+  <destDir>${destDir}</destDir>
+  <detectJavaApiLink default-value="true">${detectJavaApiLink}</detectJavaApiLink>
+  <detectLinks default-value="false">${detectLinks}</detectLinks>
+  <detectOfflineLinks default-value="true">${detectOfflineLinks}</detectOfflineLinks>
+  <docencoding default-value="${project.reporting.outputEncoding}">${docencoding}</docencoding>
+  <docfilessubdirs default-value="false">${docfilessubdirs}</docfilessubdirs>
+  <doclet>${doclet}</doclet>
+  <docletArtifact>${docletArtifact}</docletArtifact>
+  <docletArtifacts>${docletArtifacts}</docletArtifacts>
+  <docletPath>${docletPath}</docletPath>
+  <doclint>none</doclint>
+  <doctitle default-value="${project.name} ${project.version} API">${doctitle}</doctitle>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <excludePackageNames>${excludePackageNames}</excludePackageNames>
+  <excludedocfilessubdir>${excludedocfilessubdir}</excludedocfilessubdir>
+  <extdirs>${extdirs}</extdirs>
+  <failOnError default-value="true">${maven.javadoc.failOnError}</failOnError>
+  <failOnWarnings default-value="false">${maven.javadoc.failOnWarnings}</failOnWarnings>
+  <finalName>${project.build.finalName}</finalName>
+  <footer>${footer}</footer>
+  <header>${header}</header>
+  <helpfile>${helpfile}</helpfile>
+  <includeDependencySources default-value="false"/>
+  <includeTransitiveDependencySources default-value="false"/>
+  <isOffline default-value="${settings.offline}"/>
+  <jarOutputDirectory>${project.build.directory}</jarOutputDirectory>
+  <javaApiLinks>${javaApiLinks}</javaApiLinks>
+  <javadocDirectory default-value="${basedir}/src/main/javadoc"/>
+  <javadocExecutable>${javadocExecutable}</javadocExecutable>
+  <javadocOptionsDir default-value="${project.build.directory}/javadoc-bundle-options"/>
+  <javadocVersion>${javadocVersion}</javadocVersion>
+  <keywords default-value="false">${keywords}</keywords>
+  <links>${links}</links>
+  <linksource default-value="false">${linksource}</linksource>
+  <localRepository>${localRepository}</localRepository>
+  <locale>${locale}</locale>
+  <maxmemory>${maxmemory}</maxmemory>
+  <minmemory>${minmemory}</minmemory>
+  <mojo default-value="${mojoExecution}"/>
+  <nocomment default-value="false">${nocomment}</nocomment>
+  <nodeprecated default-value="false">${nodeprecated}</nodeprecated>
+  <nodeprecatedlist default-value="false">${nodeprecatedlist}</nodeprecatedlist>
+  <nohelp default-value="false">${nohelp}</nohelp>
+  <noindex default-value="false">${noindex}</noindex>
+  <nonavbar default-value="false">${nonavbar}</nonavbar>
+  <nooverview default-value="false">${nooverview}</nooverview>
+  <noqualifier>${noqualifier}</noqualifier>
+  <nosince default-value="false">${nosince}</nosince>
+  <notimestamp default-value="false">${notimestamp}</notimestamp>
+  <notree default-value="false">${notree}</notree>
+  <offlineLinks>${offlineLinks}</offlineLinks>
+  <old default-value="false">${old}</old>
+  <outputDirectory default-value="${project.build.directory}/apidocs">${destDir}</outputDirectory>
+  <overview default-value="${basedir}/src/main/javadoc/overview.html">${overview}</overview>
+  <packagesheader>${packagesheader}</packagesheader>
+  <project default-value="${project}"/>
+  <quiet default-value="false">${quiet}</quiet>
+  <reactorProjects>${reactorProjects}</reactorProjects>
+  <release default-value="${maven.compiler.release}"/>
+  <resourcesArtifacts>${resourcesArtifacts}</resourcesArtifacts>
+  <serialwarn default-value="false">${serialwarn}</serialwarn>
+  <session default-value="${session}"/>
+  <settings default-value="${settings}"/>
+  <show default-value="protected">${show}</show>
+  <skip default-value="false">${maven.javadoc.skip}</skip>
+  <source>${source}</source>
+  <sourceDependencyCacheDir default-value="${project.build.directory}/distro-javadoc-sources"/>
+  <sourcepath>${sourcepath}</sourcepath>
+  <sourcetab>${sourcetab}</sourcetab>
+  <splitindex default-value="false">${splitindex}</splitindex>
+  <stylesheet default-value="java">${stylesheet}</stylesheet>
+  <stylesheetfile>${stylesheetfile}</stylesheetfile>
+  <subpackages>${subpackages}</subpackages>
+  <taglet>${taglet}</taglet>
+  <tagletArtifact>${tagletArtifact}</tagletArtifact>
+  <tagletArtifacts>${tagletArtifacts}</tagletArtifacts>
+  <tagletpath>${tagletpath}</tagletpath>
+  <taglets>${taglets}</taglets>
+  <tags>${tags}</tags>
+  <top>${top}</top>
+  <use default-value="true">${use}</use>
+  <useDefaultManifestFile default-value="false"/>
+  <useStandardDocletOptions default-value="true">${useStandardDocletOptions}</useStandardDocletOptions>
+  <validateLinks default-value="false">${validateLinks}</validateLinks>
+  <verbose default-value="false">${verbose}</verbose>
+  <version default-value="true">${version}</version>
+  <windowtitle default-value="${project.name} ${project.version} API">${windowtitle}</windowtitle>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          com.mulesoft.munit:munit-extensions-maven-plugin:1.1.2:test (default-test)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <argLines>
+    <argLine>-javaagent:${settings.localRepository}/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=${session.executionRootDirectory}/target/jacoco-munit.exec</argLine>${argLines}</argLines>
+  <attachMuleSources default-value="false">${attachMuleSources}</attachMuleSources>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <dynamicPorts>${dynamic.ports}</dynamicPorts>
+  <enableSonarReports default-value="true">${enableSonarReports}</enableSonarReports>
+  <enableSurefireReports default-value="true">${enableSurefireReports}</enableSurefireReports>
+  <environmentVariables>${environment.variables}</environmentVariables>
+  <jvm>${munit.jvm}</jvm>
+  <localRepository default-value="${localRepository}"/>
+  <muleArtifactJsonFile default-value="${project.build.outputDirectory}/META-INF/mule-artifact/mule-artifact.json"/>
+  <munitDebug>${munit.debug}</munitDebug>
+  <munitFailIfNoTests default-value="true">${munit.failIfNoTests}</munitFailIfNoTests>
+  <munitMavenPluginVersion default-value="2.1.2">${munit.maven.plugin.version}</munitMavenPluginVersion>
+  <munitTags>${munit.tags}</munitTags>
+  <munitTest>${munit.test}</munitTest>
+  <munitTestsDirectory default-value="${project.build.directory}/test-mule/munit"/>
+  <outputDirectory>${project.build.directory}</outputDirectory>
+  <packagerVersion default-value="3.1.2">${mule.packager.version}</packagerVersion>
+  <pluginArtifactId default-value="${plugin.artifactId}"/>
+  <project>${project}</project>
+  <projectBaseFolder default-value="${project.basedir}"/>
+  <redirectTestOutputToFile default-value="false">${redirectTestOutputToFile}</redirectTestOutputToFile>
+  <remoteArtifactRepositories default-value="${project.remoteArtifactRepositories}"/>
+  <repositorySystemSession default-value="${repositorySystemSession}"/>
+  <runtimeProduct>${runtimeProduct}</runtimeProduct>
+  <runtimeVersion>${runtimeVersion}</runtimeVersion>
+  <session default-value="${session}"/>
+  <sharedLibraries>${shared.libraries}</sharedLibraries>
+  <skipAfterFailure default-value="false">${skipAfterFailure}</skipAfterFailure>
+  <skipMunitTests default-value="${skipMunitTests}"/>
+  <sonarReportsFolder default-value="${project.build.directory}/sonar-reports/"/>
+  <surefireReportsFolder default-value="${project.build.directory}/surefire-reports/"/>
+  <systemPropertyVariables>${system.property.variables}</systemPropertyVariables>
+  <testApplicationName default-value="${project.artifactId}-test-application">${testApplicationName}</testApplicationName>
+  <testClassesDirectory default-value="${project.build.directory}/test-classes"/>
+  <testFailureIgnore default-value="false">${maven.test.failure.ignore}</testFailureIgnore>
+  <testOutputDirectory default-value="${project.build.directory}/munit-reports/output/"/>
+  <testResources default-value="${project.testResources}"/>
+  <testSourcesDirectory default-value="${project.basedir}/src/test/java"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.jacoco:jacoco-maven-plugin:0.8.7:merge (merge)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <destFile default-value="${project.build.directory}/jacoco.exec">${session.executionRootDirectory}/target/jacoco-it.exec</destFile>
+  <fileSets>
+    <fileSet>
+      <directory>C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target</directory>
+      <includes>
+        <include>*.exec</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+  <project>${project}</project>
+  <skip default-value="false">${jacoco.skip}</skip>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.jacoco:jacoco-maven-plugin:0.8.7:report-integration (report-integration)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <dataFile default-value="${project.build.directory}/jacoco-it.exec"/>
+  <formats default-value="HTML,XML,CSV"/>
+  <outputDirectory default-value="${project.reporting.outputDirectory}/jacoco-it"/>
+  <outputEncoding default-value="UTF-8">${project.reporting.outputEncoding}</outputEncoding>
+  <project>${project}</project>
+  <skip default-value="false">${jacoco.skip}</skip>
+  <sourceEncoding default-value="UTF-8">${project.build.sourceEncoding}</sourceEncoding>
+  <title default-value="${project.name}"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-install-plugin:2.5.2:install (default-install)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <artifact default-value="${project.artifact}"/>
+  <attachedArtifacts default-value="${project.attachedArtifacts}"/>
+  <createChecksum default-value="false">${createChecksum}</createChecksum>
+  <installAtEnd default-value="false">${installAtEnd}</installAtEnd>
+  <localRepository>${localRepository}</localRepository>
+  <packaging default-value="${project.packaging}"/>
+  <pomFile default-value="${project.file}"/>
+  <project default-value="${project}"/>
+  <reactorProjects default-value="${reactorProjects}"/>
+  <skip default-value="false">${maven.install.skip}</skip>
+  <updateReleaseInfo default-value="false">${updateReleaseInfo}</updateReleaseInfo>
+</configuration>
+[DEBUG] =======================================================================
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=258500, ConflictMarker.markTime=138400, ConflictMarker.nodeCount=483, ConflictIdSorter.graphTime=104800, ConflictIdSorter.topsortTime=160800, ConflictIdSorter.conflictIdCount=203, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=13331300, ConflictResolver.conflictItemCount=411, DefaultDependencyCollector.collectTime=132534400, DefaultDependencyCollector.transformTime=14117700}
+[DEBUG] com.mulesoft.connectors:Basware:mule-extension:1.0.0-SNAPSHOT
+[DEBUG]    org.jacoco:org.jacoco.agent:jar:runtime:0.8.7:compile
+[DEBUG]    com.mulesoft.connectivity:rest-sdk-commons:jar:0.8.0-RC2:compile
+[DEBUG]       org.json:json:jar:20211205:compile
+[DEBUG]       com.github.everit-org.json-schema:org.everit.json.schema:jar:1.13.0:compile
+[DEBUG]          com.damnhandy:handy-uri-templates:jar:2.1.8:compile
+[DEBUG]          com.google.re2j:re2j:jar:1.3:compile
+[DEBUG]    org.mule.sdk:mule-sdk-api:jar:0.3.0:compile
+[DEBUG]    org.mule.module:mule-java-module:jar:mule-plugin:1.2.1:test
+[DEBUG]       org.apache.commons:commons-lang3:jar:3.7:provided
+[DEBUG]       org.springframework:spring-core:jar:5.0.5.RELEASE:provided
+[DEBUG]          org.springframework:spring-jcl:jar:5.0.5.RELEASE:provided
+[DEBUG]    org.mule.modules:mule-validation-module:jar:mule-plugin:1.1.0:test
+[DEBUG]       commons-validator:commons-validator:jar:1.6:compile
+[DEBUG]          commons-digester:commons-digester:jar:1.8.1:compile
+[DEBUG]          commons-logging:commons-logging:jar:1.2:compile
+[DEBUG]       com.google.guava:guava:jar:23.5-jre:provided
+[DEBUG]          com.google.code.findbugs:jsr305:jar:1.3.9:provided
+[DEBUG]          org.checkerframework:checker-qual:jar:2.0.0:provided
+[DEBUG]          com.google.errorprone:error_prone_annotations:jar:2.0.18:provided
+[DEBUG]          com.google.j2objc:j2objc-annotations:jar:1.1:provided
+[DEBUG]          org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:provided
+[DEBUG]       io.projectreactor:reactor-core:jar:3.1.1.RELEASE:provided
+[DEBUG]    org.mule.runtime:mule-extensions-api:jar:1.3.0:provided
+[DEBUG]       org.reactivestreams:reactive-streams:jar:1.0.2:provided
+[DEBUG]       org.mule.glassfish.jaxb:jaxb-runtime:jar:2.3.1-MULE-001:provided
+[DEBUG]          org.mule.glassfish.jaxb:txw2:jar:2.3.1-MULE-001:provided
+[DEBUG]          com.sun.istack:istack-commons-runtime:jar:3.0.7:provided
+[DEBUG]          org.jvnet.staxex:stax-ex:jar:1.8:provided
+[DEBUG]          com.sun.xml.fastinfoset:FastInfoset:jar:1.2.15:provided
+[DEBUG]          javax.activation:javax.activation-api:jar:1.2.0:provided
+[DEBUG]       com.sun.activation:javax.activation:jar:1.2.0:provided
+[DEBUG]       javax.transaction:javax.transaction-api:jar:1.3:provided
+[DEBUG]    org.mule.runtime:mule-api:jar:1.3.0:provided
+[DEBUG]       org.mule.runtime:mule-metadata-model-api:jar:1.3.0:provided
+[DEBUG]       org.mule.runtime:mule-message-metadata-model:jar:1.3.0:provided
+[DEBUG]       commons-io:commons-io:jar:2.6:provided
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.30:provided
+[DEBUG]       com.google.code.gson:gson:jar:2.8.5:provided
+[DEBUG]       javax.inject:javax.inject:jar:1:provided
+[DEBUG]       com.github.ben-manes.caffeine:caffeine:jar:2.8.0:provided
+[DEBUG]       com.vdurmont:semver4j:jar:3.1.0:provided
+[DEBUG]       org.mule.runtime:mule-artifact-declaration:jar:1.3.0:provided
+[DEBUG]       org.mule.runtime:api-annotations:jar:1.2.0:provided
+[DEBUG]    org.mule.runtime:mule-core:jar:4.3.0:provided
+[DEBUG]       org.mule.runtime:mule-module-dsl-api:jar:1.3.0:provided
+[DEBUG]       org.mule.runtime:mule-module-http-policy-api:jar:1.3.0:provided
+[DEBUG]          org.mule.runtime:mule-module-policy-api:jar:1.3.0:provided
+[DEBUG]       commons-beanutils:commons-beanutils:jar:1.9.4:provided
+[DEBUG]       org.mule.com.github.stephenc.eaio-uuid:uuid:jar:3.4.2-MULE-001:provided
+[DEBUG]       javax.annotation:javax.annotation-api:jar:1.3.2:provided
+[DEBUG]       commons-cli:commons-cli:jar:1.2:provided
+[DEBUG]       commons-collections:commons-collections:jar:3.2.2:compile
+[DEBUG]       commons-pool:commons-pool:jar:1.6:provided
+[DEBUG]       org.apache.geronimo.specs:geronimo-j2ee-connector_1.5_spec:jar:2.0.0:provided
+[DEBUG]       org.mule.mvel:mule-mvel2:jar:2.1.9-MULE-020:provided
+[DEBUG]       org.jgrapht:jgrapht-core:jar:1.3.1:provided
+[DEBUG]          org.jheaps:jheaps:jar:0.10:provided
+[DEBUG]       org.reflections:reflections:jar:0.9.10:provided
+[DEBUG]       io.projectreactor.addons:reactor-extra:jar:3.2.3.RELEASE:provided
+[DEBUG]       org.yaml:snakeyaml:jar:1.26:provided
+[DEBUG]       cglib:cglib-nodep:jar:3.2.10:provided
+[DEBUG]       org.apache.commons:commons-pool2:jar:2.6.2:provided
+[DEBUG]       org.apache.commons:commons-math3:jar:3.6.1:provided
+[DEBUG]       it.unimi.dsi:fastutil:jar:8.1.1:provided
+[DEBUG]       net.jodah:failsafe:jar:2.1.1:provided
+[DEBUG]       org.vibur:vibur-object-pool:jar:23.0:provided
+[DEBUG]       com.conversantmedia:disruptor:jar:1.2.10:provided
+[DEBUG]       javax.jms:javax.jms-api:jar:2.0.1:provided
+[DEBUG]    org.mule.runtime:mule-module-extensions-spring-support:jar:4.3.0:provided
+[DEBUG]       org.jsoup:jsoup:jar:1.11.3:provided
+[DEBUG]       org.mule.runtime:mule-module-spring-config:jar:4.3.0:provided
+[DEBUG]          org.mule.runtime:mule-module-artifact:jar:4.3.0:provided
+[DEBUG]          org.mule.runtime:mule-artifact-ast:jar:0.8.0:provided
+[DEBUG]          org.mule.runtime:mule-artifact-ast-dependency-graph:jar:0.8.0:provided
+[DEBUG]          org.springframework:spring-context:jar:5.1.6.RELEASE:provided
+[DEBUG]             org.springframework:spring-beans:jar:5.1.6.RELEASE:provided
+[DEBUG]             org.springframework:spring-expression:jar:5.1.6.RELEASE:provided
+[DEBUG]          org.springframework:spring-aop:jar:5.1.6.RELEASE:provided
+[DEBUG]       org.mule.runtime:mule-module-extensions-support:jar:4.3.0:provided
+[DEBUG]          org.mule.runtime:mule-extensions-api-dsql:jar:1.3.0:provided
+[DEBUG]             org.antlr:antlr-runtime:jar:3.5:provided
+[DEBUG]                org.antlr:stringtemplate:jar:3.2.1:provided
+[DEBUG]          org.mule.runtime:mule-extensions-api-persistence:jar:1.3.0:provided
+[DEBUG]             org.mule.runtime:mule-metadata-model-persistence:jar:1.3.0:provided
+[DEBUG]          org.mule.runtime:mule-service-oauth-api:jar:4.3.0:provided
+[DEBUG]          net.bytebuddy:byte-buddy:jar:1.10.7:provided
+[DEBUG]       org.mule.runtime:mule-module-extensions-soap-support:jar:4.3.0:provided
+[DEBUG]          org.mule.runtime:mule-extensions-soap-api:jar:1.3.0:provided
+[DEBUG]          org.mule.runtime:mule-service-soap-api:jar:4.3.0:provided
+[DEBUG]             org.mule.runtime:mule-service-http-api:jar:4.3.0:provided
+[DEBUG]       org.mule.runtime:mule-module-tls:jar:4.3.0:provided
+[DEBUG]       jboss:javassist:jar:3.7.ga:provided
+[DEBUG]       joda-time:joda-time:jar:2.9.1:compile
+[DEBUG]       org.dom4j:dom4j:jar:2.1.1:provided
+[DEBUG]    org.mule.runtime:mule-extension-ast-loader:jar:1.2.0:provided
+[DEBUG]       org.mule.runtime:mule-metadata-model-java-ast:jar:1.3.0:provided
+[DEBUG]    org.mule.runtime:mule-metadata-model-xml:jar:1.3.0:provided
+[DEBUG]       org.apache.xmlbeans:xmlbeans:jar:3.1.0:provided
+[DEBUG]       org.mule.apache:xerces2-xsd11:jar:2.11.3:provided
+[DEBUG]    org.mule.runtime:mule-metadata-model-java:jar:1.3.0:provided
+[DEBUG]    org.mule.runtime:mule-metadata-model-json:jar:1.3.0:provided
+[DEBUG]       org.everit.json:org.everit.json.schema:jar:1.5.1:provided
+[DEBUG]    org.mule.runtime:mule-module-service:jar:4.3.0:provided
+[DEBUG]       org.mule.runtime:mule-module-container:jar:4.3.0:provided
+[DEBUG]       org.mule.runtime:mule-module-deployment-model:jar:4.3.0:provided
+[DEBUG]          org.mule.runtime:mule-module-reboot:jar:4.3.0:provided
+[DEBUG]             tanukisoft:wrapper:jar:3.2.3:provided
+[DEBUG]       org.mule.tools.maven:mule-classloader-model:jar:3.4.0:provided
+[DEBUG]    org.mule.services:mule-service-weave:jar:mule-service:2.3.0:provided
+[DEBUG]       org.mule.weave:runtime:jar:2.3.0:provided
+[DEBUG]          org.mule.weave:core:jar:2.3.0:provided
+[DEBUG]             org.mule.weave:parser:jar:2.3.0:provided
+[DEBUG]                org.parboiled:parboiled_2.12:jar:2.1.5:provided
+[DEBUG]                   com.chuusai:shapeless_2.12:jar:2.3.3:provided
+[DEBUG]                      org.typelevel:macro-compat_2.12:jar:1.1.1:provided
+[DEBUG]             org.typelevel:spire_2.12:jar:0.14.1:provided
+[DEBUG]                org.typelevel:spire-macros_2.12:jar:0.14.1:provided
+[DEBUG]                org.typelevel:machinist_2.12:jar:0.6.1:provided
+[DEBUG]                   org.scala-lang:scala-reflect:jar:2.12.0:provided
+[DEBUG]                org.typelevel:algebra_2.12:jar:0.7.0:provided
+[DEBUG]                   org.typelevel:cats-kernel_2.12:jar:0.9.0:provided
+[DEBUG]          org.mule.weave:debugger:jar:2.3.0:provided
+[DEBUG]       org.mule.weave:wlang:jar:2.3.0:provided
+[DEBUG]       org.mule.weave:java-module:jar:2.3.0:provided
+[DEBUG]       org.mule.weave:core-modules:jar:2.3.0:provided
+[DEBUG]          org.scala-lang:scala-library:jar:2.12.10:provided
+[DEBUG]          com.fasterxml.woodstox:woodstox-core:jar:5.3.0:provided
+[DEBUG]             org.codehaus.woodstox:stax2-api:jar:4.2:provided
+[DEBUG]          com.fasterxml:aalto-xml:jar:1.0.0:provided
+[DEBUG]          com.sun.mail:jakarta.mail:jar:1.6.4:provided
+[DEBUG]             com.sun.activation:jakarta.activation:jar:1.2.1:provided
+[DEBUG]       org.mule.weave:yaml-module:jar:2.3.0:provided
+[DEBUG]          org.mule.syaml:syaml_2.12:jar:0.7.260:provided
+[DEBUG]             org.mule.common:scala-common_2.12:jar:0.5.60:provided
+[DEBUG]       org.mule.weave:ndjson-module:jar:2.3.0:provided
+[DEBUG]       org.mule.weave:avro-module:jar:2.3.0:provided
+[DEBUG]          org.apache.avro:avro:jar:1.10.0-MULE_4:provided
+[DEBUG]             com.fasterxml.jackson.core:jackson-core:jar:2.10.0:provided
+[DEBUG]             com.fasterxml.jackson.core:jackson-databind:jar:2.10.0:provided
+[DEBUG]                com.fasterxml.jackson.core:jackson-annotations:jar:2.10.0:provided
+[DEBUG]             org.apache.commons:commons-compress:jar:1.19:provided
+[DEBUG]       org.mule.weave:dwb-module:jar:2.3.0:provided
+[DEBUG]    org.mule.runtime:mule-dwb-api:jar:2.3.0:provided
+[DEBUG]       org.mule.weave:dwb-api:jar:2.3.0:provided
+[DEBUG]    org.mule.runtime:mule-module-javaee:jar:4.3.0:provided
+[DEBUG]       javax.jws:javax.jws-api:jar:1.1:provided
+[DEBUG]       javax.xml.bind:jaxb-api:jar:2.3.1:provided
+[DEBUG]       com.sun.xml.bind:jaxb-impl:jar:2.3.1-MULE-001:provided
+[DEBUG]       com.sun.xml.bind:jaxb-core:jar:2.3.0.1:provided
+[DEBUG]       javax.xml.soap:javax.xml.soap-api:jar:1.4.0:provided
+[DEBUG]       javax.xml.ws:jaxws-api:jar:2.3.1:provided
+[DEBUG]    org.mule.tests.plugin:mule-tests-component-plugin:jar:mule-plugin:4.3.0:test
+[DEBUG]       org.mule.tests.plugin:mule-core-deprecated-schema-plugin:jar:mule-plugin:4.3.0:test
+[DEBUG]    org.mule.tests:mule-tests-functional:jar:4.3.0:test
+[DEBUG]       org.mule.runtime:mule-module-service:jar:tests:4.3.0:test
+[DEBUG]       org.mule.runtime:mule-module-artifact:jar:tests:4.3.0:test
+[DEBUG]       org.mule.tests:mule-tests-model:jar:4.3.0:test
+[DEBUG]    org.mule.tests:mule-tests-runner:jar:4.3.0:test
+[DEBUG]       org.mule:mule-maven-client-api:jar:1.5.0:test
+[DEBUG]          org.apache.maven:maven-model:jar:3.3.9:test
+[DEBUG]          org.codehaus.plexus:plexus-utils:jar:3.0.24:test
+[DEBUG]       org.mule:mule-maven-client-impl:jar:1.5.0:test
+[DEBUG]          org.eclipse.aether:aether-api:jar:1.0.2.v20150114:provided
+[DEBUG]          org.eclipse.aether:aether-util:jar:1.0.2.v20150114:provided
+[DEBUG]          org.eclipse.aether:aether-connector-basic:jar:1.0.2.v20150114:test
+[DEBUG]             org.eclipse.aether:aether-spi:jar:1.0.2.v20150114:test
+[DEBUG]          org.eclipse.aether:aether-transport-file:jar:1.0.2.v20150114:test
+[DEBUG]          org.eclipse.aether:aether-transport-http:jar:1.0.2.v20150114:test
+[DEBUG]          org.apache.httpcomponents:httpclient:jar:4.5.10:test
+[DEBUG]             org.apache.httpcomponents:httpcore:jar:4.4.12:test
+[DEBUG]             commons-codec:commons-codec:jar:1.11:test
+[DEBUG]          org.apache.maven:maven-settings-builder:jar:3.3.9:test
+[DEBUG]             org.apache.maven:maven-builder-support:jar:3.3.9:test
+[DEBUG]             org.codehaus.plexus:plexus-interpolation:jar:1.21:test
+[DEBUG]             org.codehaus.plexus:plexus-component-annotations:jar:1.6:test
+[DEBUG]             org.apache.maven:maven-settings:jar:3.3.9:test
+[DEBUG]             org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:test
+[DEBUG]                org.sonatype.plexus:plexus-cipher:jar:1.4:test
+[DEBUG]          org.apache.maven:maven-aether-provider:jar:3.3.9:test
+[DEBUG]             org.apache.maven:maven-model-builder:jar:3.3.9:test
+[DEBUG]                org.apache.maven:maven-artifact:jar:3.3.9:test
+[DEBUG]             org.apache.maven:maven-repository-metadata:jar:3.3.9:test
+[DEBUG]             org.eclipse.aether:aether-impl:jar:1.0.2.v20150114:test
+[DEBUG]          com.beust:jcommander:jar:1.69:test
+[DEBUG]          org.eclipse.sisu:org.eclipse.sisu.plexus:jar:0.3.2:test
+[DEBUG]       junit:junit:jar:4.12:test
+[DEBUG]    org.mule.tests:mule-tests-unit:jar:4.3.0:test
+[DEBUG]       org.mule.runtime:mule-module-logging:jar:4.3.0:provided
+[DEBUG]          com.lmax:disruptor:jar:3.3.7:provided
+[DEBUG]          org.slf4j:slf4j-ext:jar:1.7.30:provided
+[DEBUG]          org.apache.logging.log4j:log4j-api:jar:2.17.1:provided (version managed from 2.13.1)
+[DEBUG]          org.apache.logging.log4j:log4j-core:jar:2.17.1:provided (version managed from 2.13.1)
+[DEBUG]          org.apache.logging.log4j:log4j-slf4j-impl:jar:2.17.1:provided (version managed from 2.13.1)
+[DEBUG]          org.apache.logging.log4j:log4j-1.2-api:jar:2.17.1:provided (version managed from 2.13.1)
+[DEBUG]          org.slf4j:jcl-over-slf4j:jar:1.7.30:provided
+[DEBUG]          org.slf4j:jul-to-slf4j:jar:1.7.30:provided
+[DEBUG]       org.mockito:mockito-core:jar:2.26.0:test
+[DEBUG]          net.bytebuddy:byte-buddy-agent:jar:1.9.10:test
+[DEBUG]          org.objenesis:objenesis:jar:2.6:test
+[DEBUG]       org.hamcrest:hamcrest-library:jar:1.3:test
+[DEBUG]          org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ Basware ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=32100, ConflictMarker.markTime=13300, ConflictMarker.nodeCount=14, ConflictIdSorter.graphTime=5000, ConflictIdSorter.topsortTime=8000, ConflictIdSorter.conflictIdCount=12, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=121900, ConflictResolver.conflictItemCount=14, DefaultDependencyCollector.collectTime=25119100, DefaultDependencyCollector.transformTime=207100}
+[DEBUG] org.apache.maven.plugins:maven-clean-plugin:jar:3.1.0
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-model:jar:3.0:compile
+[DEBUG]          org.codehaus.plexus:plexus-utils:jar:2.0.4:compile
+[DEBUG]       org.apache.maven:maven-artifact:jar:3.0:compile
+[DEBUG]       org.sonatype.sisu:sisu-inject-plexus:jar:1.4.2:compile
+[DEBUG]          org.codehaus.plexus:plexus-component-annotations:jar:1.7.1:compile (version managed from default)
+[DEBUG]          org.codehaus.plexus:plexus-classworlds:jar:2.2.3:compile
+[DEBUG]          org.sonatype.sisu:sisu-inject-bean:jar:1.4.2:compile
+[DEBUG]             org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7:compile
+[DEBUG]    org.apache.maven.shared:maven-shared-utils:jar:3.2.1:compile
+[DEBUG]       commons-io:commons-io:jar:2.5:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-clean-plugin:3.1.0
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-clean-plugin:3.1.0
+[DEBUG]   Imported:  < project>com.mulesoft.connectors:Basware:1.0.0-SNAPSHOT
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-clean-plugin:3.1.0
+[DEBUG]   Included: org.apache.maven.plugins:maven-clean-plugin:jar:3.1.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:2.0.4
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.7.1
+[DEBUG]   Included: org.sonatype.sisu:sisu-inject-bean:jar:1.4.2
+[DEBUG]   Included: org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-utils:jar:3.2.1
+[DEBUG]   Included: commons-io:commons-io:jar:2.5
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-clean-plugin:3.1.0, parent: sun.misc.Launcher$AppClassLoader@4e25154f]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean' with basic configurator -->
+[DEBUG]   (f) directory = C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target
+[DEBUG]   (f) excludeDefaultDirectories = false
+[DEBUG]   (f) failOnError = true
+[DEBUG]   (f) followSymLinks = false
+[DEBUG]   (f) outputDirectory = C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\classes
+[DEBUG]   (f) reportDirectory = C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\classes
+[DEBUG]   (f) retryOnError = true
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) testOutputDirectory = C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\test-classes
+[DEBUG] -- end configuration --
+[INFO] Deleting C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target
+[INFO] Deleting directory C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\classes\META-INF
+[INFO] Deleting directory C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\classes
+[INFO] Deleting directory C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target
+[DEBUG] Skipping non-existing directory C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\classes
+[DEBUG] Skipping non-existing directory C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\test-classes
+[DEBUG] Skipping non-existing directory C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\classes
+[INFO] 
+[INFO] --- maven-processor-plugin:3.3.3:process (process) @ Basware ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=71700, ConflictMarker.markTime=35000, ConflictMarker.nodeCount=107, ConflictIdSorter.graphTime=20200, ConflictIdSorter.topsortTime=21800, ConflictIdSorter.conflictIdCount=57, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=517800, ConflictResolver.conflictItemCount=104, DefaultDependencyCollector.collectTime=62683400, DefaultDependencyCollector.transformTime=695900}
+[DEBUG] org.bsc.maven:maven-processor-plugin:jar:3.3.3
+[DEBUG]    commons-collections:commons-collections:jar:3.2.2:runtime
+[DEBUG]    org.mule.runtime:mule-extension-ast-loader:jar:1.2.0:runtime
+[DEBUG]       org.mule.runtime:mule-metadata-model-java-ast:jar:1.3.0:runtime
+[DEBUG]          org.mule.runtime:mule-metadata-model-api:jar:1.3.0:runtime
+[DEBUG]             org.apache.commons:commons-lang3:jar:3.7:runtime
+[DEBUG]          org.mule.runtime:mule-metadata-model-java:jar:1.3.0:runtime
+[DEBUG]          org.mule.runtime:api-annotations:jar:1.2.0:runtime
+[DEBUG]    org.mule.glassfish.jaxb:jaxb-runtime:jar:2.3.1-MULE-001:runtime
+[DEBUG]       javax.xml.bind:jaxb-api:jar:2.3.1:runtime
+[DEBUG]       org.mule.glassfish.jaxb:txw2:jar:2.3.1-MULE-001:runtime
+[DEBUG]       com.sun.istack:istack-commons-runtime:jar:3.0.7:runtime
+[DEBUG]       org.jvnet.staxex:stax-ex:jar:1.8:runtime
+[DEBUG]       com.sun.xml.fastinfoset:FastInfoset:jar:1.2.15:runtime
+[DEBUG]       javax.activation:javax.activation-api:jar:1.2.0:runtime
+[DEBUG]    com.sun.activation:jakarta.activation:jar:1.2.1:runtime
+[DEBUG]    com.google.guava:guava:jar:25.1-jre:runtime
+[DEBUG]       com.google.code.findbugs:jsr305:jar:3.0.2:runtime
+[DEBUG]       org.checkerframework:checker-qual:jar:2.0.0:runtime
+[DEBUG]       com.google.errorprone:error_prone_annotations:jar:2.1.3:runtime
+[DEBUG]       com.google.j2objc:j2objc-annotations:jar:1.1:runtime
+[DEBUG]       org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:runtime
+[DEBUG]    cglib:cglib:jar:3.2.10:runtime
+[DEBUG]       org.ow2.asm:asm:jar:7.0:runtime
+[DEBUG]       org.apache.ant:ant:jar:1.10.3:runtime
+[DEBUG]          org.apache.ant:ant-launcher:jar:1.10.3:runtime
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:3.1.0:compile
+[DEBUG]       org.apache.maven:maven-model:jar:3.1.0:compile
+[DEBUG]       org.apache.maven:maven-artifact:jar:3.1.0:compile
+[DEBUG]       org.eclipse.sisu:org.eclipse.sisu.plexus:jar:0.0.0.M2a:compile
+[DEBUG]          javax.enterprise:cdi-api:jar:1.0:compile
+[DEBUG]             javax.annotation:jsr250-api:jar:1.0:compile
+[DEBUG]             javax.inject:javax.inject:jar:1:compile
+[DEBUG]          org.sonatype.sisu:sisu-guice:jar:no_aop:3.1.0:compile
+[DEBUG]             aopalliance:aopalliance:jar:1.0:compile
+[DEBUG]          org.eclipse.sisu:org.eclipse.sisu.inject:jar:0.0.0.M2a:compile
+[DEBUG]             asm:asm:jar:3.3.1:compile
+[DEBUG]    org.apache.maven:maven-core:jar:3.1.0:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:3.1.0:compile
+[DEBUG]       org.apache.maven:maven-settings-builder:jar:3.1.0:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:3.1.0:compile
+[DEBUG]       org.apache.maven:maven-model-builder:jar:3.1.0:compile
+[DEBUG]       org.apache.maven:maven-aether-provider:jar:3.1.0:compile
+[DEBUG]          org.eclipse.aether:aether-spi:jar:0.9.0.M2:compile
+[DEBUG]       org.eclipse.aether:aether-impl:jar:0.9.0.M2:compile
+[DEBUG]       org.eclipse.aether:aether-api:jar:0.9.0.M2:compile
+[DEBUG]       org.eclipse.aether:aether-util:jar:0.9.0.M2:compile
+[DEBUG]       org.codehaus.plexus:plexus-interpolation:jar:1.16:compile
+[DEBUG]       org.codehaus.plexus:plexus-classworlds:jar:2.4.2:compile
+[DEBUG]       org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile
+[DEBUG]       org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile
+[DEBUG]          org.sonatype.plexus:plexus-cipher:jar:1.4:compile
+[DEBUG]    org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.2:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.0.15:compile
+[DEBUG]    org.codehaus.plexus:plexus-compiler-api:jar:2.8.2:compile
+[DEBUG]    org.codehaus.plexus:plexus-compiler-manager:jar:2.8.2:compile
+[DEBUG]    org.codehaus.plexus:plexus-compiler-javac:jar:2.8.2:compile
+[DEBUG] Created new class realm plugin>org.bsc.maven:maven-processor-plugin:3.3.3
+[DEBUG] Importing foreign packages into class realm plugin>org.bsc.maven:maven-processor-plugin:3.3.3
+[DEBUG]   Imported:  < project>com.mulesoft.connectors:Basware:1.0.0-SNAPSHOT
+[DEBUG] Populating class realm plugin>org.bsc.maven:maven-processor-plugin:3.3.3
+[DEBUG]   Included: org.bsc.maven:maven-processor-plugin:jar:3.3.3
+[DEBUG]   Included: commons-collections:commons-collections:jar:3.2.2
+[DEBUG]   Included: org.mule.runtime:mule-extension-ast-loader:jar:1.2.0
+[DEBUG]   Included: org.mule.runtime:mule-metadata-model-java-ast:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:mule-metadata-model-api:jar:1.3.0
+[DEBUG]   Included: org.apache.commons:commons-lang3:jar:3.7
+[DEBUG]   Included: org.mule.runtime:mule-metadata-model-java:jar:1.3.0
+[DEBUG]   Included: org.mule.runtime:api-annotations:jar:1.2.0
+[DEBUG]   Included: org.mule.glassfish.jaxb:jaxb-runtime:jar:2.3.1-MULE-001
+[DEBUG]   Included: javax.xml.bind:jaxb-api:jar:2.3.1
+[DEBUG]   Included: org.mule.glassfish.jaxb:txw2:jar:2.3.1-MULE-001
+[DEBUG]   Included: com.sun.istack:istack-commons-runtime:jar:3.0.7
+[DEBUG]   Included: org.jvnet.staxex:stax-ex:jar:1.8
+[DEBUG]   Included: com.sun.xml.fastinfoset:FastInfoset:jar:1.2.15
+[DEBUG]   Included: javax.activation:javax.activation-api:jar:1.2.0
+[DEBUG]   Included: com.sun.activation:jakarta.activation:jar:1.2.1
+[DEBUG]   Included: com.google.guava:guava:jar:25.1-jre
+[DEBUG]   Included: com.google.code.findbugs:jsr305:jar:3.0.2
+[DEBUG]   Included: org.checkerframework:checker-qual:jar:2.0.0
+[DEBUG]   Included: com.google.errorprone:error_prone_annotations:jar:2.1.3
+[DEBUG]   Included: com.google.j2objc:j2objc-annotations:jar:1.1
+[DEBUG]   Included: org.codehaus.mojo:animal-sniffer-annotations:jar:1.14
+[DEBUG]   Included: cglib:cglib:jar:3.2.10
+[DEBUG]   Included: org.ow2.asm:asm:jar:7.0
+[DEBUG]   Included: org.apache.ant:ant:jar:1.10.3
+[DEBUG]   Included: org.apache.ant:ant-launcher:jar:1.10.3
+[DEBUG]   Included: javax.enterprise:cdi-api:jar:1.0
+[DEBUG]   Included: org.sonatype.sisu:sisu-guice:jar:no_aop:3.1.0
+[DEBUG]   Included: aopalliance:aopalliance:jar:1.0
+[DEBUG]   Included: org.eclipse.sisu:org.eclipse.sisu.inject:jar:0.0.0.M2a
+[DEBUG]   Included: asm:asm:jar:3.3.1
+[DEBUG]   Included: org.eclipse.aether:aether-util:jar:0.9.0.M2
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.16
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.5.5
+[DEBUG]   Included: org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3
+[DEBUG]   Included: org.sonatype.plexus:plexus-cipher:jar:1.4
+[DEBUG]   Included: org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.2
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.0.15
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-api:jar:2.8.2
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-manager:jar:2.8.2
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-javac:jar:2.8.2
+[DEBUG] Configuring mojo org.bsc.maven:maven-processor-plugin:3.3.3:process from plugin realm ClassRealm[plugin>org.bsc.maven:maven-processor-plugin:3.3.3, parent: sun.misc.Launcher$AppClassLoader@4e25154f]
+[DEBUG] Configuring mojo 'org.bsc.maven:maven-processor-plugin:3.3.3:process' with basic configurator -->
+[DEBUG]   (f) addCompileSourceRoots = false
+[DEBUG]   (f) additionalSourceDirectories = [C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\generated-sources]
+[DEBUG]   (f) appendSourceArtifacts = false
+[DEBUG]   (f) classpathElements = [C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\classes, C:\Users\ristoh\.m2\repository\org\jacoco\org.jacoco.agent\0.8.7\org.jacoco.agent-0.8.7-runtime.jar, C:\Users\ristoh\.m2\repository\com\mulesoft\connectivity\rest-sdk-commons\0.8.0-RC2\rest-sdk-commons-0.8.0-RC2.jar, C:\Users\ristoh\.m2\repository\org\json\json\20211205\json-20211205.jar, C:\Users\ristoh\.m2\repository\com\github\everit-org\json-schema\org.everit.json.schema\1.13.0\org.everit.json.schema-1.13.0.jar, C:\Users\ristoh\.m2\repository\com\damnhandy\handy-uri-templates\2.1.8\handy-uri-templates-2.1.8.jar, C:\Users\ristoh\.m2\repository\com\google\re2j\re2j\1.3\re2j-1.3.jar, C:\Users\ristoh\.m2\repository\org\mule\sdk\mule-sdk-api\0.3.0\mule-sdk-api-0.3.0.jar, C:\Users\ristoh\.m2\repository\org\apache\commons\commons-lang3\3.7\commons-lang3-3.7.jar, C:\Users\ristoh\.m2\repository\org\springframework\spring-core\5.0.5.RELEASE\spring-core-5.0.5.RELEASE.jar, C:\Users\ristoh\.m2\repository\org\springframework\spring-jcl\5.0.5.RELEASE\spring-jcl-5.0.5.RELEASE.jar, C:\Users\ristoh\.m2\repository\commons-validator\commons-validator\1.6\commons-validator-1.6.jar, C:\Users\ristoh\.m2\repository\commons-digester\commons-digester\1.8.1\commons-digester-1.8.1.jar, C:\Users\ristoh\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar, C:\Users\ristoh\.m2\repository\com\google\guava\guava\23.5-jre\guava-23.5-jre.jar, C:\Users\ristoh\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar, C:\Users\ristoh\.m2\repository\org\checkerframework\checker-qual\2.0.0\checker-qual-2.0.0.jar, C:\Users\ristoh\.m2\repository\com\google\errorprone\error_prone_annotations\2.0.18\error_prone_annotations-2.0.18.jar, C:\Users\ristoh\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar, C:\Users\ristoh\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar, C:\Users\ristoh\.m2\repository\io\projectreactor\reactor-core\3.1.1.RELEASE\reactor-core-3.1.1.RELEASE.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-extensions-api\1.3.0\mule-extensions-api-1.3.0.jar, C:\Users\ristoh\.m2\repository\org\reactivestreams\reactive-streams\1.0.2\reactive-streams-1.0.2.jar, C:\Users\ristoh\.m2\repository\org\mule\glassfish\jaxb\jaxb-runtime\2.3.1-MULE-001\jaxb-runtime-2.3.1-MULE-001.jar, C:\Users\ristoh\.m2\repository\org\mule\glassfish\jaxb\txw2\2.3.1-MULE-001\txw2-2.3.1-MULE-001.jar, C:\Users\ristoh\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.7\istack-commons-runtime-3.0.7.jar, C:\Users\ristoh\.m2\repository\org\jvnet\staxex\stax-ex\1.8\stax-ex-1.8.jar, C:\Users\ristoh\.m2\repository\com\sun\xml\fastinfoset\FastInfoset\1.2.15\FastInfoset-1.2.15.jar, C:\Users\ristoh\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar, C:\Users\ristoh\.m2\repository\com\sun\activation\javax.activation\1.2.0\javax.activation-1.2.0.jar, C:\Users\ristoh\.m2\repository\javax\transaction\javax.transaction-api\1.3\javax.transaction-api-1.3.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-api\1.3.0\mule-api-1.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-metadata-model-api\1.3.0\mule-metadata-model-api-1.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-message-metadata-model\1.3.0\mule-message-metadata-model-1.3.0.jar, C:\Users\ristoh\.m2\repository\commons-io\commons-io\2.6\commons-io-2.6.jar, C:\Users\ristoh\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar, C:\Users\ristoh\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar, C:\Users\ristoh\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar, C:\Users\ristoh\.m2\repository\com\github\ben-manes\caffeine\caffeine\2.8.0\caffeine-2.8.0.jar, C:\Users\ristoh\.m2\repository\com\vdurmont\semver4j\3.1.0\semver4j-3.1.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-artifact-declaration\1.3.0\mule-artifact-declaration-1.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\api-annotations\1.2.0\api-annotations-1.2.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-core\4.3.0\mule-core-4.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-dsl-api\1.3.0\mule-module-dsl-api-1.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-http-policy-api\1.3.0\mule-module-http-policy-api-1.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-policy-api\1.3.0\mule-module-policy-api-1.3.0.jar, C:\Users\ristoh\.m2\repository\commons-beanutils\commons-beanutils\1.9.4\commons-beanutils-1.9.4.jar, C:\Users\ristoh\.m2\repository\org\mule\com\github\stephenc\eaio-uuid\uuid\3.4.2-MULE-001\uuid-3.4.2-MULE-001.jar, C:\Users\ristoh\.m2\repository\javax\annotation\javax.annotation-api\1.3.2\javax.annotation-api-1.3.2.jar, C:\Users\ristoh\.m2\repository\commons-cli\commons-cli\1.2\commons-cli-1.2.jar, C:\Users\ristoh\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar, C:\Users\ristoh\.m2\repository\commons-pool\commons-pool\1.6\commons-pool-1.6.jar, C:\Users\ristoh\.m2\repository\org\apache\geronimo\specs\geronimo-j2ee-connector_1.5_spec\2.0.0\geronimo-j2ee-connector_1.5_spec-2.0.0.jar, C:\Users\ristoh\.m2\repository\org\mule\mvel\mule-mvel2\2.1.9-MULE-020\mule-mvel2-2.1.9-MULE-020.jar, C:\Users\ristoh\.m2\repository\org\jgrapht\jgrapht-core\1.3.1\jgrapht-core-1.3.1.jar, C:\Users\ristoh\.m2\repository\org\jheaps\jheaps\0.10\jheaps-0.10.jar, C:\Users\ristoh\.m2\repository\org\reflections\reflections\0.9.10\reflections-0.9.10.jar, C:\Users\ristoh\.m2\repository\io\projectreactor\addons\reactor-extra\3.2.3.RELEASE\reactor-extra-3.2.3.RELEASE.jar, C:\Users\ristoh\.m2\repository\org\yaml\snakeyaml\1.26\snakeyaml-1.26.jar, C:\Users\ristoh\.m2\repository\cglib\cglib-nodep\3.2.10\cglib-nodep-3.2.10.jar, C:\Users\ristoh\.m2\repository\org\apache\commons\commons-pool2\2.6.2\commons-pool2-2.6.2.jar, C:\Users\ristoh\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar, C:\Users\ristoh\.m2\repository\it\unimi\dsi\fastutil\8.1.1\fastutil-8.1.1.jar, C:\Users\ristoh\.m2\repository\net\jodah\failsafe\2.1.1\failsafe-2.1.1.jar, C:\Users\ristoh\.m2\repository\org\vibur\vibur-object-pool\23.0\vibur-object-pool-23.0.jar, C:\Users\ristoh\.m2\repository\com\conversantmedia\disruptor\1.2.10\disruptor-1.2.10.jar, C:\Users\ristoh\.m2\repository\javax\jms\javax.jms-api\2.0.1\javax.jms-api-2.0.1.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-extensions-spring-support\4.3.0\mule-module-extensions-spring-support-4.3.0.jar, C:\Users\ristoh\.m2\repository\org\jsoup\jsoup\1.11.3\jsoup-1.11.3.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-spring-config\4.3.0\mule-module-spring-config-4.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-artifact\4.3.0\mule-module-artifact-4.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-artifact-ast\0.8.0\mule-artifact-ast-0.8.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-artifact-ast-dependency-graph\0.8.0\mule-artifact-ast-dependency-graph-0.8.0.jar, C:\Users\ristoh\.m2\repository\org\springframework\spring-context\5.1.6.RELEASE\spring-context-5.1.6.RELEASE.jar, C:\Users\ristoh\.m2\repository\org\springframework\spring-beans\5.1.6.RELEASE\spring-beans-5.1.6.RELEASE.jar, C:\Users\ristoh\.m2\repository\org\springframework\spring-expression\5.1.6.RELEASE\spring-expression-5.1.6.RELEASE.jar, C:\Users\ristoh\.m2\repository\org\springframework\spring-aop\5.1.6.RELEASE\spring-aop-5.1.6.RELEASE.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-extensions-support\4.3.0\mule-module-extensions-support-4.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-extensions-api-dsql\1.3.0\mule-extensions-api-dsql-1.3.0.jar, C:\Users\ristoh\.m2\repository\org\antlr\antlr-runtime\3.5\antlr-runtime-3.5.jar, C:\Users\ristoh\.m2\repository\org\antlr\stringtemplate\3.2.1\stringtemplate-3.2.1.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-extensions-api-persistence\1.3.0\mule-extensions-api-persistence-1.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-metadata-model-persistence\1.3.0\mule-metadata-model-persistence-1.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-service-oauth-api\4.3.0\mule-service-oauth-api-4.3.0.jar, C:\Users\ristoh\.m2\repository\net\bytebuddy\byte-buddy\1.10.7\byte-buddy-1.10.7.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-extensions-soap-support\4.3.0\mule-module-extensions-soap-support-4.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-extensions-soap-api\1.3.0\mule-extensions-soap-api-1.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-service-soap-api\4.3.0\mule-service-soap-api-4.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-service-http-api\4.3.0\mule-service-http-api-4.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-tls\4.3.0\mule-module-tls-4.3.0.jar, C:\Users\ristoh\.m2\repository\jboss\javassist\3.7.ga\javassist-3.7.ga.jar, C:\Users\ristoh\.m2\repository\joda-time\joda-time\2.9.1\joda-time-2.9.1.jar, C:\Users\ristoh\.m2\repository\org\dom4j\dom4j\2.1.1\dom4j-2.1.1.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-extension-ast-loader\1.2.0\mule-extension-ast-loader-1.2.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-metadata-model-java-ast\1.3.0\mule-metadata-model-java-ast-1.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-metadata-model-xml\1.3.0\mule-metadata-model-xml-1.3.0.jar, C:\Users\ristoh\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar, C:\Users\ristoh\.m2\repository\org\mule\apache\xerces2-xsd11\2.11.3\xerces2-xsd11-2.11.3.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-metadata-model-java\1.3.0\mule-metadata-model-java-1.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-metadata-model-json\1.3.0\mule-metadata-model-json-1.3.0.jar, C:\Users\ristoh\.m2\repository\org\everit\json\org.everit.json.schema\1.5.1\org.everit.json.schema-1.5.1.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-service\4.3.0\mule-module-service-4.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-container\4.3.0\mule-module-container-4.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-deployment-model\4.3.0\mule-module-deployment-model-4.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-reboot\4.3.0\mule-module-reboot-4.3.0.jar, C:\Users\ristoh\.m2\repository\tanukisoft\wrapper\3.2.3\wrapper-3.2.3.jar, C:\Users\ristoh\.m2\repository\org\mule\tools\maven\mule-classloader-model\3.4.0\mule-classloader-model-3.4.0.jar, C:\Users\ristoh\.m2\repository\org\mule\services\mule-service-weave\2.3.0\mule-service-weave-2.3.0-mule-service.jar, C:\Users\ristoh\.m2\repository\org\mule\weave\runtime\2.3.0\runtime-2.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\weave\core\2.3.0\core-2.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\weave\parser\2.3.0\parser-2.3.0.jar, C:\Users\ristoh\.m2\repository\org\parboiled\parboiled_2.12\2.1.5\parboiled_2.12-2.1.5.jar, C:\Users\ristoh\.m2\repository\com\chuusai\shapeless_2.12\2.3.3\shapeless_2.12-2.3.3.jar, C:\Users\ristoh\.m2\repository\org\typelevel\macro-compat_2.12\1.1.1\macro-compat_2.12-1.1.1.jar, C:\Users\ristoh\.m2\repository\org\typelevel\spire_2.12\0.14.1\spire_2.12-0.14.1.jar, C:\Users\ristoh\.m2\repository\org\typelevel\spire-macros_2.12\0.14.1\spire-macros_2.12-0.14.1.jar, C:\Users\ristoh\.m2\repository\org\typelevel\machinist_2.12\0.6.1\machinist_2.12-0.6.1.jar, C:\Users\ristoh\.m2\repository\org\scala-lang\scala-reflect\2.12.0\scala-reflect-2.12.0.jar, C:\Users\ristoh\.m2\repository\org\typelevel\algebra_2.12\0.7.0\algebra_2.12-0.7.0.jar, C:\Users\ristoh\.m2\repository\org\typelevel\cats-kernel_2.12\0.9.0\cats-kernel_2.12-0.9.0.jar, C:\Users\ristoh\.m2\repository\org\mule\weave\debugger\2.3.0\debugger-2.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\weave\wlang\2.3.0\wlang-2.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\weave\java-module\2.3.0\java-module-2.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\weave\core-modules\2.3.0\core-modules-2.3.0.jar, C:\Users\ristoh\.m2\repository\org\scala-lang\scala-library\2.12.10\scala-library-2.12.10.jar, C:\Users\ristoh\.m2\repository\com\fasterxml\woodstox\woodstox-core\5.3.0\woodstox-core-5.3.0.jar, C:\Users\ristoh\.m2\repository\org\codehaus\woodstox\stax2-api\4.2\stax2-api-4.2.jar, C:\Users\ristoh\.m2\repository\com\fasterxml\aalto-xml\1.0.0\aalto-xml-1.0.0.jar, C:\Users\ristoh\.m2\repository\com\sun\mail\jakarta.mail\1.6.4\jakarta.mail-1.6.4.jar, C:\Users\ristoh\.m2\repository\com\sun\activation\jakarta.activation\1.2.1\jakarta.activation-1.2.1.jar, C:\Users\ristoh\.m2\repository\org\mule\weave\yaml-module\2.3.0\yaml-module-2.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\syaml\syaml_2.12\0.7.260\syaml_2.12-0.7.260.jar, C:\Users\ristoh\.m2\repository\org\mule\common\scala-common_2.12\0.5.60\scala-common_2.12-0.5.60.jar, C:\Users\ristoh\.m2\repository\org\mule\weave\ndjson-module\2.3.0\ndjson-module-2.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\weave\avro-module\2.3.0\avro-module-2.3.0.jar, C:\Users\ristoh\.m2\repository\org\apache\avro\avro\1.10.0-MULE_4\avro-1.10.0-MULE_4.jar, C:\Users\ristoh\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.0\jackson-core-2.10.0.jar, C:\Users\ristoh\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.0\jackson-databind-2.10.0.jar, C:\Users\ristoh\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.0\jackson-annotations-2.10.0.jar, C:\Users\ristoh\.m2\repository\org\apache\commons\commons-compress\1.19\commons-compress-1.19.jar, C:\Users\ristoh\.m2\repository\org\mule\weave\dwb-module\2.3.0\dwb-module-2.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-dwb-api\2.3.0\mule-dwb-api-2.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\weave\dwb-api\2.3.0\dwb-api-2.3.0.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-javaee\4.3.0\mule-module-javaee-4.3.0.jar, C:\Users\ristoh\.m2\repository\javax\jws\javax.jws-api\1.1\javax.jws-api-1.1.jar, C:\Users\ristoh\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar, C:\Users\ristoh\.m2\repository\com\sun\xml\bind\jaxb-impl\2.3.1-MULE-001\jaxb-impl-2.3.1-MULE-001.jar, C:\Users\ristoh\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0.1\jaxb-core-2.3.0.1.jar, C:\Users\ristoh\.m2\repository\javax\xml\soap\javax.xml.soap-api\1.4.0\javax.xml.soap-api-1.4.0.jar, C:\Users\ristoh\.m2\repository\javax\xml\ws\jaxws-api\2.3.1\jaxws-api-2.3.1.jar, C:\Users\ristoh\.m2\repository\org\eclipse\aether\aether-api\1.0.2.v20150114\aether-api-1.0.2.v20150114.jar, C:\Users\ristoh\.m2\repository\org\eclipse\aether\aether-util\1.0.2.v20150114\aether-util-1.0.2.v20150114.jar, C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-logging\4.3.0\mule-module-logging-4.3.0.jar, C:\Users\ristoh\.m2\repository\com\lmax\disruptor\3.3.7\disruptor-3.3.7.jar, C:\Users\ristoh\.m2\repository\org\slf4j\slf4j-ext\1.7.30\slf4j-ext-1.7.30.jar, C:\Users\ristoh\.m2\repository\org\apache\logging\log4j\log4j-api\2.17.1\log4j-api-2.17.1.jar, C:\Users\ristoh\.m2\repository\org\apache\logging\log4j\log4j-core\2.17.1\log4j-core-2.17.1.jar, C:\Users\ristoh\.m2\repository\org\apache\logging\log4j\log4j-slf4j-impl\2.17.1\log4j-slf4j-impl-2.17.1.jar, C:\Users\ristoh\.m2\repository\org\apache\logging\log4j\log4j-1.2-api\2.17.1\log4j-1.2-api-2.17.1.jar, C:\Users\ristoh\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar, C:\Users\ristoh\.m2\repository\org\slf4j\jul-to-slf4j\1.7.30\jul-to-slf4j-1.7.30.jar]
+[DEBUG]   (f) defaultOutputDirectory = C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\generated-sources\apt
+[DEBUG]   (f) encoding = ISO-8859-1
+[DEBUG]   (f) failOnError = true
+[DEBUG]   (f) fork = false
+[DEBUG]   (f) optionMap = {extension.version=1.0.0-SNAPSHOT}
+[DEBUG]   (f) outputClassDirectory = C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\classes
+[DEBUG]   (f) outputDiagnostics = true
+[DEBUG]   (f) outputDirectory = C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\classes\META-INF
+[DEBUG]   (f) pluginArtifacts = [org.bsc.maven:maven-processor-plugin:maven-plugin:3.3.3:, commons-collections:commons-collections:jar:3.2.2:runtime, org.mule.runtime:mule-extension-ast-loader:jar:1.2.0:runtime, org.mule.runtime:mule-metadata-model-java-ast:jar:1.3.0:runtime, org.mule.runtime:mule-metadata-model-api:jar:1.3.0:runtime, org.apache.commons:commons-lang3:jar:3.7:runtime, org.mule.runtime:mule-metadata-model-java:jar:1.3.0:runtime, org.mule.runtime:api-annotations:jar:1.2.0:runtime, org.mule.glassfish.jaxb:jaxb-runtime:jar:2.3.1-MULE-001:runtime, javax.xml.bind:jaxb-api:jar:2.3.1:runtime, org.mule.glassfish.jaxb:txw2:jar:2.3.1-MULE-001:runtime, com.sun.istack:istack-commons-runtime:jar:3.0.7:runtime, org.jvnet.staxex:stax-ex:jar:1.8:runtime, com.sun.xml.fastinfoset:FastInfoset:jar:1.2.15:runtime, javax.activation:javax.activation-api:jar:1.2.0:runtime, com.sun.activation:jakarta.activation:jar:1.2.1:runtime, com.google.guava:guava:jar:25.1-jre:runtime, com.google.code.findbugs:jsr305:jar:3.0.2:runtime, org.checkerframework:checker-qual:jar:2.0.0:runtime, com.google.errorprone:error_prone_annotations:jar:2.1.3:runtime, com.google.j2objc:j2objc-annotations:jar:1.1:runtime, org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:runtime, cglib:cglib:jar:3.2.10:runtime, org.ow2.asm:asm:jar:7.0:runtime, org.apache.ant:ant:jar:1.10.3:runtime, org.apache.ant:ant-launcher:jar:1.10.3:runtime, org.apache.maven:maven-plugin-api:jar:3.1.0:compile, org.apache.maven:maven-model:jar:3.1.0:compile, org.apache.maven:maven-artifact:jar:3.1.0:compile, org.eclipse.sisu:org.eclipse.sisu.plexus:jar:0.0.0.M2a:compile, javax.enterprise:cdi-api:jar:1.0:compile, javax.annotation:jsr250-api:jar:1.0:compile, javax.inject:javax.inject:jar:1:compile, org.sonatype.sisu:sisu-guice:jar:no_aop:3.1.0:compile, aopalliance:aopalliance:jar:1.0:compile, org.eclipse.sisu:org.eclipse.sisu.inject:jar:0.0.0.M2a:compile, asm:asm:jar:3.3.1:compile, org.apache.maven:maven-core:jar:3.1.0:compile, org.apache.maven:maven-settings:jar:3.1.0:compile, org.apache.maven:maven-settings-builder:jar:3.1.0:compile, org.apache.maven:maven-repository-metadata:jar:3.1.0:compile, org.apache.maven:maven-model-builder:jar:3.1.0:compile, org.apache.maven:maven-aether-provider:jar:3.1.0:compile, org.eclipse.aether:aether-spi:jar:0.9.0.M2:compile, org.eclipse.aether:aether-impl:jar:0.9.0.M2:compile, org.eclipse.aether:aether-api:jar:0.9.0.M2:compile, org.eclipse.aether:aether-util:jar:0.9.0.M2:compile, org.codehaus.plexus:plexus-interpolation:jar:1.16:compile, org.codehaus.plexus:plexus-classworlds:jar:2.4.2:compile, org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile, org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile, org.sonatype.plexus:plexus-cipher:jar:1.4:compile, org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.2:compile, org.codehaus.plexus:plexus-utils:jar:3.0.15:compile, org.codehaus.plexus:plexus-compiler-api:jar:2.8.2:compile, org.codehaus.plexus:plexus-compiler-manager:jar:2.8.2:compile, org.codehaus.plexus:plexus-compiler-javac:jar:2.8.2:compile]
+[DEBUG]   (f) processors = [org.mule.runtime.ast.internal.extension.loader.ASTExtensionResourcesGeneratorAnnotationProcessor]
+[DEBUG]   (f) remoteRepos = [MuleRepository (https://repository.mulesoft.org/nexus-ee/content/repositories/releases-ee/, default, releases+snapshots), mule-public (https://repository.mulesoft.org/nexus/content/repositories/public, default, releases+snapshots), mule-releases (https://repository.mulesoft.org/nexus/content/repositories/releases/, default, releases+snapshots), mule (https://repository.mulesoft.org/nexus/content/repositories/public/, default, releases+snapshots), central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG]   (f) repoSession = org.eclipse.aether.DefaultRepositorySystemSession@41184371
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) sourceDirectory = C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\src\main\java
+[DEBUG]   (f) systemProperties = {exportedPackagesValidator.skip=false, exportedPackagesValidator.strictValidation=false}
+[DEBUG]   (f) project = MavenProject: com.mulesoft.connectors:Basware:1.0.0-SNAPSHOT @ C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\pom.xml
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@34585ac9
+[DEBUG] -- end configuration --
+[DEBUG] Source directory: C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\classes\META-INF added
+[DEBUG] processing source directory [C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\src\main\java]
+[DEBUG] processing source directory [C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\generated-sources]
+[WARNING] source directory [C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\generated-sources] doesn't exist! Processor task will be skipped!
+[DEBUG] Adding compiler arg: -Aextension.version=1.0.0-SNAPSHOT
+[DEBUG] javac option: -cp
+[DEBUG] javac option: C:\Users\ristoh\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-extension-ast-loader\1.2.0\mule-extension-ast-loader-1.2.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-metadata-model-java-ast\1.3.0\mule-metadata-model-java-ast-1.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-metadata-model-api\1.3.0\mule-metadata-model-api-1.3.0.jar;C:\Users\ristoh\.m2\repository\org\apache\commons\commons-lang3\3.7\commons-lang3-3.7.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-metadata-model-java\1.3.0\mule-metadata-model-java-1.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\api-annotations\1.2.0\api-annotations-1.2.0.jar;C:\Users\ristoh\.m2\repository\org\mule\glassfish\jaxb\jaxb-runtime\2.3.1-MULE-001\jaxb-runtime-2.3.1-MULE-001.jar;C:\Users\ristoh\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\ristoh\.m2\repository\org\mule\glassfish\jaxb\txw2\2.3.1-MULE-001\txw2-2.3.1-MULE-001.jar;C:\Users\ristoh\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.7\istack-commons-runtime-3.0.7.jar;C:\Users\ristoh\.m2\repository\org\jvnet\staxex\stax-ex\1.8\stax-ex-1.8.jar;C:\Users\ristoh\.m2\repository\com\sun\xml\fastinfoset\FastInfoset\1.2.15\FastInfoset-1.2.15.jar;C:\Users\ristoh\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\ristoh\.m2\repository\com\sun\activation\jakarta.activation\1.2.1\jakarta.activation-1.2.1.jar;C:\Users\ristoh\.m2\repository\com\google\guava\guava\25.1-jre\guava-25.1-jre.jar;C:\Users\ristoh\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\ristoh\.m2\repository\org\checkerframework\checker-qual\2.0.0\checker-qual-2.0.0.jar;C:\Users\ristoh\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\ristoh\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\ristoh\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\ristoh\.m2\repository\cglib\cglib\3.2.10\cglib-3.2.10.jar;C:\Users\ristoh\.m2\repository\org\ow2\asm\asm\7.0\asm-7.0.jar;C:\Users\ristoh\.m2\repository\org\apache\ant\ant\1.10.3\ant-1.10.3.jar;C:\Users\ristoh\.m2\repository\org\apache\ant\ant-launcher\1.10.3\ant-launcher-1.10.3.jar;C:\Users\ristoh\.m2\repository\org\apache\maven\maven-plugin-api\3.1.0\maven-plugin-api-3.1.0.jar;C:\Users\ristoh\.m2\repository\org\apache\maven\maven-model\3.1.0\maven-model-3.1.0.jar;C:\Users\ristoh\.m2\repository\org\apache\maven\maven-artifact\3.1.0\maven-artifact-3.1.0.jar;C:\Users\ristoh\.m2\repository\org\eclipse\sisu\org.eclipse.sisu.plexus\0.0.0.M2a\org.eclipse.sisu.plexus-0.0.0.M2a.jar;C:\Users\ristoh\.m2\repository\javax\enterprise\cdi-api\1.0\cdi-api-1.0.jar;C:\Users\ristoh\.m2\repository\javax\annotation\jsr250-api\1.0\jsr250-api-1.0.jar;C:\Users\ristoh\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar;C:\Users\ristoh\.m2\repository\org\sonatype\sisu\sisu-guice\3.1.0\sisu-guice-3.1.0-no_aop.jar;C:\Users\ristoh\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\ristoh\.m2\repository\org\eclipse\sisu\org.eclipse.sisu.inject\0.0.0.M2a\org.eclipse.sisu.inject-0.0.0.M2a.jar;C:\Users\ristoh\.m2\repository\asm\asm\3.3.1\asm-3.3.1.jar;C:\Users\ristoh\.m2\repository\org\apache\maven\maven-core\3.1.0\maven-core-3.1.0.jar;C:\Users\ristoh\.m2\repository\org\apache\maven\maven-settings\3.1.0\maven-settings-3.1.0.jar;C:\Users\ristoh\.m2\repository\org\apache\maven\maven-settings-builder\3.1.0\maven-settings-builder-3.1.0.jar;C:\Users\ristoh\.m2\repository\org\apache\maven\maven-repository-metadata\3.1.0\maven-repository-metadata-3.1.0.jar;C:\Users\ristoh\.m2\repository\org\apache\maven\maven-model-builder\3.1.0\maven-model-builder-3.1.0.jar;C:\Users\ristoh\.m2\repository\org\apache\maven\maven-aether-provider\3.1.0\maven-aether-provider-3.1.0.jar;C:\Users\ristoh\.m2\repository\org\eclipse\aether\aether-spi\0.9.0.M2\aether-spi-0.9.0.M2.jar;C:\Users\ristoh\.m2\repository\org\eclipse\aether\aether-impl\0.9.0.M2\aether-impl-0.9.0.M2.jar;C:\Users\ristoh\.m2\repository\org\eclipse\aether\aether-api\0.9.0.M2\aether-api-0.9.0.M2.jar;C:\Users\ristoh\.m2\repository\org\eclipse\aether\aether-util\0.9.0.M2\aether-util-0.9.0.M2.jar;C:\Users\ristoh\.m2\repository\org\codehaus\plexus\plexus-interpolation\1.16\plexus-interpolation-1.16.jar;C:\Users\ristoh\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.4.2\plexus-classworlds-2.4.2.jar;C:\Users\ristoh\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar;C:\Users\ristoh\.m2\repository\org\sonatype\plexus\plexus-sec-dispatcher\1.3\plexus-sec-dispatcher-1.3.jar;C:\Users\ristoh\.m2\repository\org\sonatype\plexus\plexus-cipher\1.4\plexus-cipher-1.4.jar;C:\Users\ristoh\.m2\repository\org\apache\maven\plugin-tools\maven-plugin-annotations\3.2\maven-plugin-annotations-3.2.jar;C:\Users\ristoh\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.15\plexus-utils-3.0.15.jar;C:\Users\ristoh\.m2\repository\org\codehaus\plexus\plexus-compiler-api\2.8.2\plexus-compiler-api-2.8.2.jar;C:\Users\ristoh\.m2\repository\org\codehaus\plexus\plexus-compiler-manager\2.8.2\plexus-compiler-manager-2.8.2.jar;C:\Users\ristoh\.m2\repository\org\codehaus\plexus\plexus-compiler-javac\2.8.2\plexus-compiler-javac-2.8.2.jar;C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\src\main\resources;C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\classes;C:\Users\ristoh\.m2\repository\org\jacoco\org.jacoco.agent\0.8.7\org.jacoco.agent-0.8.7-runtime.jar;C:\Users\ristoh\.m2\repository\com\mulesoft\connectivity\rest-sdk-commons\0.8.0-RC2\rest-sdk-commons-0.8.0-RC2.jar;C:\Users\ristoh\.m2\repository\org\json\json\20211205\json-20211205.jar;C:\Users\ristoh\.m2\repository\com\github\everit-org\json-schema\org.everit.json.schema\1.13.0\org.everit.json.schema-1.13.0.jar;C:\Users\ristoh\.m2\repository\com\damnhandy\handy-uri-templates\2.1.8\handy-uri-templates-2.1.8.jar;C:\Users\ristoh\.m2\repository\com\google\re2j\re2j\1.3\re2j-1.3.jar;C:\Users\ristoh\.m2\repository\org\mule\sdk\mule-sdk-api\0.3.0\mule-sdk-api-0.3.0.jar;C:\Users\ristoh\.m2\repository\org\springframework\spring-core\5.0.5.RELEASE\spring-core-5.0.5.RELEASE.jar;C:\Users\ristoh\.m2\repository\org\springframework\spring-jcl\5.0.5.RELEASE\spring-jcl-5.0.5.RELEASE.jar;C:\Users\ristoh\.m2\repository\commons-validator\commons-validator\1.6\commons-validator-1.6.jar;C:\Users\ristoh\.m2\repository\commons-digester\commons-digester\1.8.1\commons-digester-1.8.1.jar;C:\Users\ristoh\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\ristoh\.m2\repository\com\google\guava\guava\23.5-jre\guava-23.5-jre.jar;C:\Users\ristoh\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\ristoh\.m2\repository\com\google\errorprone\error_prone_annotations\2.0.18\error_prone_annotations-2.0.18.jar;C:\Users\ristoh\.m2\repository\io\projectreactor\reactor-core\3.1.1.RELEASE\reactor-core-3.1.1.RELEASE.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-extensions-api\1.3.0\mule-extensions-api-1.3.0.jar;C:\Users\ristoh\.m2\repository\org\reactivestreams\reactive-streams\1.0.2\reactive-streams-1.0.2.jar;C:\Users\ristoh\.m2\repository\com\sun\activation\javax.activation\1.2.0\javax.activation-1.2.0.jar;C:\Users\ristoh\.m2\repository\javax\transaction\javax.transaction-api\1.3\javax.transaction-api-1.3.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-api\1.3.0\mule-api-1.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-message-metadata-model\1.3.0\mule-message-metadata-model-1.3.0.jar;C:\Users\ristoh\.m2\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;C:\Users\ristoh\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\ristoh\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;C:\Users\ristoh\.m2\repository\com\github\ben-manes\caffeine\caffeine\2.8.0\caffeine-2.8.0.jar;C:\Users\ristoh\.m2\repository\com\vdurmont\semver4j\3.1.0\semver4j-3.1.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-artifact-declaration\1.3.0\mule-artifact-declaration-1.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-core\4.3.0\mule-core-4.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-dsl-api\1.3.0\mule-module-dsl-api-1.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-http-policy-api\1.3.0\mule-module-http-policy-api-1.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-policy-api\1.3.0\mule-module-policy-api-1.3.0.jar;C:\Users\ristoh\.m2\repository\commons-beanutils\commons-beanutils\1.9.4\commons-beanutils-1.9.4.jar;C:\Users\ristoh\.m2\repository\org\mule\com\github\stephenc\eaio-uuid\uuid\3.4.2-MULE-001\uuid-3.4.2-MULE-001.jar;C:\Users\ristoh\.m2\repository\javax\annotation\javax.annotation-api\1.3.2\javax.annotation-api-1.3.2.jar;C:\Users\ristoh\.m2\repository\commons-cli\commons-cli\1.2\commons-cli-1.2.jar;C:\Users\ristoh\.m2\repository\commons-pool\commons-pool\1.6\commons-pool-1.6.jar;C:\Users\ristoh\.m2\repository\org\apache\geronimo\specs\geronimo-j2ee-connector_1.5_spec\2.0.0\geronimo-j2ee-connector_1.5_spec-2.0.0.jar;C:\Users\ristoh\.m2\repository\org\mule\mvel\mule-mvel2\2.1.9-MULE-020\mule-mvel2-2.1.9-MULE-020.jar;C:\Users\ristoh\.m2\repository\org\jgrapht\jgrapht-core\1.3.1\jgrapht-core-1.3.1.jar;C:\Users\ristoh\.m2\repository\org\jheaps\jheaps\0.10\jheaps-0.10.jar;C:\Users\ristoh\.m2\repository\org\reflections\reflections\0.9.10\reflections-0.9.10.jar;C:\Users\ristoh\.m2\repository\io\projectreactor\addons\reactor-extra\3.2.3.RELEASE\reactor-extra-3.2.3.RELEASE.jar;C:\Users\ristoh\.m2\repository\org\yaml\snakeyaml\1.26\snakeyaml-1.26.jar;C:\Users\ristoh\.m2\repository\cglib\cglib-nodep\3.2.10\cglib-nodep-3.2.10.jar;C:\Users\ristoh\.m2\repository\org\apache\commons\commons-pool2\2.6.2\commons-pool2-2.6.2.jar;C:\Users\ristoh\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\ristoh\.m2\repository\it\unimi\dsi\fastutil\8.1.1\fastutil-8.1.1.jar;C:\Users\ristoh\.m2\repository\net\jodah\failsafe\2.1.1\failsafe-2.1.1.jar;C:\Users\ristoh\.m2\repository\org\vibur\vibur-object-pool\23.0\vibur-object-pool-23.0.jar;C:\Users\ristoh\.m2\repository\com\conversantmedia\disruptor\1.2.10\disruptor-1.2.10.jar;C:\Users\ristoh\.m2\repository\javax\jms\javax.jms-api\2.0.1\javax.jms-api-2.0.1.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-extensions-spring-support\4.3.0\mule-module-extensions-spring-support-4.3.0.jar;C:\Users\ristoh\.m2\repository\org\jsoup\jsoup\1.11.3\jsoup-1.11.3.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-spring-config\4.3.0\mule-module-spring-config-4.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-artifact\4.3.0\mule-module-artifact-4.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-artifact-ast\0.8.0\mule-artifact-ast-0.8.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-artifact-ast-dependency-graph\0.8.0\mule-artifact-ast-dependency-graph-0.8.0.jar;C:\Users\ristoh\.m2\repository\org\springframework\spring-context\5.1.6.RELEASE\spring-context-5.1.6.RELEASE.jar;C:\Users\ristoh\.m2\repository\org\springframework\spring-beans\5.1.6.RELEASE\spring-beans-5.1.6.RELEASE.jar;C:\Users\ristoh\.m2\repository\org\springframework\spring-expression\5.1.6.RELEASE\spring-expression-5.1.6.RELEASE.jar;C:\Users\ristoh\.m2\repository\org\springframework\spring-aop\5.1.6.RELEASE\spring-aop-5.1.6.RELEASE.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-extensions-support\4.3.0\mule-module-extensions-support-4.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-extensions-api-dsql\1.3.0\mule-extensions-api-dsql-1.3.0.jar;C:\Users\ristoh\.m2\repository\org\antlr\antlr-runtime\3.5\antlr-runtime-3.5.jar;C:\Users\ristoh\.m2\repository\org\antlr\stringtemplate\3.2.1\stringtemplate-3.2.1.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-extensions-api-persistence\1.3.0\mule-extensions-api-persistence-1.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-metadata-model-persistence\1.3.0\mule-metadata-model-persistence-1.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-service-oauth-api\4.3.0\mule-service-oauth-api-4.3.0.jar;C:\Users\ristoh\.m2\repository\net\bytebuddy\byte-buddy\1.10.7\byte-buddy-1.10.7.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-extensions-soap-support\4.3.0\mule-module-extensions-soap-support-4.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-extensions-soap-api\1.3.0\mule-extensions-soap-api-1.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-service-soap-api\4.3.0\mule-service-soap-api-4.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-service-http-api\4.3.0\mule-service-http-api-4.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-tls\4.3.0\mule-module-tls-4.3.0.jar;C:\Users\ristoh\.m2\repository\jboss\javassist\3.7.ga\javassist-3.7.ga.jar;C:\Users\ristoh\.m2\repository\joda-time\joda-time\2.9.1\joda-time-2.9.1.jar;C:\Users\ristoh\.m2\repository\org\dom4j\dom4j\2.1.1\dom4j-2.1.1.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-metadata-model-xml\1.3.0\mule-metadata-model-xml-1.3.0.jar;C:\Users\ristoh\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar;C:\Users\ristoh\.m2\repository\org\mule\apache\xerces2-xsd11\2.11.3\xerces2-xsd11-2.11.3.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-metadata-model-json\1.3.0\mule-metadata-model-json-1.3.0.jar;C:\Users\ristoh\.m2\repository\org\everit\json\org.everit.json.schema\1.5.1\org.everit.json.schema-1.5.1.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-service\4.3.0\mule-module-service-4.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-container\4.3.0\mule-module-container-4.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-deployment-model\4.3.0\mule-module-deployment-model-4.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-reboot\4.3.0\mule-module-reboot-4.3.0.jar;C:\Users\ristoh\.m2\repository\tanukisoft\wrapper\3.2.3\wrapper-3.2.3.jar;C:\Users\ristoh\.m2\repository\org\mule\tools\maven\mule-classloader-model\3.4.0\mule-classloader-model-3.4.0.jar;C:\Users\ristoh\.m2\repository\org\mule\services\mule-service-weave\2.3.0\mule-service-weave-2.3.0-mule-service.jar;C:\Users\ristoh\.m2\repository\org\mule\weave\runtime\2.3.0\runtime-2.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\weave\core\2.3.0\core-2.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\weave\parser\2.3.0\parser-2.3.0.jar;C:\Users\ristoh\.m2\repository\org\parboiled\parboiled_2.12\2.1.5\parboiled_2.12-2.1.5.jar;C:\Users\ristoh\.m2\repository\com\chuusai\shapeless_2.12\2.3.3\shapeless_2.12-2.3.3.jar;C:\Users\ristoh\.m2\repository\org\typelevel\macro-compat_2.12\1.1.1\macro-compat_2.12-1.1.1.jar;C:\Users\ristoh\.m2\repository\org\typelevel\spire_2.12\0.14.1\spire_2.12-0.14.1.jar;C:\Users\ristoh\.m2\repository\org\typelevel\spire-macros_2.12\0.14.1\spire-macros_2.12-0.14.1.jar;C:\Users\ristoh\.m2\repository\org\typelevel\machinist_2.12\0.6.1\machinist_2.12-0.6.1.jar;C:\Users\ristoh\.m2\repository\org\scala-lang\scala-reflect\2.12.0\scala-reflect-2.12.0.jar;C:\Users\ristoh\.m2\repository\org\typelevel\algebra_2.12\0.7.0\algebra_2.12-0.7.0.jar;C:\Users\ristoh\.m2\repository\org\typelevel\cats-kernel_2.12\0.9.0\cats-kernel_2.12-0.9.0.jar;C:\Users\ristoh\.m2\repository\org\mule\weave\debugger\2.3.0\debugger-2.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\weave\wlang\2.3.0\wlang-2.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\weave\java-module\2.3.0\java-module-2.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\weave\core-modules\2.3.0\core-modules-2.3.0.jar;C:\Users\ristoh\.m2\repository\org\scala-lang\scala-library\2.12.10\scala-library-2.12.10.jar;C:\Users\ristoh\.m2\repository\com\fasterxml\woodstox\woodstox-core\5.3.0\woodstox-core-5.3.0.jar;C:\Users\ristoh\.m2\repository\org\codehaus\woodstox\stax2-api\4.2\stax2-api-4.2.jar;C:\Users\ristoh\.m2\repository\com\fasterxml\aalto-xml\1.0.0\aalto-xml-1.0.0.jar;C:\Users\ristoh\.m2\repository\com\sun\mail\jakarta.mail\1.6.4\jakarta.mail-1.6.4.jar;C:\Users\ristoh\.m2\repository\org\mule\weave\yaml-module\2.3.0\yaml-module-2.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\syaml\syaml_2.12\0.7.260\syaml_2.12-0.7.260.jar;C:\Users\ristoh\.m2\repository\org\mule\common\scala-common_2.12\0.5.60\scala-common_2.12-0.5.60.jar;C:\Users\ristoh\.m2\repository\org\mule\weave\ndjson-module\2.3.0\ndjson-module-2.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\weave\avro-module\2.3.0\avro-module-2.3.0.jar;C:\Users\ristoh\.m2\repository\org\apache\avro\avro\1.10.0-MULE_4\avro-1.10.0-MULE_4.jar;C:\Users\ristoh\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.0\jackson-core-2.10.0.jar;C:\Users\ristoh\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.0\jackson-databind-2.10.0.jar;C:\Users\ristoh\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.0\jackson-annotations-2.10.0.jar;C:\Users\ristoh\.m2\repository\org\apache\commons\commons-compress\1.19\commons-compress-1.19.jar;C:\Users\ristoh\.m2\repository\org\mule\weave\dwb-module\2.3.0\dwb-module-2.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-dwb-api\2.3.0\mule-dwb-api-2.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\weave\dwb-api\2.3.0\dwb-api-2.3.0.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-javaee\4.3.0\mule-module-javaee-4.3.0.jar;C:\Users\ristoh\.m2\repository\javax\jws\javax.jws-api\1.1\javax.jws-api-1.1.jar;C:\Users\ristoh\.m2\repository\com\sun\xml\bind\jaxb-impl\2.3.1-MULE-001\jaxb-impl-2.3.1-MULE-001.jar;C:\Users\ristoh\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0.1\jaxb-core-2.3.0.1.jar;C:\Users\ristoh\.m2\repository\javax\xml\soap\javax.xml.soap-api\1.4.0\javax.xml.soap-api-1.4.0.jar;C:\Users\ristoh\.m2\repository\javax\xml\ws\jaxws-api\2.3.1\jaxws-api-2.3.1.jar;C:\Users\ristoh\.m2\repository\org\eclipse\aether\aether-api\1.0.2.v20150114\aether-api-1.0.2.v20150114.jar;C:\Users\ristoh\.m2\repository\org\eclipse\aether\aether-util\1.0.2.v20150114\aether-util-1.0.2.v20150114.jar;C:\Users\ristoh\.m2\repository\org\mule\runtime\mule-module-logging\4.3.0\mule-module-logging-4.3.0.jar;C:\Users\ristoh\.m2\repository\com\lmax\disruptor\3.3.7\disruptor-3.3.7.jar;C:\Users\ristoh\.m2\repository\org\slf4j\slf4j-ext\1.7.30\slf4j-ext-1.7.30.jar;C:\Users\ristoh\.m2\repository\org\apache\logging\log4j\log4j-api\2.17.1\log4j-api-2.17.1.jar;C:\Users\ristoh\.m2\repository\org\apache\logging\log4j\log4j-core\2.17.1\log4j-core-2.17.1.jar;C:\Users\ristoh\.m2\repository\org\apache\logging\log4j\log4j-slf4j-impl\2.17.1\log4j-slf4j-impl-2.17.1.jar;C:\Users\ristoh\.m2\repository\org\apache\logging\log4j\log4j-1.2-api\2.17.1\log4j-1.2-api-2.17.1.jar;C:\Users\ristoh\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\ristoh\.m2\repository\org\slf4j\jul-to-slf4j\1.7.30\jul-to-slf4j-1.7.30.jar;
+[DEBUG] javac option: -sourcepath
+[DEBUG] javac option: C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\src\main\java;C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\classes\META-INF
+[DEBUG] javac option: -proc:only
+[DEBUG] javac option: -Aextension.version=1.0.0-SNAPSHOT
+[DEBUG] javac option: -processor
+[DEBUG] javac option: org.mule.runtime.ast.internal.extension.loader.ASTExtensionResourcesGeneratorAnnotationProcessor
+[DEBUG] javac option: -d
+[DEBUG] javac option: C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\classes
+[DEBUG] javac option: -s
+[DEBUG] javac option: C:\Users\ristoh\Documents\GitHub\mulesoft-connector-demo\target\classes\META-INF
+[DEBUG] set system property : [exportedPackagesValidator.skip] = [false]
+[DEBUG] set system property : [exportedPackagesValidator.strictValidation] = [false]
+[INFO] diagnostic: Note: Starting Resources generator for Extensions
+[ERROR] error on execute: use -X to have details 
+[DEBUG] 
+java.lang.RuntimeException: java.lang.RuntimeException: Only one extension is allowed per plugin, however several classes annotated with @Extension were found. Offending classes are [com.mulesoft.connectors.baswareconnector.internal.extension.BaswareConnector, com.mulesoft.connectors.baswareconnectoroauth2aprilv2.internal.extension.BaswareConnectorOauth2aprilv2Connector]
+    at com.sun.tools.javac.main.Main.compile (Main.java:553)
+    at com.sun.tools.javac.api.JavacTaskImpl.doCall (JavacTaskImpl.java:129)
+    at com.sun.tools.javac.api.JavacTaskImpl.call (JavacTaskImpl.java:138)
+    at org.bsc.maven.plugin.processor.AbstractAnnotationProcessorMojo.executeWithExceptionsHandled (AbstractAnnotationProcessorMojo.java:778)
+    at org.bsc.maven.plugin.processor.AbstractAnnotationProcessorMojo.execute (AbstractAnnotationProcessorMojo.java:429)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:137)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:210)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+Caused by: java.lang.RuntimeException: Only one extension is allowed per plugin, however several classes annotated with @Extension were found. Offending classes are [com.mulesoft.connectors.baswareconnector.internal.extension.BaswareConnector, com.mulesoft.connectors.baswareconnectoroauth2aprilv2.internal.extension.BaswareConnectorOauth2aprilv2Connector]
+    at org.mule.runtime.module.extension.internal.resources.BaseExtensionResourcesGeneratorAnnotationProcessor.getExtension (BaseExtensionResourcesGeneratorAnnotationProcessor.java:147)
+    at org.mule.runtime.module.extension.internal.resources.BaseExtensionResourcesGeneratorAnnotationProcessor.process (BaseExtensionResourcesGeneratorAnnotationProcessor.java:93)
+    at com.sun.tools.javac.processing.JavacProcessingEnvironment.callProcessor (JavacProcessingEnvironment.java:802)
+    at com.sun.tools.javac.processing.JavacProcessingEnvironment.discoverAndRunProcs (JavacProcessingEnvironment.java:713)
+    at com.sun.tools.javac.processing.JavacProcessingEnvironment.access$1800 (JavacProcessingEnvironment.java:91)
+    at com.sun.tools.javac.processing.JavacProcessingEnvironment$Round.run (JavacProcessingEnvironment.java:1043)
+    at com.sun.tools.javac.processing.JavacProcessingEnvironment.doProcessing (JavacProcessingEnvironment.java:1184)
+    at com.sun.tools.javac.main.JavaCompiler.processAnnotations (JavaCompiler.java:1170)
+    at com.sun.tools.javac.main.JavaCompiler.compile (JavaCompiler.java:856)
+    at com.sun.tools.javac.main.Main.compile (Main.java:523)
+    at com.sun.tools.javac.api.JavacTaskImpl.doCall (JavacTaskImpl.java:129)
+    at com.sun.tools.javac.api.JavacTaskImpl.call (JavacTaskImpl.java:138)
+    at org.bsc.maven.plugin.processor.AbstractAnnotationProcessorMojo.executeWithExceptionsHandled (AbstractAnnotationProcessorMojo.java:778)
+    at org.bsc.maven.plugin.processor.AbstractAnnotationProcessorMojo.execute (AbstractAnnotationProcessorMojo.java:429)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:137)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:210)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.160 s
+[INFO] Finished at: 2022-06-16T08:54:30+03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.bsc.maven:maven-processor-plugin:3.3.3:process (process) on project Basware: Error executing: java.lang.RuntimeException: Only one extension is allowed per plugin, however several classes annotated with @Extension were found. Offending classes are [com.mulesoft.connectors.baswareconnector.internal.extension.BaswareConnector, com.mulesoft.connectors.baswareconnectoroauth2aprilv2.internal.extension.BaswareConnectorOauth2aprilv2Connector] -> [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.bsc.maven:maven-processor-plugin:3.3.3:process (process) on project Basware: Error executing
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:215)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+Caused by: org.apache.maven.plugin.MojoExecutionException: Error executing
+    at org.bsc.maven.plugin.processor.AbstractAnnotationProcessorMojo.execute (AbstractAnnotationProcessorMojo.java:437)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:137)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:210)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+Caused by: java.lang.RuntimeException: java.lang.RuntimeException: Only one extension is allowed per plugin, however several classes annotated with @Extension were found. Offending classes are [com.mulesoft.connectors.baswareconnector.internal.extension.BaswareConnector, com.mulesoft.connectors.baswareconnectoroauth2aprilv2.internal.extension.BaswareConnectorOauth2aprilv2Connector]
+    at com.sun.tools.javac.main.Main.compile (Main.java:553)
+    at com.sun.tools.javac.api.JavacTaskImpl.doCall (JavacTaskImpl.java:129)
+    at com.sun.tools.javac.api.JavacTaskImpl.call (JavacTaskImpl.java:138)
+    at org.bsc.maven.plugin.processor.AbstractAnnotationProcessorMojo.executeWithExceptionsHandled (AbstractAnnotationProcessorMojo.java:778)
+    at org.bsc.maven.plugin.processor.AbstractAnnotationProcessorMojo.execute (AbstractAnnotationProcessorMojo.java:429)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:137)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:210)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+Caused by: java.lang.RuntimeException: Only one extension is allowed per plugin, however several classes annotated with @Extension were found. Offending classes are [com.mulesoft.connectors.baswareconnector.internal.extension.BaswareConnector, com.mulesoft.connectors.baswareconnectoroauth2aprilv2.internal.extension.BaswareConnectorOauth2aprilv2Connector]
+    at org.mule.runtime.module.extension.internal.resources.BaseExtensionResourcesGeneratorAnnotationProcessor.getExtension (BaseExtensionResourcesGeneratorAnnotationProcessor.java:147)
+    at org.mule.runtime.module.extension.internal.resources.BaseExtensionResourcesGeneratorAnnotationProcessor.process (BaseExtensionResourcesGeneratorAnnotationProcessor.java:93)
+    at com.sun.tools.javac.processing.JavacProcessingEnvironment.callProcessor (JavacProcessingEnvironment.java:802)
+    at com.sun.tools.javac.processing.JavacProcessingEnvironment.discoverAndRunProcs (JavacProcessingEnvironment.java:713)
+    at com.sun.tools.javac.processing.JavacProcessingEnvironment.access$1800 (JavacProcessingEnvironment.java:91)
+    at com.sun.tools.javac.processing.JavacProcessingEnvironment$Round.run (JavacProcessingEnvironment.java:1043)
+    at com.sun.tools.javac.processing.JavacProcessingEnvironment.doProcessing (JavacProcessingEnvironment.java:1184)
+    at com.sun.tools.javac.main.JavaCompiler.processAnnotations (JavaCompiler.java:1170)
+    at com.sun.tools.javac.main.JavaCompiler.compile (JavaCompiler.java:856)
+    at com.sun.tools.javac.main.Main.compile (Main.java:523)
+    at com.sun.tools.javac.api.JavacTaskImpl.doCall (JavacTaskImpl.java:129)
+    at com.sun.tools.javac.api.JavacTaskImpl.call (JavacTaskImpl.java:138)
+    at org.bsc.maven.plugin.processor.AbstractAnnotationProcessorMojo.executeWithExceptionsHandled (AbstractAnnotationProcessorMojo.java:778)
+    at org.bsc.maven.plugin.processor.AbstractAnnotationProcessorMojo.execute (AbstractAnnotationProcessorMojo.java:429)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:137)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:210)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+[ERROR] 
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
