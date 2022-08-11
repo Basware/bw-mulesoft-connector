@@ -1,3 +1,0 @@
-/*
- *(c) 2022 Basware. The software in this package is published under the terms included with this distribution in the LICENSE.md file."
- */
