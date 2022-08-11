@@ -11,6 +11,13 @@
 ***
 _File version: ._
 </description>
+	<repositories>
+        <repository>
+            <id>mule-releases</id>
+            <name>Nexus Public Releases</name>
+            <url>https://repository.mulesoft.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </repositories>
     <parent>
         <groupId>com.mulesoft.connectivity</groupId>
         <artifactId>rest-sdk-connector-parent-pom</artifactId>
