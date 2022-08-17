@@ -9,7 +9,7 @@ import org.mule.runtime.extension.api.annotation.dsl.xml.Xml;
 import org.mule.runtime.extension.api.annotation.error.ErrorTypes;
 import org.mule.runtime.extension.api.annotation.license.RequiresEnterpriseLicense;
 
-@Extension(name = "Basware Connector Mule4Connector", category = Category.CERTIFIED)
+@Extension(name = "Basware Connector", category = Category.CERTIFIED)
 @Xml(prefix = "basware-connector-mule-4")
 @Configurations({BaswareConnectorMule4Configuration.class})
 @ErrorTypes(RestError.class)

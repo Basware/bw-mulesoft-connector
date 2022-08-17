@@ -32,7 +32,7 @@ public class Oauth2ConnectionProviderBase extends BaseClientCredentialsConnectio
    * {@link OptionalTlsParameterGroup} references to a TLS config element. This will enable HTTPS
    * for this config.
    */
-  @ParameterGroup(name = "tls")
+  @ParameterGroup(name = "TLS")
   protected OptionalTlsParameterGroup tlsConfig;
 
   /**

@@ -1,7 +1,7 @@
 #% Rest Connector Descriptor 1.0
 
 apiSpec:
-  url: 'https://api.basware.com/swagger/./v1/swagger.json'
+  url: 'https://api.basware.com/p2pOpenApiSwagger/p2popenapi.json'
 
 connectorName: Basware Connector - MULE 4
 connectorCategory: certified                            
