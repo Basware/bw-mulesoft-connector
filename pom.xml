@@ -5,7 +5,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <name>Basware Connector - MULE 4 Connector</name>
+    <name>Basware Connector - MULE 4</name>
     <description>The Basware Connector provides connectivity to Basware P2P APIs from Mule 4 application. These APIs are documented at https://developer.basware.com/api/p2p.
 
 </description>
