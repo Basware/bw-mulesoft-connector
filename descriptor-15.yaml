@@ -8,8 +8,6 @@ connectorCategory: certified
 connectorDescription: |
   The Basware Connector provides connectivity to Basware P2P APIs from Mule 4 application. These APIs are documented at https://developer.basware.com/api/p2p.
 
-  ***
-  _File version: ._
 
 connectorGav:
   groupId: com.mulesoft.connectors
