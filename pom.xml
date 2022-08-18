@@ -8,8 +8,6 @@
     <name>Basware Connector - MULE 4 Connector</name>
     <description>The Basware Connector provides connectivity to Basware P2P APIs from Mule 4 application. These APIs are documented at https://developer.basware.com/api/p2p.
 
-***
-_File version: ._
 </description>
 	<repositories>
         <repository>
