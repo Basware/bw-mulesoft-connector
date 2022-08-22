@@ -1,6 +1,6 @@
 == Basware Connector Release Notes
 
-*May 1,2022*
+*XX X,2022*
 
 Release Notes for version V1.0.0 of the Mule 4- Basware Connector.
 
