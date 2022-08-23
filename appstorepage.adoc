@@ -1,5 +1,7 @@
 == About Basware 
-Basware is ... 
+Basware is the only procure-to-pay and e-invoicing solution provider that empowers businesses with 100% spend visibility through 100% data capture. Basware’s cloud-based technology enables organisations to fully manage their spend, mitigate financial risk, and reduce the cost of operations via automation. With the world’s largest open business network and an open technology ecosystem, Basware is uniquely positioned to deliver the solution required for Visible Commerce, which provides customers with complete transparency into all the flows of money, goods, and services around the world. 
+More information about Basware is available at https://www.basware.com[basware.com].
+ 
 
 == Basware connector - Mule 4
 Use Basware Purchase-to-Pay APIs to power your purchasing and accounts payable processes. 
