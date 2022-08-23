@@ -1,6 +1,6 @@
 == Basware Connector Release Notes
 
-*XX X,2022*
+*23 8,2022*
 
 Release Notes for version V1.0.0 of the Mule 4- Basware Connector.
 
@@ -27,7 +27,7 @@ Supports the operations available in https://developer.basware.com/api/p2p[Baswa
 * {blank}
 +
 
-Basware Connector example can be found at this https://github.com/hautari/muledocs/connectorusageexamples.adoc[Basware-Connector-Usage examples]
+Basware Connector example can be found at this https://github.com/Basware/bw-mulesoft-connector/blob/release/v1.0.0/documentation/connector%20usage%20examples.adoc[Basware-Connector-Usage examples]
 
 * {blank}
 +
