@@ -1,5 +1,7 @@
 == About Basware 
-Basware is ... 
+Basware is the only procure-to-pay and e-invoicing solution provider that empowers businesses with 100% spend visibility through 100% data capture. Basware’s cloud-based technology enables organisations to fully manage their spend, mitigate financial risk, and reduce the cost of operations via automation. With the world’s largest open business network and an open technology ecosystem, Basware is uniquely positioned to deliver the solution required for Visible Commerce, which provides customers with complete transparency into all the flows of money, goods, and services around the world. 
+More information about Basware is available at https://www.basware.com[basware.com].
+ 
 
 == Basware connector - Mule 4
 Use Basware Purchase-to-Pay APIs to power your purchasing and accounts payable processes. 
@@ -13,9 +15,9 @@ The Basware Connector provides the connectivity to the Basware Rest API.
 * Combine your purchasing and accounts payable processes to automatically validate invoices, whether the purchasing is done in Basware P2P Purchase or in your existing purchasing system.
 
 === Additional References
-* Connector Release Notes
-* Connector User Guide
-* All anypoint connectors support policy https://www.mulesoft.com/legal/versioning-back-support-policy#anypoint-connectors
-* Connector Help https://help.mulesoft.com/s/topic/0TO2T0000009a3bWAA/connectors
+* https://github.com/Basware/bw-mulesoft-connector/blob/release/v1.0.0/documentation/releasenotes.adoc[Connector Release Notes]
+* https://github.com/Basware/bw-mulesoft-connector/blob/release/v1.0.0/documentation/index.adoc[Connector User Guide]
+* https://www.mulesoft.com/legal/versioning-back-support-policy#anypoint-connectors[All anypoint connectors support policy]
+* https://help.mulesoft.com/s/topic/0TO2T0000009a3bWAA/connectors[Connector Help]
 * https://developer.basware.com/api/p2p[Basware API developer site]
 * https://developer.basware.com/api/p2p/api_reference[Basware API reference]

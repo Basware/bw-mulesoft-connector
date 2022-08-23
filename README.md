@@ -37,15 +37,3 @@
 
   Programs using Basware API need to handle redirects either at the application layer or the HTTP layer since certain APIs allow larger payloads by redirecting the response. 'Authorization' header must not be included in the redirected request (the second request after receiving a redirect). 'Host' header needs to be included.
 
-#empty [outputfolder] folder
-
-#remove internal apis from swaggerfile
-
-#at least RC2 needed to be able to generate oauth spesific connectivity
-mvn com.mulesoft.connectivity:rest-sdk-mojo:0.8.0-RC2:createDescriptor -DapiSpec=C:\alusta\connectors\mule\swagger_aprilv4.json
-
-#copy Icon folder to [outputfolder] folder
-
-# cd [outputfolder]
-
-#mvn clean install
