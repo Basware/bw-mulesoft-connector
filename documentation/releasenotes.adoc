@@ -12,7 +12,7 @@ The Basware connector is compatible with:
 |===
 |*Application/Service* | *Version*
 |Mule Runtime | 4.3.X 4.4.X 
-|Basware Rest API | 22.04.27.36
+|Basware Rest API | 22.08.13.61
 |===
 
 Basware API is backwards compatible with previous versions.  
